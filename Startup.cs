@@ -5,10 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pos.Data.Implementation;
+using Pos.Data.Intefaces;
 using Pos.Models;
 
 namespace Pos
@@ -31,6 +34,10 @@ namespace Pos
                     Configuration.GetConnectionString("Conn")
                 )
             );
+            services.AddIdentity<ApplicationUsers,IdentityRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddScoped<IUnitOfWork,UnitOfWork>();
+           services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +53,9 @@ namespace Pos
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseAuthentication();
+           
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

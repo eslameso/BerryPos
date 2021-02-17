@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Pos.Models;
@@ -39,18 +40,44 @@ namespace Pos.Controllers
                await SignInManager.SignInAsync(User,isPersistent:false);
                return RedirectToAction("Index","Home");
              }
-             else
-             {
+            
                foreach (var item in Result.Errors)
                {
                    ModelState.AddModelError("",item.Description);
                }
-
-             }
+                   ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+             
          }
 
          return View();
         }
+
+         [HttpGet]
+         [AllowAnonymous]
+        public IActionResult Login()
+        {
+          return View();
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(LogimMv model)
+        {
+
+          var User=await UserManager.FindByEmailAsync(model.Email);
+          if(ModelState.IsValid)
+          {
+             var Result=await SignInManager.PasswordSignInAsync(User.UserName,model.Password,model.RememberMe,false);
+             if (Result.Succeeded)
+             {
+                return RedirectToAction("Index","Home");
+             }
+            ModelState.AddModelError(string.Empty,"Invalid Login Attempt");
+            
+          }
+
+         return View();
+        }
+
 
     }
 }

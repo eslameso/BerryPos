@@ -3,38 +3,49 @@
     ViewData["Title"] = "Login";
     Layout=null;
 }
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-           
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
- 
-            <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                    <input asp-for="RememberMe" type="checkbox" class="custom-control-input">
-                    <label class="custom-control-label" asp-for="RememberMe">@Html.DisplayNameFor(m => m.RememberMe)</label>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<div class="register" style="height:100%;display: flex;background-image: url(../imgs/Background_Main_POS.jpg);background-size: cover;background-blend-mode: exclusion;background-color: #333;">
+    <div class="container">
+        <div class="row my-5 mx-5 px-5">
+            <form class="col-12 border rounded shadow py-4 px-5 mx-5" method="post" style="font-size: 17px;color: #111; background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(255 255 255 / 58%) 0%, rgb(193 77 94 / 36%) 99.3% )">
+                <div class="text-center mb-3 mt-1 font-weight-bold">
+                    <h1 style="color: #fff;text-shadow: 3px 3px 1px #b35468;">WELCOME</h1>
                 </div>
-           
-            <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-primary" />
-            </div>
-        </form>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+    
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                        <input asp-for="RememberMe" type="checkbox" class="custom-control-input">
+                        <label class="custom-control-label" asp-for="RememberMe">@Html.DisplayNameFor(m => m.RememberMe)</label>
+                    </div>
+                </div>
+                <div class="form-group row col-12">
+                    <input type="submit" value="Login" class="btn btn-primary" />
+                    <a asp-action="Register" asp-controller="Account" class="col-12 mb-0 mt-3 p-0 text-dark font-weight-bold " style="text-decoration: none;">
+                        <img width="15px" src="../imgs/right-arrow.png" /> Sign Up</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Register" asp-controller="Account">Sign Up</a>
-</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 @section Scripts{
     <partial name="_ValidationScriptsPartial"/>
 }

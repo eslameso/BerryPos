@@ -39,7 +39,7 @@ namespace Pos.Controllers
              var Result=await RoleManager.CreateAsync(Role);
              if (Result.Succeeded)
              {
-                 RedirectToAction("Index","Home");
+                return RedirectToAction("Index","Home");
              }
              foreach (var item in Result.Errors)
              {

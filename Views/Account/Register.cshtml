@@ -3,40 +3,47 @@
     ViewData["Title"] = "Register";
     Layout=null;
 }
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<div class="container">
+    <div class="row my-4 mx-5 px-5">
+        <form class="col-12 border rounded shadow py-4 px-5 mx-5" method="post" style="font-size: 17px;color: #445d69; background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(226 208 208) 0%, rgb(173 181 245) 99.3% );">
+            <div class="text-center mb-3 font-weight-bold">
+                <h1 style="color: #fff;text-shadow: 3px 3px 1px #8a8dda;">WELCOME</h1>
+            </div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                 <label asp-for="UserName" class="control-label"></label>
-                <input asp-for="UserName" class="form-control" />
+                    <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" required class="form-control" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" required class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+                <input asp-for="Password" required class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
+                <input asp-for="ConfirmPassword" required class="form-control" />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group row text-center col-12">
                 <input type="submit" value="Register" class="btn btn-primary" />
+                <a asp-action="Register" asp-controller="Account" class="btn btn-primary mx-2">Reset</a>
+                <p  class="col-12">LOGIN</p>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Register" asp-controller="Account">Cancel</a>
-</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 @section Scripts{
     <partial name="_ValidationScriptsPartial"/>
 }

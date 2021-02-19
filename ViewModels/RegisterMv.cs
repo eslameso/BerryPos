@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Pos.ViewModels
 {
@@ -9,6 +10,7 @@ namespace Pos.ViewModels
         public string UserName { get; set; }
         [Required]
         [EmailAddress]
+        [Remote(action:"IsEmailInUse",controller:"Account")]
         [Display(Name="Email")]
         public string Email { get; set; }
         [Required]

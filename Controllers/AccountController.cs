@@ -78,6 +78,24 @@ namespace Pos.Controllers
          return View();
         }
 
+        [AcceptVerbs("Get","Post")]
+        [AllowAnonymous]
+        public async Task<IActionResult> IsEmailInUse( string Email){
+         
+         var User=await UserManager.FindByEmailAsync(Email);
+         if (User ==null)
+         {
+             return Json(true);
+         }
+         else
+         {
+
+           return Json($"This Email {Email} Is Already Exist");
+         }
+
+
+        }
+
 
     }
 }

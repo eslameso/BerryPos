@@ -5,46 +5,52 @@
 }
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-<div class="container">
-    <div class="row my-4 mx-5 px-5">
-        <form class="col-12 border rounded shadow py-4 px-5 mx-5" method="post" style="font-size: 17px;color: #445d69; background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(226 208 208) 0%, rgb(173 181 245) 99.3% );">
-            <div class="text-center mb-3 font-weight-bold">
-                <h1 style="color: #fff;text-shadow: 3px 3px 1px #8a8dda;">WELCOME</h1>
-            </div>
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UserName" class="control-label"></label>
-                <input asp-for="UserName"  class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email"  class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password"  class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword"  class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group row text-center col-12">
-                <input type="submit" value="Register" class="btn btn-primary" />
-                <input type="reset" value="Reset" class="btn btn-danger mx-2"/>
-                <p class="col-12">LOGIN</p>
-            </div>
-        </form>
+<div class="register" style="height:auto%;flex-wrap: wrap;display: flex;background-image: url(../imgs/Background_Main_POS.jpg);background-size: cover;background-blend-mode: exclusion;background-color: #333;">
+    <div class="container">
+        <div class="row my-4 mx-5 px-5">
+            <form class="col-12 border rounded shadow py-4 px-5 mx-5" method="post" style="font-size: 17px;color: #111; background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(255 255 255 / 58%) 0%, rgb(193 77 94 / 36%) 99.3% )">
+                <div class="text-center mb-3 mt-1 font-weight-bold">
+                    <h1 style="color: #fff;text-shadow: 3px 3px 1px #b35468;">WELCOME</h1>
+                </div>
+               
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label"></label>
+                    <input asp-for="UserName"  class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email"  class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password"  class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword" class="control-label"></label>
+                    <input asp-for="ConfirmPassword"  class="form-control" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group row col-12">
+                    <input type="submit" value="Register" class="btn btn-primary" />
+                    <input type="reset" value="Reset" class="btn btn-danger mx-2"/>
+                    <a asp-action="Login" asp-controller="Account"  asp- class="col-12 mb-0 mt-3 p-0 text-dark font-weight-bold " style="text-decoration: none;">
+                        <img width="15px" src="../imgs/right-arrow.png" /> LOGIN
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
-@section Scripts{
+@* @section Scripts{
     <partial name="_ValidationScriptsPartial"/>
-}
+} *@

@@ -19,6 +19,7 @@ namespace Pos.Controllers
 
         }
 
+//ToDo Show Register Page
         [HttpGet]
         public IActionResult Register()
         {
@@ -26,14 +27,18 @@ namespace Pos.Controllers
             return View();
         }
 
+
+//ToDo Register Person To Can Login To The System
         [HttpPost]
         public async Task<IActionResult> Register(RegisterMv model){
          if (ModelState.IsValid)
          {
+
            var User =new ApplicationUsers{
                UserName=model.UserName,
                Email=model.Email
            };
+
            var Result= await UserManager.CreateAsync(User,model.Password);
              if(Result.Succeeded)
              {
@@ -51,19 +56,23 @@ namespace Pos.Controllers
 
          return View();
         }
-
+        //ToDo Show Login Page
          [HttpGet]
          [AllowAnonymous]
         public IActionResult Login()
         {
           return View();
         }
+
+        //ToDo Login To The System
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Login(LogimMv model)
         {
           if(ModelState.IsValid)
           {
+            //To Get The User That Login And Use It`s UserName To Login Becouse WE Login With Email Not User Name
+            //And The PasswordSignInAsyn Need UserName
           var User=await UserManager.FindByEmailAsync(model.Email);
            if (User !=null)
            {
@@ -81,6 +90,7 @@ namespace Pos.Controllers
          return View();
         }
 
+        //ToDo Check If Email Is Already Exist
         [AcceptVerbs("Get","Post")]
         [AllowAnonymous]
         public async Task<IActionResult> IsEmailInUse(string Email){

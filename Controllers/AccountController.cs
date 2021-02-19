@@ -45,7 +45,7 @@ namespace Pos.Controllers
                {
                    ModelState.AddModelError("",item.Description);
                }
-                   ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+                   ModelState.AddModelError(string.Empty, "Invalid Register Attempt");
              
          }
 
@@ -62,20 +62,41 @@ namespace Pos.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Login(LogimMv model)
         {
-
-          var User=await UserManager.FindByEmailAsync(model.Email);
           if(ModelState.IsValid)
           {
+          var User=await UserManager.FindByEmailAsync(model.Email);
+           if (User !=null)
+           {
+               
              var Result=await SignInManager.PasswordSignInAsync(User.UserName,model.Password,model.RememberMe,false);
              if (Result.Succeeded)
              {
                 return RedirectToAction("Index","Home");
              }
-            ModelState.AddModelError(string.Empty,"Invalid Login Attempt");
+            
+            }
             
           }
-
+          ModelState.AddModelError(string.Empty,"Invalid Login Attempt");
          return View();
+        }
+
+        [AcceptVerbs("Get","Post")]
+        [AllowAnonymous]
+        public async Task<IActionResult> IsEmailInUse(string Email){
+         
+         var User=await UserManager.FindByEmailAsync(Email);
+         if (User ==null)
+         {
+             return Json(data:true);
+         }
+         else
+         {
+
+           return Json(data:$"This Email {Email} Is Already Exist");
+         }
+
+
         }
 
 

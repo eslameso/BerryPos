@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Pos.ViewModels
 {
@@ -10,6 +11,8 @@ namespace Pos.ViewModels
         [Required]
         [EmailAddress]
         [Display(Name="Email")]
+        [Remote(action:"IsEmailInUse",controller:"Account")]
+        [ValideEmailDomain(AllowedDomain:"pos.com",ErrorMessage="Domain Name Should be (pos.com)")]
         public string Email { get; set; }
         [Required]
         [DataType(DataType.Password)]

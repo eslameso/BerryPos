@@ -45,7 +45,7 @@ namespace Pos.Controllers
                {
                    ModelState.AddModelError("",item.Description);
                }
-                   ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+                   ModelState.AddModelError(string.Empty, "Invalid Register Attempt");
              
          }
 
@@ -83,17 +83,17 @@ namespace Pos.Controllers
 
         [AcceptVerbs("Get","Post")]
         [AllowAnonymous]
-        public async Task<IActionResult> IsEmailInUse( string Email){
+        public async Task<IActionResult> IsEmailInUse(string Email){
          
          var User=await UserManager.FindByEmailAsync(Email);
          if (User ==null)
          {
-             return Json(true);
+             return Json(data:true);
          }
          else
          {
 
-           return Json($"This Email {Email} Is Already Exist");
+           return Json(data:$"This Email {Email} Is Already Exist");
          }
 
 

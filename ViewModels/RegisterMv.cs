@@ -10,8 +10,9 @@ namespace Pos.ViewModels
         public string UserName { get; set; }
         [Required]
         [EmailAddress]
-        [Remote(action:"IsEmailInUse",controller:"Account")]
         [Display(Name="Email")]
+        [Remote(action:"IsEmailInUse",controller:"Account")]
+        [ValideEmailDomain(AllowedDomain:"pos.com",ErrorMessage="Domain Name Should be (pos.com)")]
         public string Email { get; set; }
         [Required]
         [DataType(DataType.Password)]

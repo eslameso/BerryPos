@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -53,6 +54,14 @@ namespace Pos.Controllers
             }
             
             return View();
+        }
+
+        [HttpGet]
+        public  IActionResult GetAllRoles()
+        {
+            var roles = RoleManager.Roles.ToList();
+
+            return View(roles);
         }
 
     }

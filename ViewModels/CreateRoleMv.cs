@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Pos.ViewModels
 {
     public class CreateRoleMv
     {
-        public string  Name { get; set; }
+            [Required]
+            public string  Name { get; set; }
     }
-}
+} 

@@ -10,6 +10,7 @@ using Pos.Models;
 
 namespace Pos.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -23,7 +24,7 @@ namespace Pos.Controllers
         {
             return View();
         }
-
+         [AllowAnonymous]
         public IActionResult Privacy()
         {
             return View();

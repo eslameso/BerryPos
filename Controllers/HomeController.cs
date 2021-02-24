@@ -10,7 +10,7 @@ using Pos.Models;
 
 namespace Pos.Controllers
 {
-    [Authorize]
+    // [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -19,7 +19,7 @@ namespace Pos.Controllers
         {
             _logger = logger;
         }
-         [Authorize]
+        //  [Authorize]
         public IActionResult Index()
         {
             return View();

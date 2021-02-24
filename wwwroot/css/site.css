@@ -65,7 +65,35 @@ a.navbar-brand {
   transition: display 0s , margin-left .5s linear ;
 }
 
-.custom-select{width: auto;}
+.Langselect .selectedlan img{
+  box-shadow: 1px 1px 4px 0px #00bcd4;
+  border: 2px solid #00bcd4;
+  border-radius: 50%;
+}
+.langHover{
+  display: none;
+  position: fixed;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px;
+  box-shadow: 1px 1px 3px -2px #333;
+  margin-left: -14px;
+}
+.langHover span{
+  padding: 8px;
+  border-right: 1px solid #ddd;
+}
+.langHover span:last-child{border: none;}
+.Langselect:hover .selectedlan img{
+  transform: translateY(-2px);
+  box-shadow: 1px 1px 6px 0px #00bcd4 !important;
+}
+.Langselect:hover .langHover , .Langselect:focus .langHover{
+  display: inline-block;
+  cursor: pointer;
+}
+
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;

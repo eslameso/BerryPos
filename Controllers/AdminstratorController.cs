@@ -130,6 +130,11 @@ namespace Pos.Controllers
              }
            return View(model);
         }
+
+         
+
+         
+
      
        
     }

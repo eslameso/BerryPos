@@ -9,27 +9,37 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pos</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".menuIcon , .navbar-collapse , .contentPush" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon menuIcon"></span>
+                    <span class="navbar-toggler-icon menuIcon"></span>
+                    <span class="navbar-toggler-icon menuIcon"></span>
+            </button>
+            <div class="btn-group">
+                <div class="Langselect mr-5">
+                    <div class="selectedlan"><img width="40px" src="../imgs/en.jpg" /> </div>
+                    <div class="langHover">
+                        <i class="fas fa-sort-up"></i>
+                        <span><img width="20px" src="~/imgs/ar.png" /> Ar</span>
+                    </div>
                 </div>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pos</a>
+            </div>
+            
+            <div class="navbar-collapse collapse sidenav">
+                <ul class="navbar-nav navbar-nav-scroll mr-auto my-2 my-lg-0 "style="max-height: 100px;" >
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                            <i class="fa fa-home" ></i> Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy"></a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="contentPush">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

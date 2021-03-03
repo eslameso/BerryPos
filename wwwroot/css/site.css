@@ -4,10 +4,94 @@ for details on configuring this project to bundle and minify static web assets. 
   font-family: KhandL;
   src: url(../fonts/Khand-Light.ttf);
 } */
+
+/* Header Style */
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+}
+/* .menuIcon ,.menuIcon.show{display: block !important;transition: display 0s , transform .5s linear}
+.menuIcon.show{padding: 5px 0px;} */
+.navbar-toggler{padding: 9px;}
+.navbar-toggler .navbar-toggler-icon{
+  background-image: none !important;
+  width: 28px;
+  background-color: #fff;
+  height: 3px;
+  margin-bottom: 5px;
+  display: table-caption;
+  transition:  display 0s , transform .5s linear;
+}
+.navbar-toggler .navbar-toggler-icon:last-child{margin-bottom: 0;}
+.menuIcon.show.navbar-toggler-icon:nth-child(2){
+  display: none;
+}
+.menuIcon.show.navbar-toggler-icon:nth-child(1){
+  transform: translateY(3px) skewY(31deg);
+  display: block !important;
+  transition: display 0s , transform .5s linear;
+}
+.menuIcon.show.navbar-toggler-icon:nth-child(3){
+  transform: translateY(-4px) skewY(-35deg);
+  display: block !important;
+  transition: display 0s ,transform .5s linear;
+}
+.sidenav{
+  width: 0;
+  height: 0;
+  position: fixed;
+}
+.sidenav.show{
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1e2225;
+  overflow-x: hidden;
+  transition: height 0s , width .5s linear;
+  margin-top: 56px;
+  padding: 10px;
+}
+.contentPush{
+  display: block !important;
+  margin-left: 0px;
+  transition: display 0s , margin-left .5s linear ;
+}
+.contentPush.show{
+  margin-left: 250px;
+  transition: display 0s , margin-left .5s linear ;
+}
+
+.Langselect .selectedlan img{
+  box-shadow: 1px 1px 4px 0px #00bcd4;
+  border: 2px solid #00bcd4;
+  border-radius: 50%;
+}
+.langHover{
+  display: none;
+  position: fixed;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px;
+  box-shadow: 1px 1px 3px -2px #333;
+  margin-left: -14px;
+}
+.langHover span{
+  padding: 8px;
+  border-right: 1px solid #ddd;
+}
+.langHover span:last-child{border: none;}
+.Langselect:hover .selectedlan img{
+  transform: translateY(-2px);
+  box-shadow: 1px 1px 6px 0px #00bcd4 !important;
+}
+.Langselect:hover .langHover , .Langselect:focus .langHover{
+  display: inline-block;
+  cursor: pointer;
 }
 
 /* Provide sufficient contrast against white background */
@@ -31,11 +115,6 @@ a {
 -------------------------------------------------- */
 html {
   font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
 }
 
 .border-top {
@@ -71,4 +150,21 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+/* Media Queiry */
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px){
+  .sidenav , .sidenav.show{
+    position: unset;
+    background-color: transparent;
+    margin-top: 0px;padding: 0px;
+  }
+  .contentPush.show{
+    margin-left: 0px;
+  }
 }

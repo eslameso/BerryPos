@@ -4,7 +4,9 @@ for details on configuring this project to bundle and minify static web assets. 
   font-family: KhandL;
   src: url(../fonts/Khand-Light.ttf);
 } */
-
+p , a , span , h1,h2,h3,h4,h5,h6 , li ,ul , div{
+  text-align: start;
+}
 /* Header Style */
 a.navbar-brand {
   white-space: normal;
@@ -48,7 +50,7 @@ a.navbar-brand {
   z-index: 1;
   height: 100%;
   top: 0;
-  left: 0;
+  inset-inline-start: 0;
   background-color: #1e2225;
   overflow-x: hidden;
   transition: height 0s , width .5s linear;
@@ -57,17 +59,55 @@ a.navbar-brand {
 }
 .contentPush{
   display: block !important;
-  margin-left: 0px;
-  transition: display 0s , margin-left .5s linear ;
+  margin-inline-start: 0px;
+  transition: display 0s , margin-inline-start .5s linear ;
 }
 .contentPush.show{
-  margin-left: 250px;
-  transition: display 0s , margin-left .5s linear ;
+  margin-inline-start: 250px;
+  transition: display 0s , margin-inline-start .5s linear ;
 }
+ /* Start SideNav  */
+ /* .sidenav.show ul{
+  position: fixed;
+  width: 230px;
+ } */
+ .sidenav li.active{
+  background-color: #00bcd4;
+  clip-path: polygon(0% 0%, 90% 0%, 96% 50%, 90% 100%, 0% 100%);
+  transition: all .8s;
+  font-weight: 600;
+ }
+  .sidenav li:hover a{
+    color: #00bcd4 !important;
+    font-weight: 600;
+  }
+  .sidenav li.active a,.sidenav li.active i{color:#fff !important;}
 
+  /* Start Theme */
+  .theme span{
+    background-color: #00bcd4;
+    padding: 0px 10px;
+    margin-inline-end: 5px;
+    border-radius: 3px;
+    border: 2px solid #ffffffa1;
+  }
+  .theme span:hover{
+    filter: drop-shadow(2px 4px 6px black);    
+    transform: rotateX(360deg);
+    transition: .3s linear;
+  }
+  .theme span.blue{background-color: #00bcd4;}
+  .theme span.red{background-color: red;}
+  .theme span.yellow{background-color: yellow;}
+  .theme span.blue.active{
+    border: 2px solid #ffffff;
+    box-shadow: -1px 1px 10px 0px #00bcd4;
+    border-radius: 5px;
+  }
+  /* Style language */
 .Langselect .selectedlan img{
   box-shadow: 1px 1px 4px 0px #00bcd4;
-  border: 2px solid #00bcd4;
+  border: 2px solid hsl(187, 100%, 42%);
   border-radius: 50%;
 }
 .langHover{
@@ -78,21 +118,40 @@ a.navbar-brand {
   border-radius: 5px;
   padding: 8px;
   box-shadow: 1px 1px 3px -2px #333;
-  margin-left: -14px;
+  margin-top: .7px;margin-inline-start: -14px;
+}
+/* contentPush */
+.langHover:after {
+  content: '\25b2';
+  position: absolute;
+  top: -18px;
+  inset-inline-start: 12px;
+  color: #fff;
 }
 .langHover span{
   padding: 8px;
-  border-right: 1px solid #ddd;
+  border-inline-end: 1px solid #ddd;
 }
 .langHover span:last-child{border: none;}
+.Langselect:hover .selectedlan{
+  background-color: #ffffffc2;padding: 3px 8px;
+}
 .Langselect:hover .selectedlan img{
-  transform: translateY(-2px);
+  transform: rotateY(360deg);
   box-shadow: 1px 1px 6px 0px #00bcd4 !important;
+  transition: all .5s ease-in;
 }
 .Langselect:hover .langHover , .Langselect:focus .langHover{
   display: inline-block;
   cursor: pointer;
 }
+.langHover span:hover {
+  background-color: #ddd;
+}
+.langHover:hover .langHover:after{color: #ddd;}
+
+
+
 
 /* Provide sufficient contrast against white background */
 a {
@@ -165,6 +224,6 @@ body {
     margin-top: 0px;padding: 0px;
   }
   .contentPush.show{
-    margin-left: 0px;
+    margin-inline-start: 0px;
   }
 }

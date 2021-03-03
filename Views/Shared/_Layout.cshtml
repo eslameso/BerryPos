@@ -1,13 +1,14 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" unicode-bidi:bidi-override; lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Pos</title>
+    <link rel="stylesheet" href="~/lib/fontawesome//css/all.min.css" />    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+<body unicode-bidi:bidi-override;>
     <header>
         <nav class="navbar navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".menuIcon , .navbar-collapse , .contentPush" aria-expanded="true" aria-label="Toggle navigation">
@@ -16,31 +17,48 @@
                     <span class="navbar-toggler-icon menuIcon"></span>
             </button>
             <div class="btn-group">
-                <div class="Langselect mr-5">
-                    <div class="selectedlan"><img width="40px" src="../imgs/en.jpg" /> </div>
-                    <div class="langHover">
-                        <i class="fas fa-sort-up"></i>
-                        <span><img width="20px" src="~/imgs/ar.png" /> Ar</span>
+                <div class="Langselect mx-4">
+                    <div class="myselect">
+                        <div class="selectedlan">
+                            <span><img class="langselect" width="33px" title="English" src="../imgs/en.jpg" /> </span>
+                        </div>
+                        <div class="langHover">
+                            <span class="myselect-option" title="Change Language"><img class="langopt" width="20px" src="../imgs/ar.png" /> <span class="langName"> Ar </span></span>
+                        </div>
                     </div>
                 </div>
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pos</a>
+                <a class="navbar-brand px-1" asp-area="" asp-controller="Home" asp-action="Index">Pos</a>
             </div>
             
             <div class="navbar-collapse collapse sidenav">
-                <ul class="navbar-nav navbar-nav-scroll mr-auto my-2 my-lg-0 "style="max-height: 100px;" >
-                    <li class="nav-item active">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
-                            <i class="fa fa-home" ></i> Home <span class="sr-only">(current)</span></a>
+                <ul class="navbar-nav navbar-nav-scroll mr-auto my-2 my-lg-0 " >
+                    <li class="theme mb-3">
+                        <p class="text-light d-inline mx-3">Themes </p>
+                        <span class="blue active"></span>
+                        <span class="red"></span>
+                        <span class="yellow"></span>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy"></a>
+                    <li class="nav-item px-3 mb-1 active">
+                        <a class="nav-link p-2" asp-area="" asp-controller="Home" asp-action="Index">
+                            <i class="fa fa-home" ></i> Home <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1 px-3">
+                        <a class="nav-link p-2" asp-area="" asp-controller="Home" asp-action="Index">
+                            <i class="fa fa-align-center" ></i> Category
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1 px-3">
+                        <a class="nav-link p-2" asp-area="" asp-controller="Home" asp-action="Privacy">
+                            <i class="fa fa-key" ></i> Privacy
+                        </a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
     <div class="contentPush">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-3 container">
             @RenderBody()
         </main>
     </div>

@@ -15608,6 +15608,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Adminstrator\\GetAllRoles.cshtml",
+      "TargetPath": "Views\\Adminstrator\\GetAllRoles.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -15615,6 +15620,11 @@
     {
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Adminstrator\\EditRole.cshtml",
+      "TargetPath": "Views\\Adminstrator\\EditRole.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15650,6 +15660,11 @@
     {
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Shared\\NotFound.cshtml",
+      "TargetPath": "Views\\Shared\\NotFound.cshtml",
       "FileKind": "mvc"
     }
   ],

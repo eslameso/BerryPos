@@ -45,7 +45,7 @@ namespace Pos.Controllers
                 var Result = await RoleManager.CreateAsync(Role);
                 if (Result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("GetAllRoles", "Adminstrator");
                 }
                 foreach (var item in Result.Errors)
                 {
@@ -132,7 +132,22 @@ namespace Pos.Controllers
         }
 
          
+       public async Task<ActionResult> DeleteRole(string RoleId)
+       {
+         var Role =await RoleManager.FindByIdAsync(RoleId);
+         if (Role == null)
+         {
+            ViewBag.ErrorMessage= $"There Is No Role With This Id {RoleId}";
+             return View("NotFound");
+         }
+         var Result = await RoleManager.DeleteAsync(Role);
+         if (Result.Succeeded)
+         {
+             return Json(RoleId);
+         }
 
+         return Json(RoleId);
+       }
          
 
      

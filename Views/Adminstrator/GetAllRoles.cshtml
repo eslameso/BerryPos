@@ -22,50 +22,12 @@ ViewData["tittle"]="Get All Roles";
 </div>
 }
 @section scripts{
+  <script src="~/js/CustomDeleteSwal.js"></script>
 <script>
 
 $('.deleterole').click(function(){
-  debugger;
-var dataId = $(this).attr("data-id");
-swal({
-  title: "Are you sure? dataId",
-  text: "You will not be able to recover this imaginary file!",
-  type: "warning",
-  showCancelButton: true,
-  confirmButtonClass: "btn-danger",
-  confirmButtonText: "Yes, delete it!",
-  cancelButtonText: "No, cancel plx!",
-  closeOnConfirm: false,
-  closeOnCancel: false
-},
-function(isConfirm) {
-  debugger;
-  if (isConfirm) {
-    $.ajax({
-      url:"/Adminstrator/DeleteRole",
-      data:{RoleId:dataId},
-      success:function(result){
-
-         swal({
-            title:"Deleted!", 
-            text:"Your imaginary file has been deleted.", 
-            type:"success"
-             },
-        function(isConfirm){
-        if(isConfirm){
-          location.reload();
-        }
-    });
-    
-
-    }
-
-    });
-   
-  } else {
-    swal("Cancelled", "Your imaginary file is safe :)", "error");
-  }
-});
+ var dataId = $(this).attr("data-id");
+CustomDelete("/Adminstrator/DeleteRole",dataId);
 });
 
 

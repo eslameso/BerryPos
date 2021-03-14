@@ -51,9 +51,21 @@
     
    </div>
   <div class="card-footer text-muted">
-    <button class="btn btn-primary" asp-action="" asp-controller="" asp-route-RoleId="">Add Or Remove User</button>
+    
+    <a asp-action="EditUsersRole" asp-controller="Adminstrator" asp-route-roleid="@Model.Id" class="btn btn-primary">Add Or Remove Users</a>
 
   </div>
 </div>
 
 </form>
+@section scripts{
+    <script>
+
+
+
+
+
+    </script>
+
+
+}

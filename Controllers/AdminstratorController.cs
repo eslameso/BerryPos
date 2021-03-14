@@ -45,7 +45,7 @@ namespace Pos.Controllers
                 var Result = await RoleManager.CreateAsync(Role);
                 if (Result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("GetAllRoles", "Adminstrator");
                 }
                 foreach (var item in Result.Errors)
                 {
@@ -132,7 +132,109 @@ namespace Pos.Controllers
         }
 
          
+       public async Task<ActionResult> DeleteRole(string Id)
+       {
+         var Role =await RoleManager.FindByIdAsync(Id);
+         if (Role == null)
+         {
+            ViewBag.ErrorMessage= $"There Is No Role With This Id {Id}";
+             return View("NotFound");
+         }
 
+             foreach (var item in UserManager.Users)
+                    {
+                        if (await UserManager.IsInRoleAsync(item,Role.Name))
+                        {
+                            return Json(false);
+                        }
+
+                    }
+         var Result = await RoleManager.DeleteAsync(Role);
+         if (Result.Succeeded)
+         {
+             return Json(true);
+         }
+
+         return Json(true);
+       }
+
+       [HttpGet]
+       public async Task<IActionResult> EditUsersRole(string roleid)
+       {
+           var Role = await RoleManager.FindByIdAsync(roleid);
+           if (Role == null)
+           {
+               ViewBag.ErrorMessage=$"There Is No role With This Id {roleid}";
+               return View("NotFound");
+           }
+           ViewBag.RoleId=roleid;
+            var model= new List<UsersRoleMv>();
+            foreach (var user in UserManager.Users)
+            {
+                var usersrolemv = new UsersRoleMv
+                {
+                  UserId=user.Id,
+                  UserName=user.UserName
+
+                };
+                if (await UserManager.IsInRoleAsync(user,Role.Name))
+                {
+                 usersrolemv.IsSelected=true;
+                }
+                else
+                {
+                    usersrolemv.IsSelected=false;
+                }
+                
+                model.Add(usersrolemv);
+                
+            }
+
+           
+
+         
+         return View(model);
+       }
+
+       [HttpPost]
+       public async Task<IActionResult> EditUsersRole(List<UsersRoleMv> model,string roleid)
+       {
+           var Role= await RoleManager.FindByIdAsync(roleid);
+           if (Role == null)
+           {
+               ViewBag.ErrorMessage=$"Ther Is No Role With This Id {roleid}";
+           }
+             
+             for (int i = 0; i < model.Count; i++)
+             {
+                 var user= await UserManager.FindByIdAsync(model[i].UserId);
+                 IdentityResult Result=null;
+                 if (model[i].IsSelected && !(await UserManager.IsInRoleAsync(user,Role.Name)))
+                 {
+                     Result=await UserManager.AddToRoleAsync(user,Role.Name);
+                 }
+                 else if(! model[i].IsSelected && await UserManager.IsInRoleAsync(user,Role.Name))
+                 {
+                    Result= await UserManager.RemoveFromRoleAsync(user,Role.Name);
+                 }
+                 else
+                 {
+                     continue;
+                 }
+
+                 if (Result.Succeeded)
+                 {
+                     if (i < (model.Count-1))
+                     continue;
+                     else
+                     return RedirectToAction("EditRole",new {id=roleid});
+                     
+                 }
+             }
+
+
+           return RedirectToAction("EditRole",new {id=roleid});
+       }
          
 
      

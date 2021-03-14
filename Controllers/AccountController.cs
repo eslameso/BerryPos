@@ -90,6 +90,15 @@ namespace Pos.Controllers
          return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> LogOut()
+        {
+        
+        await SignInManager.SignOutAsync();
+        return RedirectToAction("Login");
+
+        }
+
         //ToDo Check If Email Is Already Exist
         [AcceptVerbs("Get","Post")]
         [AllowAnonymous]

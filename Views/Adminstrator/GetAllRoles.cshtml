@@ -17,7 +17,21 @@ ViewData["tittle"]="Get All Roles";
    </div>
   <div class="card-footer text-muted">
     <a class="btn btn-primary" asp-action="EditRole" asp-controller="Adminstrator" asp-route-id="@item.Id">Edit</a>
-    <a class="btn btn-danger" asp-action="DeleteRole" asp-controller="Adminstrator" asp-route-id="@item.Id">Delete</a>
+   <input type="button" value="delete" data-id="@item.Id"  class="btn btn-danger deleterole">
   </div>
 </div>
+}
+@section scripts{
+  <script src="~/js/CustomDeleteSwal.js"></script>
+<script>
+
+$('.deleterole').click(function(){
+ var dataId = $(this).attr("data-id");
+CustomDelete("/Adminstrator/DeleteRole",dataId);
+});
+
+
+
+</script>
+
 }

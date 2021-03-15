@@ -165,3 +165,4 @@ F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Adminstrator\E
 F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Adminstrator\GetAllRoles.cshtml.g.cs
 F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Shared\NotFound.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Adminstrator\EditUsersRole.cshtml.g.cs
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Adminstrator\EditUsersRole.cshtml.g.cs

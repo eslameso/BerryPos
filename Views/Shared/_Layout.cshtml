@@ -12,7 +12,7 @@
     
 
 </head>
-<body unicode-bidi:bidi-override;>
+<body>
     <header>
         <nav class="navbar navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".menuIcon , .navbar-collapse , .contentPush" aria-expanded="true" aria-label="Toggle navigation">
@@ -34,25 +34,21 @@
                 <a class="navbar-brand px-1" asp-area="" asp-controller="Home" asp-action="Index">Pos</a>
                @if (SignInManager.IsSignedIn(User))
                {
-                   <li class="nav-item">
                        <form method="POST" asp-action="LogOut" asp-controller="Account">
                            <button type="submit"  class="nav-link btn btn-link py-0">
                                    Log Out  @User.Identity.Name
                            </button> 
                        </form>
-                   </li>
                }
                else{
-                   <li class="nav-item">
                    <a asp-action="Login" asp-controller="Account" class="nav-link">Login</a>
-                   </li>
                }
                
             </div>
            
             
             <div class="navbar-collapse collapse sidenav">
-                <ul class="navbar-nav navbar-nav-scroll mr-auto my-2 my-lg-0 " >
+                <ul class="navbar-nav navbar-nav-scroll mr-auto my-2 my-lg-0 px-1" >
                     <li class="theme mb-3">
                         <p class="text-light d-inline mx-3">Themes </p>
                         <span class="blue active"></span>
@@ -64,8 +60,30 @@
                             <i class="fa fa-home" ></i> Home <span class="sr-only">(current)</span>
                         </a>
                     </li>
+                     @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                    <div class="accordion">
+                        <li class="nav-item px-3 mb-1">
+                            <a class="nav-link p-2" asp-area="" asp-controller="" asp-action="" data-toggle="collapse" id="#adimnAccordId" data-target="#adimnAccord" aria-controls="adimnAccord">
+                                <i class="fa fa-user-circle" ></i> Administration <i class="fa fa-angle-down" ></i>
+                            </a>
+                        </li>
+                        <div id="adimnAccord" class="collapse in" role="tabpanel">
+                            <li class="nav-item px-3 mb-1">
+                                <a class="nav-link p-2" asp-area="" asp-controller="Home" asp-action="Index">
+                                    <i class="fa fa-home" ></i> Roles
+                                </a>
+                            </li>
+                            <li class="nav-item px-3 mb-1">
+                                <a class="nav-link p-2" asp-area="" asp-controller="Home" asp-action="Index">
+                                    <i class="fa fa-home" ></i> Users
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                    }
 
-                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    @* @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                     {
                         
                     
@@ -79,7 +97,7 @@
                             <i class="fa fa-key" ></i> Users
                         </a>
                     </li>
-                    }
+                    } *@
                 </ul>
             </div>
         </nav>

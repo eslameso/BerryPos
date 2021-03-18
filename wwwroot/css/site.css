@@ -15,11 +15,12 @@ a.navbar-brand {
 }
 /* .menuIcon ,.menuIcon.show{display: block !important;transition: display 0s , transform .4s linear}
 .menuIcon.show{padding: 5px 0px;} */
-.navbar-toggler{padding: 9px;}
+.navbar-toggler{padding: 9px;border: none;}
+.navbar-toggler:focus{outline: none;}
 .navbar-toggler .navbar-toggler-icon{
   background-image: none !important;
   width: 28px;
-  background-color: #fff;
+  background-color: #00bcd4;
   height: 3px;
   margin-bottom: 5px;
   display: table-caption;
@@ -116,6 +117,21 @@ a.navbar-brand {
     border: 2px solid #ffffff;
     box-shadow: -1px 1px 10px 0px #00bcd4;
     border-radius: 5px;
+  }
+  /* Start Loging/Logout */
+  .loginIcon{
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px -1px #00bcd4;
+    border: 2px solid hsl(187, 100%, 42%);
+    background-color: #00bcd45c;
+  }
+  .loginIcon button , .loginIcon a{
+    color: #fff;
+    font-weight: 500;
+  }
+  .loginIcon img{
+    box-shadow: 1px 1px 4px 0px #00bcd4;
+    border-radius: 50% !important;
   }
   /* Style language */
 .Langselect .selectedlan img{

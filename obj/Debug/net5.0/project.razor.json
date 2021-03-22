@@ -15666,6 +15666,11 @@
       "FilePath": "e:\\Projects\\Pos\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\EditUsersRole.cshtml",
+      "TargetPath": "Views\\Adminstrator\\EditUsersRole.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

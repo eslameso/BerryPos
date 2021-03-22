@@ -23,12 +23,12 @@ a.navbar-brand {
   background-color: #00bcd4;
   height: 3px;
   margin-bottom: 5px;
-  display: table-caption;
+  display: block !important;
   transition:  display 0s , transform .4s linear;
 }
 .navbar-toggler .navbar-toggler-icon:last-child{margin-bottom: 0;}
 .menuIcon.show.navbar-toggler-icon:nth-child(2){
-  display: none;
+  display: none !important;
 }
 .menuIcon.show.navbar-toggler-icon:nth-child(1){
   transform: translateY(3px) skewY(31deg);

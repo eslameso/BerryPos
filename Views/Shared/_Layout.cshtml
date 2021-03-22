@@ -69,8 +69,8 @@
                             <i class="fa fa-home" ></i> Home <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                     @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-                    {
+                     @* @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    { *@
                     <div class="accordion">
                         <li class="nav-item px-3 mb-1">
                             <a class="nav-link p-2" asp-area="" asp-controller="" asp-action="" data-toggle="collapse" id="#adimnAccordId" data-target="#adimnAccord" aria-controls="adimnAccord">
@@ -90,8 +90,12 @@
                             </li>
                         </div>
                     </div>
-                    }
-
+                    @* } *@
+                    <li class="nav-item px-3 mb-1">
+                        <a class="nav-link p-2" asp-area="" asp-controller="Home" asp-action="Index">
+                            <i class="fa fa-box" ></i> About 
+                        </a>
+                    </li>
                     @* @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                     {
                         

@@ -67,7 +67,7 @@ namespace Pos.Controllers
         //ToDo Login To The System
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(LogimMv model)
+        public async Task<IActionResult> Login(LogimMv model,string ReturnUrl="")
         {
           if(ModelState.IsValid)
           {
@@ -80,7 +80,11 @@ namespace Pos.Controllers
              var Result=await SignInManager.PasswordSignInAsync(User.UserName,model.Password,model.RememberMe,false);
              if (Result.Succeeded)
              {
-                return RedirectToAction("Index","Home");
+               if (Url.IsLocalUrl(ReturnUrl))
+                return Redirect(ReturnUrl);
+               else
+               return RedirectToAction("Index", "Home");
+                
              }
             
             }

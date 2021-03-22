@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Pos.Models;
@@ -61,6 +62,7 @@ namespace Pos.Controllers
             return View();
         }
         //ToDo Get All Roles At The System
+        [Authorize]
         [HttpGet]
         public IActionResult GetAllRoles()
         {

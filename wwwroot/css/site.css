@@ -13,17 +13,18 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
-/* .menuIcon ,.menuIcon.show{display: block !important;transition: display 0s , transform .5s linear}
+/* .menuIcon ,.menuIcon.show{display: block !important;transition: display 0s , transform .4s linear}
 .menuIcon.show{padding: 5px 0px;} */
-.navbar-toggler{padding: 9px;}
+.navbar-toggler{padding: 9px;border: none;}
+.navbar-toggler:focus{outline: none;}
 .navbar-toggler .navbar-toggler-icon{
   background-image: none !important;
   width: 28px;
-  background-color: #fff;
+  background-color: #00bcd4;
   height: 3px;
   margin-bottom: 5px;
   display: table-caption;
-  transition:  display 0s , transform .5s linear;
+  transition:  display 0s , transform .4s linear;
 }
 .navbar-toggler .navbar-toggler-icon:last-child{margin-bottom: 0;}
 .menuIcon.show.navbar-toggler-icon:nth-child(2){
@@ -32,14 +33,25 @@ a.navbar-brand {
 .menuIcon.show.navbar-toggler-icon:nth-child(1){
   transform: translateY(3px) skewY(31deg);
   display: block !important;
-  transition: display 0s , transform .5s linear;
+  transition: display 0s , transform .4s linear;
 }
 .menuIcon.show.navbar-toggler-icon:nth-child(3){
   transform: translateY(-4px) skewY(-35deg);
   display: block !important;
-  transition: display 0s ,transform .5s linear;
+  transition: display 0s ,transform .4s linear;
 }
-.sidenav{
+.contentPush{
+  display: block !important;
+  margin-inline-start: 0px;
+  transition: display 0s , margin-inline-start .4s linear ;
+}
+.contentPush.show{
+  margin-inline-start: 250px;
+  transition: display 0s , margin-inline-start .4s linear ;
+}
+
+ /* Start SideNav  */
+ .sidenav{
   width: 0;
   height: 0;
   position: fixed;
@@ -53,24 +65,20 @@ a.navbar-brand {
   inset-inline-start: 0;
   background-color: #1e2225;
   overflow-x: hidden;
-  transition: height 0s , width .5s linear;
+  transition: height 0s , width .3s linear;
   margin-top: 56px;
   padding: 10px;
 }
-.contentPush{
-  display: block !important;
-  margin-inline-start: 0px;
-  transition: display 0s , margin-inline-start .5s linear ;
+.sidenav ul{
+  transform: translateX(-100%);
+  visibility: hidden;padding-top: 10px;
 }
-.contentPush.show{
-  margin-inline-start: 250px;
-  transition: display 0s , margin-inline-start .5s linear ;
+.sidenav.show ul{    
+  transform: translateX(0%);
+  transition: .3s ease-in-out;
+  visibility: visible;
+  transition-delay: 0.3s;
 }
- /* Start SideNav  */
- /* .sidenav.show ul{
-  position: fixed;
-  width: 230px;
- } */
  .sidenav li.active{
   background-color: #00bcd4;
   clip-path: polygon(0% 0%, 90% 0%, 96% 50%, 90% 100%, 0% 100%);
@@ -82,6 +90,12 @@ a.navbar-brand {
     font-weight: 600;
   }
   .sidenav li.active a,.sidenav li.active i{color:#fff !important;}
+  #adimnAccord{
+    background-color: rgba(0, 188, 212, 0.31);
+    border-top: 2px solid rgb(0, 188, 212);
+    clip-path: polygon(0% 0%, 90% 0%, 90% 50%, 90% 100%, 0% 100%);
+  }
+  #adimnAccord a{color: #fff;}
 
   /* Start Theme */
   .theme span{
@@ -103,6 +117,21 @@ a.navbar-brand {
     border: 2px solid #ffffff;
     box-shadow: -1px 1px 10px 0px #00bcd4;
     border-radius: 5px;
+  }
+  /* Start Loging/Logout */
+  .loginIcon{
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px -1px #00bcd4;
+    border: 2px solid hsl(187, 100%, 42%);
+    background-color: #00bcd45c;
+  }
+  .loginIcon button , .loginIcon a{
+    color: #fff;
+    font-weight: 500;
+  }
+  .loginIcon img{
+    box-shadow: 1px 1px 4px 0px #00bcd4;
+    border-radius: 50% !important;
   }
   /* Style language */
 .Langselect .selectedlan img{
@@ -139,7 +168,7 @@ a.navbar-brand {
 .Langselect:hover .selectedlan img{
   transform: rotateY(360deg);
   box-shadow: 1px 1px 6px 0px #00bcd4 !important;
-  transition: all .5s ease-in;
+  transition: all .4s ease-in;
 }
 .Langselect:hover .langHover , .Langselect:focus .langHover{
   display: inline-block;
@@ -150,7 +179,13 @@ a.navbar-brand {
 }
 .langHover:hover .langHover:after{color: #ddd;}
 
-
+/* Style Arabic Issues */
+html[dir="rtl"] .sidenav li.active {
+  clip-path: polygon(100% 0%, 100% 59%, 100% 100%, 6% 100%, 0% 50%, 5% 0%) !important;
+}
+html[dir="rtl"] #adimnAccord{
+  clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 6% 100%, 6% 0%, 5% 0%) !important; 
+}
 
 
 /* Provide sufficient contrast against white background */

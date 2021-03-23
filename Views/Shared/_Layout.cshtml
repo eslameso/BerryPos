@@ -25,26 +25,30 @@
             </div>
             <div class="btn-group">
                 @* Language Icon *@
-                <div class="Langselect mx-4">
+                <div class="Langselect mx-0 mt-1">
                     <div class="myselect">
                         <div class="selectedlan">
-                            <span><img class="langselect" width="33px" title="English" src="../imgs/en.jpg" /> </span>
+                            <span><img class="langselect" width="28px" title="English" src="/imgs/en.png" /> </span>
                         </div>
                         <div class="langHover">
-                            <span class="myselect-option" title="Change Language"><img class="langopt" width="20px" src="../imgs/ar.png" /> <span class="langName"> Ar </span></span>
+                            <span class="myselect-option" title="Change Language"><img class="langopt" width="20px" src="/imgs/ar.png" /> <span class="langName"> Ar </span></span>
                         </div>
                     </div>
                 </div>
                 @* Login Icon *@
-                <div class="loginIcon m-0 px-2 py-1">
+                <div class="dropdown loginIcon mx-3 px-2 py-1">
                 @if (SignInManager.IsSignedIn(User))
                     {
-                            <form class="d-inline-flex" method="POST" asp-action="LogOut" asp-controller="Account">
-                                <button type="submit"  class="nav-link btn btn-link py-0 px-2">
-                                        Log Out  @User.Identity.Name
-                                </button> 
-                                <img class="rounded" width="25px" src="/imgs/ar.png">
-                            </form>
+                        <img class="rounded" width="25px" src="/imgs/user.png">
+                        <form class="d-inline-flex" method="POST" asp-action="LogOut" asp-controller="Account">
+                            <button type="submit"  class="nav-link btn py-0 px-2 dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" >
+                                    @User.Identity.Name
+                            </button> 
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <button class="dropdown-item" type="button">Logout</button>
+                                <button class="dropdown-item" type="button">Account</button>
+                            </div>
+                        </form>
                     }
                 else{
                     <a asp-action="Login" asp-controller="Account" class="nav-link p-0">Login</a>
@@ -68,8 +72,8 @@
                             <i class="fa fa-home" ></i> Home <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                     @* @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-                    { *@
+                     @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
                     <div class="accordion">
                         <li class="nav-item px-3 mb-1">
                             <a class="nav-link p-2" asp-area="" asp-controller="" asp-action="" data-toggle="collapse" id="#adimnAccordId" data-target="#adimnAccord" aria-controls="adimnAccord">
@@ -78,18 +82,18 @@
                         </li>
                         <div id="adimnAccord" class="collapse in" role="tabpanel">
                             <li class="nav-item px-3 mb-1">
-                                <a class="nav-link p-2" asp-area="" asp-controller="Home" asp-action="Index">
+                                <a class="nav-link p-2" asp-area="" asp-controller="Adminstrator" asp-action="GetAllRoles">
                                     <i class="fa fa-home" ></i> Roles
                                 </a>
                             </li>
                             <li class="nav-item px-3 mb-1">
-                                <a class="nav-link p-2" asp-area="" asp-controller="Home" asp-action="Index">
+                                <a class="nav-link p-2" asp-area="" asp-controller="Adminstrator" asp-action="Index">
                                     <i class="fa fa-home" ></i> Users
                                 </a>
                             </li>
                         </div>
                     </div>
-                    @* } *@
+                    }
                     <li class="nav-item px-3 mb-1">
                         <a class="nav-link p-2" asp-area="" asp-controller="Home" asp-action="Index">
                             <i class="fa fa-box" ></i> About 

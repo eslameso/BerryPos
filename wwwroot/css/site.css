@@ -7,6 +7,7 @@ for details on configuring this project to bundle and minify static web assets. 
 p , a , span , h1,h2,h3,h4,h5,h6 , li ,ul , div{
   text-align: start;
 }
+.btn.focus, .btn:focus{box-shadow: none;}
 /* Header Style */
 a.navbar-brand {
   white-space: normal;
@@ -129,11 +130,13 @@ a.navbar-brand {
     color: #fff;
     font-weight: 500;
   }
+  .loginIcon .dropdown-menu button{color: #343a40;}
   .loginIcon img{
     box-shadow: 1px 1px 4px 0px #00bcd4;
     border-radius: 50% !important;
   }
   /* Style language */
+  .Langselect .selectedlan{padding: 3px 8px;}
 .Langselect .selectedlan img{
   box-shadow: 1px 1px 4px 0px #00bcd4;
   border: 2px solid hsl(187, 100%, 42%);
@@ -163,7 +166,7 @@ a.navbar-brand {
 }
 .langHover span:last-child{border: none;}
 .Langselect:hover .selectedlan{
-  background-color: #ffffffc2;padding: 3px 8px;
+  background-color: #ffffffc2;
 }
 .Langselect:hover .selectedlan img{
   transform: rotateY(360deg);

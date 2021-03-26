@@ -4,15 +4,15 @@
 // Write your JavaScript code.
 $(document).ready(function(){
     $('.myselect-option').on({'click': function() {
-            if($('.langselect').attr('src') == "../imgs/en.jpg"){
-                $('.langselect').attr({"src" : "../imgs/ar.png", "title" : "عربي"});
-                $('.langopt').attr('src', "../imgs/en.jpg");
+            if($('.langselect').attr('src') == "/imgs/en.png"){
+                $('.langselect').attr({"src" : "/imgs/ar.png", "title" : "عربي"});
+                $('.langopt').attr('src', "/imgs/en.png");
                 $('.langName').text("En");
                 console.log( $("html").children().css("direction"));
                 $("html").attr('dir','rtl');
-            }else if($('.langselect').attr('src') == "../imgs/ar.png"){
-                $('.langselect').attr({"src":"../imgs/en.jpg", "title" : "English"});
-                $('.langopt').attr('src', "../imgs/ar.png");
+            }else if($('.langselect').attr('src') == "/imgs/ar.png"){
+                $('.langselect').attr({"src":"/imgs/en.png", "title" : "English"});
+                $('.langopt').attr('src', "/imgs/ar.png");
                 $('.langName').text("Ar");
                 $("html").attr('dir','ltr');
             }

@@ -1,0 +1,52 @@
+@model IEnumerable<ApplicationUsers>
+    <h2>Users</h2>
+    <div>
+         <a asp-action="Register" asp-controller="Account" class="btn btn-primary">Add New User</a>
+    </div>
+   
+    <table id="UsersTable" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Age</th>
+                <th>Hire Date</th>
+                <th>Mobile Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                 <tr>
+                 <td>@user.UserName</td>
+                 <td>@user.Email</td>
+                 <td>@(user.Address!=null ? user.Address:"") </td>
+                 <td>@(user.Age!=0 ? user.Age : "")</td>
+                 <td>@(user.HireDate !=DateTime.Parse("1/1/0001 12:00:00 AM") ? user.HireDate : "")</td>
+                 <td>@(user.MobileNumber!=0 ? user.MobileNumber : "")</td>
+                 <td>
+                     <a asp-action="EditUser" asp-controller="Adminstrator" class="btn btn-primary" asp-route-id="@user.Id">Edit </a>
+                    <input type="button" value="Delete" data-id="@user.Id"  class="btn btn-danger deleteuser">
+                 </td>
+                </tr>
+                
+            }
+           
+        </tbody>
+
+@section Scripts{
+     <script src="~/js/CustomDeleteSwal.js"></script>
+    <script>
+      $(document).ready(function() {
+      $('#UsersTable').DataTable();
+       } );
+
+     $('.deleteuser').click(function(){
+         var dataId = $(this).attr("data-id");
+         CustomDelete("/Adminstrator/DeleteUser",dataId);
+          });
+      
+    </script>
+}

@@ -1,4 +1,7 @@
 ﻿@inject SignInManager<ApplicationUsers> SignInManager;
+    @{
+        ViewData["Title"]="Berry";
+    }
 <!DOCTYPE html>
 <html dir="ltr" unicode-bidi:bidi-override; lang="en">
 <head>
@@ -9,6 +12,9 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/sweetalert.min.css" />
+    <link rel="stylesheet" href="~/css/datatable.css" />
+    <link rel="stylesheet" href="~/css/datatable.min.css" />
+    
     
 
 </head>
@@ -45,7 +51,7 @@
                                     @User.Identity.Name
                             </button> 
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <button class="dropdown-item" type="button">Logout</button>
+                                <button type="submit" class="dropdown-item" type="button" >Logout</button>
                                 <button class="dropdown-item" type="button">Account</button>
                             </div>
                         </form>
@@ -87,7 +93,7 @@
                                 </a>
                             </li>
                             <li class="nav-item px-3 mb-1">
-                                <a class="nav-link p-2" asp-area="" asp-controller="Adminstrator" asp-action="Index">
+                                <a class="nav-link p-2" asp-area="" asp-controller="Adminstrator" asp-action="GetAllUsers">
                                     <i class="fa fa-home" ></i> Users
                                 </a>
                             </li>
@@ -120,13 +126,14 @@
     </header>
     <div class="contentPush">
         <main role="main" class="pb-3 container">
+            <br>
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - Pos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+           
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -136,6 +143,8 @@
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
      <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/js/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/js/datatable.min.js"></script>
+    <script src="~/js/datatable.bootstrap.min.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

@@ -237,7 +237,42 @@ namespace Pos.Controllers
 
            return RedirectToAction("EditRole",new {id=roleid});
        }
-         
+         public IActionResult GetAllUsers()
+         {
+             var Users= UserManager.Users.ToList();
+             return View(Users);
+         }
+
+         public async Task<IActionResult> DeleteUser( string Id)
+         {
+            var User= await UserManager.FindByIdAsync(Id);
+            if (User ==null)
+            {
+                ViewBag.ErrorMessage=$" There Is No Users With This Id {Id}";
+                return View("NotFound");
+            }
+            var Result = await UserManager.DeleteAsync(User);
+            if (Result.Succeeded)
+            {
+                return Json(true);
+            }
+            else
+            {
+                return Json(false);
+            }
+
+         }
+
+         public async Task<IActionResult> EditUser(string id)
+         {
+             var User= await UserManager.FindByIdAsync(id);
+              if (User ==null)
+            {
+                ViewBag.ErrorMessage=$" There Is No Users With This Id {id}";
+                return View("NotFound");
+            }
+             return View(User);
+         }
 
      
        

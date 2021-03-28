@@ -136,8 +136,11 @@ a.navbar-brand {
     border-radius: 50% !important;
   }
   /* Style language */
-  .Langselect .selectedlan{padding: 3px 8px;}
-.Langselect .selectedlan img{
+  .Notification i{
+    color: #fff;
+  }
+  .Langselect .selectedlan ,.bell,.msg{padding: 3px 8px;}
+.Langselect .selectedlan img , .bell:hover i , .msg:hover i{
   box-shadow: 1px 1px 4px 0px #00bcd4;
   border: 2px solid hsl(187, 100%, 42%);
   border-radius: 50%;
@@ -165,10 +168,10 @@ a.navbar-brand {
   border-inline-end: 1px solid #ddd;
 }
 .langHover span:last-child{border: none;}
-.Langselect:hover .selectedlan{
+.Langselect:hover .selectedlan {
   background-color: #ffffffc2;
 }
-.Langselect:hover .selectedlan img{
+.Langselect:hover .selectedlan img , .bell:hover i ,.msg:hover i{
   transform: rotateY(360deg);
   box-shadow: 1px 1px 6px 0px #00bcd4 !important;
   transition: all .4s ease-in;

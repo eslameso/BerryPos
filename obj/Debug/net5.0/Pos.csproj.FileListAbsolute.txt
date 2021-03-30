@@ -170,3 +170,4 @@ E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Adminstrator\GetAllUsers.cshtml.g.c
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Adminstrator\EditUser.cshtml.g.cs
 F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Adminstrator\EditUser.cshtml.g.cs
 F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Adminstrator\GetAllUsers.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Adminstrator\MangeRolesOfUsers.cshtml.g.cs

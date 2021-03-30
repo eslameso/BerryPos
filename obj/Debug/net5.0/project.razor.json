@@ -15678,6 +15678,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\MangeRolesOfUsers.cshtml",
+      "TargetPath": "Views\\Adminstrator\\MangeRolesOfUsers.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\EditUsersRole.cshtml",
       "TargetPath": "Views\\Adminstrator\\EditUsersRole.cshtml",
       "FileKind": "mvc"

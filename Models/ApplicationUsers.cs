@@ -7,8 +7,8 @@ namespace Pos.Models
     public class ApplicationUsers :IdentityUser
     {
         public string Address { get; set; }
-        public int MobileNumber { get; set; }
-        public int OthrMobileNumber { get; set; }
+        public string MobileNumber { get; set; }
+        public string OthrMobileNumber { get; set; }
         public int Age { get; set; }
         public string Photo { get; set; }
         public DateTime HireDate { get; set; }

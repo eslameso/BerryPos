@@ -237,6 +237,8 @@ namespace Pos.Controllers
 
            return RedirectToAction("EditRole",new {id=roleid});
        }
+
+         
          public IActionResult GetAllUsers()
          {
              var Users= UserManager.Users.ToList();
@@ -263,6 +265,7 @@ namespace Pos.Controllers
 
          }
 
+        [HttpGet]
          public async Task<IActionResult> EditUser(string id)
          {
              var User= await UserManager.FindByIdAsync(id);
@@ -271,7 +274,60 @@ namespace Pos.Controllers
                 ViewBag.ErrorMessage=$" There Is No Users With This Id {id}";
                 return View("NotFound");
             }
-             return View(User);
+          
+          var _Roles=await UserManager.GetRolesAsync(User);
+          var _Claims=await UserManager.GetClaimsAsync(User);
+
+            var Model = new EditUserMv()
+            {
+                Id=User.Id,
+                UserName=User.UserName,
+                Email=User.Email,
+                MobileNumber=User.MobileNumber,
+                Roles=_Roles,
+                Claims=_Claims.Select(m =>m.Value).ToList()
+
+            };
+             
+             return View(Model);
+         }
+         [HttpPost]
+         public async Task<IActionResult> EditUser(EditUserMv Model)
+         {
+             if (ModelState.IsValid)
+             {
+                 
+             
+              var User= await UserManager.FindByIdAsync(Model.Id);
+              if (User ==null)
+            {
+                ViewBag.ErrorMessage=$" There Is No Users With This Id {Model.Id}";
+                return View("NotFound");
+            }
+
+            User.UserName=Model.UserName;
+            User.Email=Model.Email;
+            User.MobileNumber=Model.MobileNumber;
+
+            var Result= await UserManager.UpdateAsync(User);
+            if (Result.Succeeded)
+            {
+                return RedirectToAction("GetAllUsers");
+            }
+            else
+            {
+                foreach (var item in Result.Errors)
+                {
+                    ModelState.AddModelError("",item.Description);
+                }
+            }
+            }
+            else
+            {
+                ModelState.AddModelError("","Sorry There Is a Problem");
+            }
+            return View(Model);
+
          }
 
      

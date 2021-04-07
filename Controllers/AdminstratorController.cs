@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -72,7 +73,8 @@ namespace Pos.Controllers
             return View(roles);
         }
         //ToDo Show Page Of Edit Role With Users That Belongs To This Role
-
+        
+        //[Authorize(Policy ="TestPolicy")]
         [HttpGet]
         public async Task<IActionResult> EditRole(string id)
         {
@@ -105,6 +107,7 @@ namespace Pos.Controllers
 
         }
         //ToDo Edit The Role 
+        
         [HttpPost]
         public async Task<IActionResult> EditRole(EditRolesMv model)
         {
@@ -395,6 +398,68 @@ namespace Pos.Controllers
             
 
          }
+
+         [HttpGet]
+         public async Task<IActionResult> MangeUserClaims(string UserId)
+         {
+            var user = await UserManager.FindByIdAsync(UserId);
+             if (user ==null)
+            {
+                ViewBag.ErrorMessage=$" There Is No Users With This Id {UserId}";
+                return View("NotFound");
+            }
+            
+            var ExistingUserClaims=await UserManager.GetClaimsAsync(user);
+            var Model = new UserClaimsVm(){
+
+                UserId=UserId
+            };
+            foreach (Claim claim in ClaimsStore.AllClaims)
+            {
+                UserClaims userclaims =new UserClaims(){
+                   ClaimType=claim.Type
+                };
+                if (ExistingUserClaims.Any(c=>c.Type==claim.Type))
+                {
+                    userclaims.IsSelected=true;
+                }
+                Model.Claims.Add(userclaims);
+            }
+            return View(Model);
+
+         }
+         [HttpPost]
+         public async Task<IActionResult> MangeUserClaims(UserClaimsVm Model)
+         {
+             var User= await UserManager.FindByIdAsync(Model.UserId);
+              if (User ==null)
+            {
+                ViewBag.ErrorMessage=$" There Is No Users With This Id {Model.UserId}";
+                return View("NotFound");
+            }
+
+            var Claims= await UserManager.GetClaimsAsync(User);
+            var Result= await UserManager.RemoveClaimsAsync(User,Claims);
+            if (Result.Succeeded)
+            {
+                Result=await UserManager.AddClaimsAsync(
+                    User,Model.Claims.Where(m =>m.IsSelected).Select(c =>new Claim(c.ClaimType,c.ClaimType))
+                );
+                
+               if (! Result.Succeeded)
+            {
+                ModelState.AddModelError("","Cannot Add Selected Roles To This User ");
+                return View(Model);
+            }
+            
+                
+            }
+            
+           return RedirectToAction("EditUser",new {id = Model.UserId});
+
+
+         }
+        
 
 
 

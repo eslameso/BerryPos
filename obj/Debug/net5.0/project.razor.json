@@ -15603,6 +15603,11 @@
   "RootNamespace": "Pos",
   "Documents": [
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\MangeUserClaims.cshtml",
+      "TargetPath": "Views\\Adminstrator\\MangeUserClaims.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\GetAllRoles.cshtml",
       "TargetPath": "Views\\Adminstrator\\GetAllRoles.cshtml",
       "FileKind": "mvc"
@@ -15645,6 +15650,11 @@
     {
       "FilePath": "e:\\Projects\\Pos\\Views\\Account\\Login.cshtml",
       "TargetPath": "Views\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Account\\AccessDenied.cshtml",
+      "TargetPath": "Views\\Account\\AccessDenied.cshtml",
       "FileKind": "mvc"
     },
     {

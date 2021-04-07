@@ -38,6 +38,12 @@ namespace Pos
             .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddScoped<IUnitOfWork,UnitOfWork>();
            services.AddRazorPages();
+           services.AddAuthorization(
+               option => 
+               {
+                   option.AddPolicy("TestPolicy",policy => policy.RequireClaim("TestClaim"));
+               }
+           );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

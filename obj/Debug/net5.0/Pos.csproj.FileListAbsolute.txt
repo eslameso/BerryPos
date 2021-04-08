@@ -173,3 +173,15 @@ F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Adminstrator\G
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Adminstrator\MangeRolesOfUsers.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Adminstrator\MangeUserClaims.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Account\AccessDenied.cshtml.g.cs
+E:\Projects\Pos\bin\Debug\net5.0\en\Pos.resources.dll
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Home.Index.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.csproj.GenerateResource.cache
+E:\Projects\Pos\obj\Debug\net5.0\en\Pos.resources.cs
+E:\Projects\Pos\obj\Debug\net5.0\en\Pos.resources.dll
+E:\Projects\Pos\bin\Debug\net5.0\ar\Pos.resources.dll
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Home.Index.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\ar\Pos.resources.cs
+E:\Projects\Pos\obj\Debug\net5.0\ar\Pos.resources.dll
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Controllers.HomeController.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Controllers.HomeController.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Shared\_Culture.cshtml.g.cs

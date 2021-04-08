@@ -1,8 +1,11 @@
-﻿@{
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@{
     ViewData["Title"] = "Berry Pos";
 }
-
+<partial name="_Culture">
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">@Localizer["WelcomeBerry"] </h1>
+    <h1 class="display-4">@ViewData["WelcomeBerry"] </h1>
+    
      <p>Point Of Sale System From  <a href="https://docs.microsoft.com/aspnet/core"> Berry Software Company</a>.</p>
 </div>

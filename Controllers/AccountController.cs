@@ -122,6 +122,7 @@ namespace Pos.Controllers
 
         }
 
+<<<<<<< HEAD
         [HttpGet]
         public IActionResult CompleteProfile()
         {
@@ -129,5 +130,11 @@ namespace Pos.Controllers
         }
 
 
+=======
+      [HttpGet]
+         public IActionResult AccessDenied(){
+             return View();
+         }
+>>>>>>> c196b26258f913b6c61ec8f2cc5a0db4f35847e9
     }
 }

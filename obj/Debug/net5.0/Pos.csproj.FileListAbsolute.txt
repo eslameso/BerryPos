@@ -170,4 +170,30 @@ E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Adminstrator\GetAllUsers.cshtml.g.c
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Adminstrator\EditUser.cshtml.g.cs
 F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Adminstrator\EditUser.cshtml.g.cs
 F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Adminstrator\GetAllUsers.cshtml.g.cs
+<<<<<<< HEAD
 F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Account\CompleteProfile.cshtml.g.cs
+=======
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Adminstrator\MangeRolesOfUsers.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Adminstrator\MangeUserClaims.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Account\AccessDenied.cshtml.g.cs
+E:\Projects\Pos\bin\Debug\net5.0\en\Pos.resources.dll
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Home.Index.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.csproj.GenerateResource.cache
+E:\Projects\Pos\obj\Debug\net5.0\en\Pos.resources.cs
+E:\Projects\Pos\obj\Debug\net5.0\en\Pos.resources.dll
+E:\Projects\Pos\bin\Debug\net5.0\ar\Pos.resources.dll
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Home.Index.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\ar\Pos.resources.cs
+E:\Projects\Pos\obj\Debug\net5.0\ar\Pos.resources.dll
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Controllers.HomeController.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Controllers.HomeController.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Shared\_Culture.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.ViewModels.LogimMv.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.ViewModels.LogimMv.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Account.Login.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Account.Login.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.ViewModels.RegisterMv.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.ViewModels.RegisterMv.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Account.Register.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Account.Register.ar.resources
+>>>>>>> c196b26258f913b6c61ec8f2cc5a0db4f35847e9

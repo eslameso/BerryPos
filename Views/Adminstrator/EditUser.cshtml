@@ -68,7 +68,7 @@
    </div>
   <div class="card-footer text-muted">
     
-    <a asp-action="" asp-controller="Adminstrator" asp-route-roleid="@Model.Id" class="btn btn-primary">Manage Roles</a>
+    <a asp-action="MangeRolesOfUsers" asp-controller="Adminstrator" asp-route-UserId="@Model.Id" class="btn btn-primary">Manage Roles</a>
 
   </div>
   
@@ -96,7 +96,7 @@
    </div>
   <div class="card-footer text-muted">
     
-    <a asp-action="" asp-controller="Adminstrator" asp-route-roleid="@Model.Id" class="btn btn-primary">Mange Claims</a>
+    <a asp-action="MangeUserClaims" asp-controller="Adminstrator" asp-route-UserId="@Model.Id" class="btn btn-primary">Mange Claims</a>
 
   </div>
   

@@ -15603,8 +15603,18 @@
   "RootNamespace": "Pos",
   "Documents": [
     {
+      "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Shared\\_Culture.cshtml",
+      "TargetPath": "Views\\Shared\\_Culture.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Adminstrator\\EditUsersRole.cshtml",
       "TargetPath": "Views\\Adminstrator\\EditUsersRole.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Adminstrator\\MangeUserClaims.cshtml",
+      "TargetPath": "Views\\Adminstrator\\MangeUserClaims.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15630,6 +15640,11 @@
     {
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Adminstrator\\MangeRolesOfUsers.cshtml",
+      "TargetPath": "Views\\Adminstrator\\MangeRolesOfUsers.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15675,6 +15690,11 @@
     {
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Account\\AccessDenied.cshtml",
+      "TargetPath": "Views\\Account\\AccessDenied.cshtml",
       "FileKind": "mvc"
     },
     {

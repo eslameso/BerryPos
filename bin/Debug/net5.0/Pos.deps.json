@@ -312,6 +312,14 @@
         "runtime": {
           "Pos.dll": {}
         },
+        "resources": {
+          "ar/Pos.resources.dll": {
+            "locale": "ar"
+          },
+          "en/Pos.resources.dll": {
+            "locale": "en"
+          }
+        },
         "compile": {
           "Pos.dll": {}
         }

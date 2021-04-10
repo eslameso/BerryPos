@@ -122,6 +122,12 @@ namespace Pos.Controllers
 
         }
 
+        [HttpGet]
+        public IActionResult CompleteProfile()
+        {
+          return View();
+        }
+
 
     }
 }

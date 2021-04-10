@@ -139,12 +139,30 @@ a.navbar-brand {
   .Notification i{
     color: #fff;
   }
+  .Notification > div{position: relative;}
+  .Notification .num-count{
+    position: absolute;
+    user-select: none;
+    cursor: default;
+    font-size: 0.6rem;
+    background: #00bcd4;
+    width: 1rem;
+    height: 1rem;
+    color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    top: -0.33rem;
+    right: 0.2rem;
+    box-sizing: border-box;
+  }
   .Langselect .selectedlan ,.bell,.msg{padding: 3px 8px;}
-.Langselect .selectedlan img , .bell:hover i , .msg:hover i{
-  box-shadow: 1px 1px 4px 0px #00bcd4;
-  border: 2px solid hsl(187, 100%, 42%);
-  border-radius: 50%;
-}
+  .Langselect .selectedlan img , .bell i , .msg i{
+    box-shadow: 1px 1px 4px 0px #00bcd4;
+    border: 2px solid hsl(187, 100%, 42%);
+    border-radius: 50%;
+  }
 .langHover{
   display: none;
   position: fixed;
@@ -175,6 +193,10 @@ a.navbar-brand {
   transform: rotateY(360deg);
   box-shadow: 1px 1px 6px 0px #00bcd4 !important;
   transition: all .4s ease-in;
+}
+.bell:hover i ,.msg:hover i{
+  background-color: #ffffffc2;
+  color: #343a40;
 }
 .Langselect:hover .langHover , .Langselect:focus .langHover{
   display: inline-block;

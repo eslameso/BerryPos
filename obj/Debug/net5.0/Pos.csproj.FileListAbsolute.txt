@@ -197,3 +197,16 @@ E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.ViewModels.RegisterMv.en.resource
 E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Account.Register.en.resources
 E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Account.Register.ar.resources
 >>>>>>> c196b26258f913b6c61ec8f2cc5a0db4f35847e9
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Controllers.HomeController.ar.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Controllers.HomeController.en.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.ViewModels.LogimMv.ar.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.ViewModels.LogimMv.en.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.ViewModels.RegisterMv.ar.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.ViewModels.RegisterMv.en.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Views.Account.Login.ar.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Views.Account.Login.en.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Views.Account.Register.ar.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Views.Account.Register.en.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Views.Home.Index.ar.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Views.Home.Index.en.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.csproj.GenerateResource.cache

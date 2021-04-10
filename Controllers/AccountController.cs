@@ -129,17 +129,15 @@ namespace Pos.Controllers
 
         }
 
-
         [HttpGet]
         public IActionResult CompleteProfile()
         {
           return View();
         }
 
-
-
       [HttpGet]
-         public IActionResult AccessDenied(){
+         public IActionResult AccessDenied()
+         {
              return View();
          }
 

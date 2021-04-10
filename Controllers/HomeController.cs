@@ -39,7 +39,7 @@ namespace Pos.Controllers
              );
                  
                  return LocalRedirect(returnurl);
-
+                 
            }
          [AllowAnonymous]
         public IActionResult Privacy()

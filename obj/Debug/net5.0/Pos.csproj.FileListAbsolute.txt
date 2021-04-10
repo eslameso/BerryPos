@@ -185,3 +185,11 @@ E:\Projects\Pos\obj\Debug\net5.0\ar\Pos.resources.dll
 E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Controllers.HomeController.ar.resources
 E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Controllers.HomeController.en.resources
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Shared\_Culture.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.ViewModels.LogimMv.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.ViewModels.LogimMv.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Account.Login.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Account.Login.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.ViewModels.RegisterMv.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.ViewModels.RegisterMv.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Account.Register.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Account.Register.ar.resources

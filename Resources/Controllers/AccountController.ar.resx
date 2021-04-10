@@ -117,80 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="User Name" xml:space="preserve">
-    <value>أسم المستخدم</value>
-    <comment/>
-  </data>
-  <data name="Email" xml:space="preserve">
-    <value>البريد الإلكترونى</value>
-    <comment/>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>الرقم السرى</value>
-    <comment/>
-  </data>
-  <data name="Confirm Password" xml:space="preserve">
-    <value>تأكيد الرقم السرى</value>
-    <comment/>
-  </data>
-  <data name="The Email field is required" xml:space="preserve">
-    <value>يجب إدخال البريد الإلكترونى</value>
-    <comment/>
-  </data>
-  <data name="The User Name field is required" xml:space="preserve">
-    <value>يجب إادخال أسم المستخدم</value>
-    <comment/>
-  </data>
-  <data name="The Confirm Password field is required" xml:space="preserve">
-    <value>يجب إدخال تأكيد كلمة السر</value>
-    <comment/>
-  </data>
-  <data name="The Password field is required" xml:space="preserve">
-    <value>يجب إدخال كلمة السر</value>
-    <comment/>
-  </data>
-  <data name="Invalid Login Attempt" xml:space="preserve">
-    <value>عفوا .. لا يمكنك تسجيل الدخول</value>
-    <comment/>
-  </data>
-  <data name="National Number" xml:space="preserve">
-    <value>الرقم القومى</value>
-    <comment/>
-  </data>
-  <data name="NationalNumber Required" xml:space="preserve">
-    <value>يجب إدخال الرقم القومى</value>
-    <comment/>
-  </data>
-  <data name="Branch Required" xml:space="preserve">
-    <value>يجب إدخال الفرع</value>
-    <comment/>
-  </data>
-  <data name="Branch" xml:space="preserve">
-    <value>الفرع</value>
-    <comment/>
-  </data>
-  <data name="Address" xml:space="preserve">
-    <value>العنوان</value>
-    <comment/>
-  </data>
-  <data name="MobileNumber" xml:space="preserve">
-    <value>رقم التليفون</value>
-    <comment/>
-  </data>
-  <data name="Photo" xml:space="preserve">
-    <value>الصورة الشخصية</value>
-    <comment/>
-  </data>
-  <data name="HireDate" xml:space="preserve">
-    <value>تاريخ التعيين</value>
-    <comment/>
-  </data>
-  <data name="BirthDate" xml:space="preserve">
-    <value>تاريخ الميلاد</value>
-    <comment/>
-  </data>
-  <data name="Notes" xml:space="preserve">
-    <value>ملاحظات</value>
+  <data name="error" xml:space="preserve">
+    <value>عفوا لا يمكن تسجيل الدخول</value>
     <comment/>
   </data>
 </root>

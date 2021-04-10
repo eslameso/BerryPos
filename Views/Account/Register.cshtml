@@ -17,9 +17,10 @@
             
                 <div class="form-group">
                     <label asp-for="UserName" class="control-label"></label>
-                    <input asp-for="UserName"  class="form-control" />
+                    <input asp-for="UserName"  class="form-control" id="UserName"/>
                     <span asp-validation-for="UserName" class="text-danger"></span>
                 </div>
+                <input asp-for="EmployeeName" type="hidden" class="form-control" id="EmployeeName"/>
                 <div class="form-group">
                     <label asp-for="Email" class="control-label"></label>
                     <input asp-for="Email"  class="form-control" />
@@ -54,7 +55,15 @@
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
 
-@* @section Scripts{
-    <partial name="_ValidationScriptsPartial"/>
-} *@
+
+   <script>
+debugger;
+    $("#UserName").focusout(function () {
+    var data=$(this).val();
+        $('#UserName').val(function (i, value) {
+     $('#EmployeeName').val(data);
+    return value.replace(/ /g, '');
+     });
+      });
+   </script>
 

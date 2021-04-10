@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pos.Models;
 
 namespace Pos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210410154549_AddingEmployeeName")]
+    partial class AddingEmployeeName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -167,15 +169,6 @@ namespace Pos.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("BranchId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BranchesProductsBranchId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BranchesProductsProductId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -246,8 +239,6 @@ namespace Pos.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BranchId");
-
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -255,8 +246,6 @@ namespace Pos.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("BranchesProductsProductId", "BranchesProductsBranchId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -704,19 +693,6 @@ namespace Pos.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Pos.Models.ApplicationUsers", b =>
-                {
-                    b.HasOne("Pos.Models.Branches", "Branches")
-                        .WithMany()
-                        .HasForeignKey("BranchId");
-
-                    b.HasOne("Pos.Models.BranchesProducts", null)
-                        .WithMany("Users")
-                        .HasForeignKey("BranchesProductsProductId", "BranchesProductsBranchId");
-
-                    b.Navigation("Branches");
-                });
-
             modelBuilder.Entity("Pos.Models.BranchesProducts", b =>
                 {
                     b.HasOne("Pos.Models.Branches", "Branches")
@@ -882,11 +858,6 @@ namespace Pos.Migrations
                     b.Navigation("PurchaseInvoices");
 
                     b.Navigation("SaleInvoices");
-                });
-
-            modelBuilder.Entity("Pos.Models.BranchesProducts", b =>
-                {
-                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("Pos.Models.Category", b =>

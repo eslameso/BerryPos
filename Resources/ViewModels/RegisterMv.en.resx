@@ -149,4 +149,48 @@
     <value>The Password field is required</value>
     <comment/>
   </data>
+  <data name="Invalid Login Attempt" xml:space="preserve">
+    <value>Invalid Login Attempt</value>
+    <comment/>
+  </data>
+  <data name="NationalNumber Required" xml:space="preserve">
+    <value>The National Number Is Required</value>
+    <comment/>
+  </data>
+  <data name="National Number" xml:space="preserve">
+    <value>National Number</value>
+    <comment/>
+  </data>
+  <data name="Branch Required" xml:space="preserve">
+    <value>The Branch  field is required</value>
+    <comment/>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>Branch</value>
+    <comment/>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+    <comment/>
+  </data>
+  <data name="MobileNumbe" xml:space="preserve">
+    <value>Mobile Number</value>
+    <comment/>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>Photo</value>
+    <comment/>
+  </data>
+  <data name="HireDate" xml:space="preserve">
+    <value>Hire Date</value>
+    <comment/>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Birth Date</value>
+    <comment/>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes</value>
+    <comment/>
+  </data>
 </root>

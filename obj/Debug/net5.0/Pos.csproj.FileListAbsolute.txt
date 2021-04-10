@@ -193,3 +193,5 @@ E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.ViewModels.RegisterMv.ar.resource
 E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.ViewModels.RegisterMv.en.resources
 E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Account.Register.en.resources
 E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Account.Register.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Controllers.AccountController.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Controllers.AccountController.en.resources

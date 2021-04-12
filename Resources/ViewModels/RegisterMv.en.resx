@@ -193,4 +193,8 @@
     <value>Notes</value>
     <comment/>
   </data>
+  <data name="JobTitle" xml:space="preserve">
+    <value>Job Title</value>
+    <comment/>
+  </data>
 </root>

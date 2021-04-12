@@ -33,7 +33,7 @@ namespace Pos.ViewModels
         public string MobileNumber { get; set; }
         [Display(Name="Photo")]
         public string Photo { get; set; }
-         [Display(Name="HireDate")]
+        [Display(Name="HireDate")]
         public DateTime HireDate { get; set; }
         [Display(Name="BirthDate")]
         public DateTime BirthDate { get; set; }
@@ -43,7 +43,9 @@ namespace Pos.ViewModels
          [Required(ErrorMessage="Branch Required")]
         [Display(Name="Branch")]
         public int? BranchId { get; set; }
-        [Display(Name="Notes")]
+         [Display(Name="JobTitle")]
+        public int? JobtitleId { get; set; }
+         [Display(Name="Notes")]
         public string  Notes { get; set; }
 
 

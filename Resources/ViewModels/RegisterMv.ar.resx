@@ -193,4 +193,8 @@
     <value>ملاحظات</value>
     <comment/>
   </data>
+  <data name="JobTitle" xml:space="preserve">
+    <value>الوظيفة</value>
+    <comment/>
+  </data>
 </root>

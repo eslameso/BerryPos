@@ -23,6 +23,10 @@ namespace Pos.Models
          public int? BranchId { get; set; }
         [ForeignKey("BranchId")]
         public Branches Branches { get; set; }
+
+        public int? JobtitleId { get; set; }
+        [ForeignKey("JobtitleId")]
+        public JobTitles jobTitles { get; set; }
          public ICollection<SaleInvoices> SaleInvoices { get; set; }
          public ICollection<PurchaseInvoice> PurchaseInvoices { get; set; }
     }

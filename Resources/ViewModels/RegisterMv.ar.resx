@@ -149,4 +149,52 @@
     <value>يجب إدخال كلمة السر</value>
     <comment/>
   </data>
+  <data name="Invalid Login Attempt" xml:space="preserve">
+    <value>عفوا .. لا يمكنك تسجيل الدخول</value>
+    <comment/>
+  </data>
+  <data name="National Number" xml:space="preserve">
+    <value>الرقم القومى</value>
+    <comment/>
+  </data>
+  <data name="NationalNumber Required" xml:space="preserve">
+    <value>يجب إدخال الرقم القومى</value>
+    <comment/>
+  </data>
+  <data name="Branch Required" xml:space="preserve">
+    <value>يجب إدخال الفرع</value>
+    <comment/>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>الفرع</value>
+    <comment/>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>العنوان</value>
+    <comment/>
+  </data>
+  <data name="MobileNumber" xml:space="preserve">
+    <value>رقم التليفون</value>
+    <comment/>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>الصورة الشخصية</value>
+    <comment/>
+  </data>
+  <data name="HireDate" xml:space="preserve">
+    <value>تاريخ التعيين</value>
+    <comment/>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>تاريخ الميلاد</value>
+    <comment/>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>ملاحظات</value>
+    <comment/>
+  </data>
+  <data name="JobTitle" xml:space="preserve">
+    <value>الوظيفة</value>
+    <comment/>
+  </data>
 </root>

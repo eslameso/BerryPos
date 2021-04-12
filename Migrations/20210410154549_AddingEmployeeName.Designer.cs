@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pos.Models;
 
 namespace Pos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210410154549_AddingEmployeeName")]
+    partial class AddingEmployeeName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -167,15 +169,6 @@ namespace Pos.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("BranchId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BranchesProductsBranchId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BranchesProductsProductId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -192,9 +185,6 @@ namespace Pos.Migrations
 
                     b.Property<DateTime>("HireDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("JobtitleId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -249,10 +239,6 @@ namespace Pos.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BranchId");
-
-                    b.HasIndex("JobtitleId");
-
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -260,8 +246,6 @@ namespace Pos.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("BranchesProductsProductId", "BranchesProductsBranchId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -377,30 +361,6 @@ namespace Pos.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Clients");
-                });
-
-            modelBuilder.Entity("Pos.Models.JobTitles", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Code")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NameA")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Notes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("JobTitles");
                 });
 
             modelBuilder.Entity("Pos.Models.Measurments", b =>
@@ -733,25 +693,6 @@ namespace Pos.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Pos.Models.ApplicationUsers", b =>
-                {
-                    b.HasOne("Pos.Models.Branches", "Branches")
-                        .WithMany()
-                        .HasForeignKey("BranchId");
-
-                    b.HasOne("Pos.Models.JobTitles", "jobTitles")
-                        .WithMany("Users")
-                        .HasForeignKey("JobtitleId");
-
-                    b.HasOne("Pos.Models.BranchesProducts", null)
-                        .WithMany("Users")
-                        .HasForeignKey("BranchesProductsProductId", "BranchesProductsBranchId");
-
-                    b.Navigation("Branches");
-
-                    b.Navigation("jobTitles");
-                });
-
             modelBuilder.Entity("Pos.Models.BranchesProducts", b =>
                 {
                     b.HasOne("Pos.Models.Branches", "Branches")
@@ -919,11 +860,6 @@ namespace Pos.Migrations
                     b.Navigation("SaleInvoices");
                 });
 
-            modelBuilder.Entity("Pos.Models.BranchesProducts", b =>
-                {
-                    b.Navigation("Users");
-                });
-
             modelBuilder.Entity("Pos.Models.Category", b =>
                 {
                     b.Navigation("Products");
@@ -932,11 +868,6 @@ namespace Pos.Migrations
             modelBuilder.Entity("Pos.Models.Clients", b =>
                 {
                     b.Navigation("SaleInvoices");
-                });
-
-            modelBuilder.Entity("Pos.Models.JobTitles", b =>
-                {
-                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("Pos.Models.Measurments", b =>

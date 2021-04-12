@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Localization;
 using Pos.Models;
 using Pos.ViewModels;
 
@@ -11,10 +12,14 @@ namespace Pos.Controllers
     {
         public UserManager<ApplicationUsers> UserManager { get; }
         public SignInManager<ApplicationUsers> SignInManager { get; }
+        
+        private readonly IHtmlLocalizer<AccountController> _Localizer;
 
-        public AccountController(UserManager<ApplicationUsers> userManager, SignInManager<ApplicationUsers> signInManager)
+
+        public AccountController(UserManager<ApplicationUsers> userManager, SignInManager<ApplicationUsers> signInManager,IHtmlLocalizer<AccountController> localizer)
         {
             this.SignInManager = signInManager;
+            _Localizer = localizer;
             this.UserManager = userManager;
 
         }
@@ -35,7 +40,8 @@ namespace Pos.Controllers
          {
 
            var User =new ApplicationUsers{
-               UserName=model.UserName,
+              UserName=model.UserName,
+              EmployeeName=model.EmployeeName,
                Email=model.Email
            };
 
@@ -90,7 +96,8 @@ namespace Pos.Controllers
             }
             
           }
-          ModelState.AddModelError(string.Empty,"Invalid Login Attempt");
+          var Message=_Localizer["error"];
+          ModelState.AddModelError(string.Empty,Message.Value);
          return View();
         }
 
@@ -128,10 +135,19 @@ namespace Pos.Controllers
           return View();
         }
 
+<<<<<<< HEAD
 
      [HttpGet]
          public IActionResult AccessDenied(){
              return View();
          }
+=======
+      [HttpGet]
+         public IActionResult AccessDenied()
+         {
+             return View();
+         }
+
+>>>>>>> 33ea89653687dfcf407829875fa266dc7d1ee029
     }
 }

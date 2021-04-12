@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\Pos\\Pos.csproj": {}
+    "F:\\Projects\\BerryPOS\\BerryPos-master\\Pos.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\Pos\\Pos.csproj": {
+    "F:\\Projects\\BerryPOS\\BerryPos-master\\Pos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Pos\\Pos.csproj",
+        "projectUniqueName": "F:\\Projects\\BerryPOS\\BerryPos-master\\Pos.csproj",
         "projectName": "Pos",
-        "projectPath": "E:\\Projects\\Pos\\Pos.csproj",
-        "packagesPath": "C:\\Users\\Eslam Elsayed\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Pos\\obj\\",
+        "projectPath": "F:\\Projects\\BerryPOS\\BerryPos-master\\Pos.csproj",
+        "packagesPath": "C:\\Users\\Roka\\.nuget\\packages\\",
+        "outputPath": "F:\\Projects\\BerryPOS\\BerryPos-master\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Eslam Elsayed\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Roka\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -87,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

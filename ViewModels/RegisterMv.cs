@@ -1,11 +1,19 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
+using Pos.Data.Classes;
 
 namespace Pos.ViewModels
 {
     public class RegisterMv
     {
+        public RegisterMv()
+        {
+            Branches=new List<CustomSelectList>();
+            JobTitles=new List<CustomSelectList>();
+        }
         [Required(ErrorMessage="The User Name field is required")]
         [Display(Name="User Name")]
         public string UserName { get; set; }
@@ -45,6 +53,11 @@ namespace Pos.ViewModels
         public int? BranchId { get; set; }
          [Display(Name="JobTitle")]
         public int? JobtitleId { get; set; }
+
+         public IList<CustomSelectList> Branches { get; set; }
+         public IList<CustomSelectList> JobTitles { get; set; }
+
+
          [Display(Name="Notes")]
         public string  Notes { get; set; }
 

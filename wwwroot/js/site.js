@@ -4,20 +4,25 @@
 // Write your JavaScript code.
 $(document).ready(function(){
     $('.myselect-option').on({'click': function() {
-            if($('.langselect').attr('src') == "/imgs/en.png"){
-                $('.langselect').attr({"src" : "/imgs/ar.png", "title" : "عربي"});
-                $('.langopt').attr('src', "/imgs/en.png");
-                $('.langName').text("En");
-                console.log( $("html").children().css("direction"));
-                $("html").attr('dir','rtl');
-            }else if($('.langselect').attr('src') == "/imgs/ar.png"){
-                $('.langselect').attr({"src":"/imgs/en.png", "title" : "English"});
-                $('.langopt').attr('src', "/imgs/ar.png");
-                $('.langName').text("Ar");
-                $("html").attr('dir','ltr');
-            }
+        if($('.langselect').attr('src') == "/imgs/en.png"){
+            $('.langselect').attr({"src" : "/imgs/ar.png", "title" : "عربي"});
+            $('.langopt').attr('src', "/imgs/en.png");
+            $('.langHover input').value="ar";
+            // $('.langName').text("En");
+            console.log($('.langHover input').value);
+            $("html").attr('dir','rtl');
+        }else if($('.langselect').attr('src') == "/imgs/ar.png"){
+            $('.langselect').attr({"src":"/imgs/en.png", "title" : "English"});
+            $('.langopt').attr('src', "/imgs/ar.png");
+            $('.langHover input').value="en";
+            // $('.langName').text("Ar");
+            $("html").attr('dir','ltr');
         }
+        $(".myselect-option").trigger('change');  
+    }
     });
+  
+
     $(".nav-item").click(function () {
         $(".nav-item").removeClass("active");
         $(this).addClass("active");   

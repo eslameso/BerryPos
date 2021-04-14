@@ -135,19 +135,12 @@ namespace Pos.Controllers
           return View();
         }
 
-<<<<<<< HEAD
 
      [HttpGet]
          public IActionResult AccessDenied(){
              return View();
          }
-=======
-      [HttpGet]
-         public IActionResult AccessDenied()
-         {
-             return View();
-         }
 
->>>>>>> 33ea89653687dfcf407829875fa266dc7d1ee029
+
     }
 }

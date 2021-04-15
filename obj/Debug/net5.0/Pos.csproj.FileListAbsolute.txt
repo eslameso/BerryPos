@@ -212,5 +212,18 @@ F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Views.Accoun
 F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Views.Home.Index.ar.resources
 F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Views.Home.Index.en.resources
 F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.csproj.GenerateResource.cache
+F:\Projects\BerryPOS\BerryPos-master\bin\Debug\net5.0\ar\Pos.resources.dll
+F:\Projects\BerryPOS\BerryPos-master\bin\Debug\net5.0\en\Pos.resources.dll
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\ar\Pos.resources.cs
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\ar\Pos.resources.dll
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\en\Pos.resources.cs
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\en\Pos.resources.dll
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Account\AccessDenied.cshtml.g.cs
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Adminstrator\MangeRolesOfUsers.cshtml.g.cs
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Adminstrator\MangeUserClaims.cshtml.g.cs
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Razor\Views\Shared\_Culture.cshtml.g.cs
 >>>>>>> 9270bd9fd45cd8ad3091170510d02d316e15ca35
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Account\CompleteProfile.cshtml.g.cs
+>>>>>>> 33ea89653687dfcf407829875fa266dc7d1ee029
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Controllers.AccountController.ar.resources
+F:\Projects\BerryPOS\BerryPos-master\obj\Debug\net5.0\Pos.Resources.Controllers.AccountController.en.resources

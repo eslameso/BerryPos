@@ -34,7 +34,9 @@ namespace Pos.Controllers
         {
           RegisterMv model = new RegisterMv()
           {
-            Branches=await _uow.Branches.GetAllBranches()
+              
+            Branches=await _uow.Branches.GetAllBranches(),
+            JobTitles= await _uow.JobTitles.GetAllJobTitles()
           };
 
             return View(model);

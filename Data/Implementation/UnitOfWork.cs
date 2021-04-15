@@ -17,6 +17,9 @@ namespace Pos.Data.Implementation
         public IBranchesRepo Branches => 
         new BranchesRepo(_db);
 
+        public IJobtitlesRepo JobTitles => 
+        new JobtitlesRepo(_db);
+
         public async Task<bool> SaveAsync()
         {
             return await _db.SaveChangesAsync() > 0;

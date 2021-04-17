@@ -161,7 +161,7 @@ namespace Pos.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Age")
+                    b.Property<int?>("Age")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("BirthDate")
@@ -205,8 +205,8 @@ namespace Pos.Migrations
                     b.Property<string>("MobileNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NationalNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("NationalNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)

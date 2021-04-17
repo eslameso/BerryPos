@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Pos.Data.Interfaces;
@@ -17,7 +18,7 @@ namespace Pos.Data.Implementation
 
         public async Task<List<Branches>> GetAllBranches()
         {
-            return await _db.Branches.ToListAsync();
+           return await _db.Branches.ToListAsync();
         }
     }
 }

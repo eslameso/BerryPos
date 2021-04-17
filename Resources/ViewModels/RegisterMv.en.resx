@@ -197,4 +197,12 @@
     <value>Job Title</value>
     <comment/>
   </data>
+  <data name="Entered phone format is not valid." xml:space="preserve">
+    <value>Entered phone format is not valid.</value>
+    <comment/>
+  </data>
+  <data name="Entered National Number is not valid." xml:space="preserve">
+    <value>Entered National Number is not valid.</value>
+    <comment/>
+  </data>
 </root>

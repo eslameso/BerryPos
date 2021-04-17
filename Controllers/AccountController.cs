@@ -1,5 +1,10 @@
+using System;
+using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Localization;
@@ -16,16 +21,18 @@ namespace Pos.Controllers
         public SignInManager<ApplicationUsers> SignInManager { get; }
 
         private readonly IHtmlLocalizer<AccountController> _Localizer;
-
+        private readonly IWebHostEnvironment _hosting;
         private readonly IUnitOfWork _uow;
+      
 
-        public AccountController(UserManager<ApplicationUsers> userManager, SignInManager<ApplicationUsers> signInManager, IHtmlLocalizer<AccountController> localizer, IUnitOfWork uow)
+        public AccountController(UserManager<ApplicationUsers> userManager, SignInManager<ApplicationUsers> signInManager, IHtmlLocalizer<AccountController> localizer, IUnitOfWork uow,IWebHostEnvironment Hosting)
         {
             
             this.SignInManager = signInManager;
             _Localizer = localizer;
             this.UserManager = userManager;
             _uow = uow;
+           _hosting=Hosting;
         }
 
         //ToDo Show Register Page
@@ -35,8 +42,9 @@ namespace Pos.Controllers
           RegisterMv model = new RegisterMv()
           {
               
-            Branches=await _uow.Branches.GetAllBranches(),
+            Branches= await _uow.Branches.GetAllBranches(),
             JobTitles= await _uow.JobTitles.GetAllJobTitles()
+            
           };
 
             return View(model);
@@ -47,14 +55,39 @@ namespace Pos.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterMv model)
         {
+         model.Branches=await _uow.Branches.GetAllBranches();
+         model.JobTitles=await _uow.JobTitles.GetAllJobTitles();
+
             if (ModelState.IsValid)
             {
-
+                string FileName=string.Empty;
+                 if (model.Photo !=null)
+                {
+                    if (IsImageUpload(model.Photo.FileName))
+                    {
+                        FileName=model.Photo.FileName;
+                        UploadImage(FileName,model.Photo);
+                                            }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty,"You Can Choose Images Only.");
+                        return View(model);
+                    }
+                   
+                 }
                 var User = new ApplicationUsers
                 {
                     UserName = model.UserName,
                     EmployeeName = model.EmployeeName,
-                    Email = model.Email
+                    Email = model.Email,
+                    MobileNumber=model.MobileNumber,
+                    NationalNumber=model.NationalNumber,
+                    BranchId=model.BranchId,
+                    JobtitleId=model.JobtitleId,
+                    Address=model.Address,
+                    HireDate=model.HireDate,
+                    BirthDate=model.BirthDate,
+                    Photo=FileName
                 };
 
                 var Result = await UserManager.CreateAsync(User, model.Password);
@@ -71,8 +104,9 @@ namespace Pos.Controllers
                 ModelState.AddModelError(string.Empty, "Invalid Register Attempt");
 
             }
-
-            return View();
+            
+            
+            return View(model);
         }
         //ToDo Show Login Page
         [HttpGet]
@@ -140,6 +174,26 @@ namespace Pos.Controllers
             }
 
 
+        }
+
+       public void UploadImage(string FileName,IFormFile Photo)
+       {         
+                 string Uploads=Path.Combine(_hosting.WebRootPath,"Uploads");
+                 string FullPath=Path.Combine(Uploads,FileName);
+                 Photo.CopyTo(new FileStream(FullPath,FileMode.Create));
+       }
+        public bool IsImageUpload(string FileName)
+        {
+             var supportedTypes = new[] { "JPEG ", "JPG", "PNG","jpeg","jpg","png"};
+              var fileExt = Path.GetExtension(FileName).Substring(1);  
+                if (supportedTypes.Contains(fileExt))  
+                {  
+                            return true;
+                 }
+                 else
+                 {
+                             return false;
+                 }
         }
 
         [HttpGet]

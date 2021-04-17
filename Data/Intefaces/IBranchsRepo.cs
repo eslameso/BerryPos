@@ -6,7 +6,7 @@ namespace Pos.Data.Interfaces
 {
     public interface IBranchesRepo
     {
-        Task<List<Branches>> GetAllBranches();
+     Task<List<Branches>> GetAllBranches();
 
     }
 }

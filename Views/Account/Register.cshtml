@@ -5,16 +5,18 @@
     Layout=null;
 }
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/select2.min.css" />
 
 
 <div class="register" style="height:auto;display: flex;background-image: url(../imgs/Background_Main_POS.jpg);background-size: cover;background-blend-mode: exclusion;background-color: #333;">
     <div class="container">
         <div class="row my-4 mx-5 px-5">
-            <form class="col-12 border rounded shadow py-4 px-5 mx-5" method="post" style="font-size: 17px;color: #111; background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(255 255 255 / 58%) 0%, rgb(193 77 94 / 36%) 99.3% )">
+            <form class="col-12 border rounded shadow py-4 px-5 mx-5" asp-action="Register" asp-controller="Account" method="post" style="font-size: 17px;color: #111; background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(255 255 255 / 58%) 0%, rgb(193 77 94 / 36%) 99.3% )" enctype="multipart/form-data">
                 <div class="text-center mb-3 mt-1 font-weight-bold">
                     <h1 style="color: #fff;text-shadow: 3px 3px 1px #b35468;">@Localizer["WELCOME"]</h1>
                 </div>
-            
+               <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
                 <div class="form-group">
                     <label asp-for="UserName" class="control-label"></label>
                     <input asp-for="UserName"  class="form-control" id="UserName"/>
@@ -46,35 +48,35 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label asp-for="MobileNumber" class="control-label"></label>
-                        <input asp-for="MobileNumber" type="number"  class="form-control" />
+                        <input asp-for="MobileNumber" type="text"  class="form-control" />
                         <span asp-validation-for="MobileNumber" class="text-danger"></span>
                     </div>
                 </div>
-                 @* <div class="row">
+                  <div class="row">
                     <div class="form-group col-md-6 col-12">
                         <label asp-for="BirthDate" class="control-label"></label>
-                        <input asp-for="BirthDate" type="date" class="form-control" />
+                        <input asp-for="BirthDate" type="date" value="@DateTime.Now"   class="form-control" />
                         <span asp-validation-for="BirthDate" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6 col-12 datepicker">
                         <label asp-for="HireDate" class="control-label"></label>
-                        <input asp-for="HireDate" type="date" class="form-control" />
+                        <input asp-for="HireDate"  type="date" value="@DateTime.Now" class="form-control" />
                         <span asp-validation-for="HireDate" class="text-danger"></span>
                     </div>
-                </div> *@
+                </div> 
                 
                 <div class="row">
                     <div class="form-group col-md-6 col-12">
                    <label asp-for="BranchId" class="control-label"></label> 
-                   <select asp-for="BranchId" asp-items='@(new SelectList (Model.Branches,"Id","Name"))' class="custom-select">
-                         <option disable selected>Choose Branch</option>
+                   <select asp-for="BranchId" asp-items='@(new SelectList (@Model.Branches,"Id","Name"))' class="form-control">
+                         <option></option>
                      </select>
-                     <span asp-validation-for="BranchId" class="text-danger"></span>
+                     <span asp-validation-for="@Model.BranchId" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6 col-12">
                        <label asp-for="JobtitleId" class="control-label"></label> 
-                   <select asp-for="JobtitleId" asp-items='@(new SelectList (Model.JobTitles,"Id","Name"))' class="custom-select">
-                         <option disable selected>Choose JobTitle</option>
+                      <select asp-for="JobtitleId" asp-items='@(new SelectList (@Model.JobTitles,"Id","Name"))' class="form-control">
+                         <option></option>
                      </select>
                      <span asp-validation-for="JobtitleId" class="text-danger"></span>
                     </div>
@@ -85,13 +87,13 @@
                 <div class="row">
                     <div class="form-group col-md-6 col-12">
                         <label asp-for="NationalNumber" class="control-label"></label>
-                        <input asp-for="NationalNumber" type="number"  class="form-control" />
+                        <input asp-for="NationalNumber" type="text"  class="form-control" />
                         <span asp-validation-for="NationalNumber" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label asp-for="Photo" class="control-label"></label>
                         <input asp-for="Photo" type="file" class="form-control-file" id="imgInp" />
-                        <img id="userImg" src="#" alt="userImg" />
+                        <img id="userImg" src="#" alt="" style="height:50px;Width:50px;" /> 
                         <span asp-validation-for="Photo" class="text-danger"></span>
                     </div>
                 </div>
@@ -102,7 +104,7 @@
                 </div>
                  
 
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
                 <div class="form-group row col-12">
                     <input type="submit" value='@Localizer["Register"]' class="btn btn-primary" />
                     <input type="reset" value='@Localizer["Reset"]' class="btn btn-danger mx-2"/>
@@ -119,20 +121,26 @@
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/select2.min.js"></script>
 
 <script>
+    $(document).ready(function() {
+    $('Select').select2({
+     selectOnClose: true
+     });
+});
     function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-            $('#userImg').attr('src', e.target.result);
-            }   
-            reader.readAsDataURL(input.files[0]); // convert to base64 string
-        }}
-        $("#imgInp").change(function() {
-        readURL(this);
-    });
-debugger;
+       if (input.files && input.files[0]) {
+         var reader = new FileReader();
+         reader.onload = function(e) {
+        $('#userImg').attr('src', e.target.result);
+        }   
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+      }}
+      $("#imgInp").change(function() {
+       readURL(this);
+   }); 
+
     $("#UserName").focusout(function () {
     var data=$(this).val();
         $('#UserName').val(function (i, value) {
@@ -140,6 +148,9 @@ debugger;
     return value.replace(/ /g, '');
      });
       });
+
+
+
 
 </script>
 

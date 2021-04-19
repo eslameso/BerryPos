@@ -1,7 +1,13 @@
+using System.Threading.Tasks;
+using Pos.Data.Interfaces;
+
 namespace Pos.Data.Intefaces
 {
-    public class IUnitOfWork
+    public interface IUnitOfWork
     {
+        IBranchesRepo Branches {get;}
+        IJobtitlesRepo JobTitles {get;}
+        Task<bool> SaveAsync();
         
     }
 }

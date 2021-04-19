@@ -197,4 +197,12 @@
     <value>الوظيفة</value>
     <comment/>
   </data>
+  <data name="Entered phone format is not valid." xml:space="preserve">
+    <value>رقم التليفون المحمول غير صحيح</value>
+    <comment/>
+  </data>
+  <data name="Entered National Number is not valid." xml:space="preserve">
+    <value>الرقم القومى غير صحيح</value>
+    <comment/>
+  </data>
 </root>

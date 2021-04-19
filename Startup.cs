@@ -39,9 +39,15 @@ namespace Pos
             {
               var SupportedCulture=new List<CultureInfo>
               {
-                  new CultureInfo("en"),
-                  new CultureInfo("ar")
+                  new CultureInfo("en")
+                  
               };
+              var ar = new CultureInfo("ar");
+              ar.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy";
+              ar.DateTimeFormat.DateSeparator = "/";
+              ar.DateTimeFormat.Calendar = new GregorianCalendar();
+              SupportedCulture.Add(ar);
+
                  opt.DefaultRequestCulture=new Microsoft.AspNetCore.Localization.RequestCulture("en");
                  opt.SupportedCultures=SupportedCulture;
                  opt.SupportedUICultures=SupportedCulture;

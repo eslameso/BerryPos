@@ -22,6 +22,7 @@ namespace Pos.Models
         public DbSet<SaleInvoices> SaleInvoices { get; set; }
         public DbSet<Stores> Stores { get; set; }
         public DbSet<Suppliers> Suppliers { get; set; }
+        public DbSet<JobTitles> JobTitles { get; set; }
 
        protected override void OnModelCreating(ModelBuilder modelBuilder)
 {

@@ -173,6 +173,19 @@ a.navbar-brand {
   box-shadow: 1px 1px 3px -2px #333;
   margin-top: .7px;margin-inline-start: -14px;
 }
+/* Culture page */
+.Langselect .culSelect{
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.Langselect .culSelect option{
+  
+}
+
 /* contentPush */
 .langHover:after {
   content: '\25b2';

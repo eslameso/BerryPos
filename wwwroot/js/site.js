@@ -3,25 +3,26 @@
 
 // Write your JavaScript code.
 $(document).ready(function(){
-    $('.myselect-option').on({'click': function() {
-        if($('.langselect').attr('src') == "/imgs/en.png"){
+    // $('.culSelect option').on({'click': function() {
+
+        if(($(".culSelect").val() == "ar") && ($('.langselect').attr('src') == "/imgs/en.png" )){
             $('.langselect').attr({"src" : "/imgs/ar.png", "title" : "عربي"});
             $('.langopt').attr('src', "/imgs/en.png");
-            $('.langHover input').value="ar";
-            // $('.langName').text("En");
-            console.log($('.langHover input').value);
             $("html").attr('dir','rtl');
-        }else if($('.langselect').attr('src') == "/imgs/ar.png"){
+            // $(".langSelect").val('en').change();
+            // console.log($(".langSelect").val('en').change());
+        }else if(($(".culSelect").val() == "en") && ($('.langselect').attr('src') == "/imgs/ar.png")){
             $('.langselect').attr({"src":"/imgs/en.png", "title" : "English"});
             $('.langopt').attr('src', "/imgs/ar.png");
-            $('.langHover input').value="en";
-            // $('.langName').text("Ar");
+            // $(".langSelect option[value='en']").attr('selected', 'selected');
             $("html").attr('dir','ltr');
+            // $(".langSelect").val('ar').change();
         }
         $(".myselect-option").trigger('change');  
-    }
-    });
-  
+
+    // }
+    // });
+      
 
     $(".nav-item").click(function () {
         $(".nav-item").removeClass("active");

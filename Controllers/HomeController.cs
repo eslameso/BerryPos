@@ -31,7 +31,7 @@ namespace Pos.Controllers
             return View();
         }
 
-          [HttpPost]
+         
           public IActionResult CultureMangement(string Culture,string returnurl)
            {
              Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(Culture)),
@@ -41,6 +41,7 @@ namespace Pos.Controllers
                  return LocalRedirect(returnurl);
                  
            }
+           
          [AllowAnonymous]
         public IActionResult Privacy()
         {

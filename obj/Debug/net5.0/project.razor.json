@@ -1,5 +1,5 @@
 {
-  "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Pos.csproj",
+  "FilePath": "e:\\Projects\\Pos\\Pos.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15619,11 +15619,16 @@
   "RootNamespace": "Pos",
   "Documents": [
     {
+<<<<<<< HEAD
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Shared\\_Culture.cshtml",
+=======
+      "FilePath": "e:\\Projects\\Pos\\Views\\Shared\\_Culture.cshtml",
+>>>>>>> c9738228dfcaf3f7496722bb28c2b09a6582174d
       "TargetPath": "Views\\Shared\\_Culture.cshtml",
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Adminstrator\\EditUsersRole.cshtml",
       "TargetPath": "Views\\Adminstrator\\EditUsersRole.cshtml",
       "FileKind": "mvc"
@@ -15635,20 +15640,48 @@
     },
     {
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Shared\\_Layout.cshtml",
+=======
+      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\MangeUserClaims.cshtml",
+      "TargetPath": "Views\\Adminstrator\\MangeUserClaims.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\GetAllRoles.cshtml",
+      "TargetPath": "Views\\Adminstrator\\GetAllRoles.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Shared\\_Layout.cshtml",
+>>>>>>> c9738228dfcaf3f7496722bb28c2b09a6582174d
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Adminstrator\\GetAllRoles.cshtml",
       "TargetPath": "Views\\Adminstrator\\GetAllRoles.cshtml",
       "FileKind": "mvc"
     },
     {
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Account\\CompleteProfile.cshtml",
+=======
+      "FilePath": "e:\\Projects\\Pos\\Views\\Shared\\NotFound.cshtml",
+      "TargetPath": "Views\\Shared\\NotFound.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Account\\CompleteProfile.cshtml",
+>>>>>>> c9738228dfcaf3f7496722bb28c2b09a6582174d
       "TargetPath": "Views\\Account\\CompleteProfile.cshtml",
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -15665,10 +15698,29 @@
     },
     {
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Adminstrator\\EditRole.cshtml",
+=======
+      "FilePath": "e:\\Projects\\Pos\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\EditUser.cshtml",
+      "TargetPath": "Views\\Adminstrator\\EditUser.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\EditRole.cshtml",
+>>>>>>> c9738228dfcaf3f7496722bb28c2b09a6582174d
       "TargetPath": "Views\\Adminstrator\\EditRole.cshtml",
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -15680,10 +15732,24 @@
     },
     {
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\_ViewImports.cshtml",
+=======
+      "FilePath": "e:\\Projects\\Pos\\Views\\Account\\Login.cshtml",
+      "TargetPath": "Views\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Account\\AccessDenied.cshtml",
+      "TargetPath": "Views\\Account\\AccessDenied.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\_ViewImports.cshtml",
+>>>>>>> c9738228dfcaf3f7496722bb28c2b09a6582174d
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Adminstrator\\CreateRole.cshtml",
       "TargetPath": "Views\\Adminstrator\\CreateRole.cshtml",
       "FileKind": "mvc"
@@ -15721,6 +15787,40 @@
     {
       "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Views\\Shared\\NotFound.cshtml",
       "TargetPath": "Views\\Shared\\NotFound.cshtml",
+=======
+      "FilePath": "e:\\Projects\\Pos\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\CreateRole.cshtml",
+      "TargetPath": "Views\\Adminstrator\\CreateRole.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\GetAllUsers.cshtml",
+      "TargetPath": "Views\\Adminstrator\\GetAllUsers.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Account\\Register.cshtml",
+      "TargetPath": "Views\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\MangeRolesOfUsers.cshtml",
+      "TargetPath": "Views\\Adminstrator\\MangeRolesOfUsers.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\EditUsersRole.cshtml",
+      "TargetPath": "Views\\Adminstrator\\EditUsersRole.cshtml",
+>>>>>>> c9738228dfcaf3f7496722bb28c2b09a6582174d
       "FileKind": "mvc"
     }
   ],

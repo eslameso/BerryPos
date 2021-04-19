@@ -4,31 +4,81 @@
     @{
        var Culture=Context.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>();
        var CultureList=LocalizationOptions.Value.SupportedCultures.Select(x=>new SelectListItem{Value=x.Name,Text=x.Name}).ToList();
-       
        var returnurl=string.IsNullOrWhiteSpace(Context.Request.Path)? "~/" :$"{Context.Request.Path.Value}{Context.Request.QueryString}";  
 
     }
 
     <div>
-        <form asp-action="CultureMangement" asp-controller="Home" asp-route-returnurl="@returnurl" method="POST">
+        @* <form asp-action="CultureMangement" asp-controller="Home" asp-route-returnurl="@returnurl" method="POST"> *@
             @* <select  name="Culture" asp-for="@Culture.RequestCulture.UICulture.Name" asp-items="CultureList"
             onchange="this.form.submit();"></select> *@
+            @if (Culture.RequestCulture.UICulture.Name =="en")
+            {
+                  <div class="Langselect mx-0 mt-1">
+                <div class="myselect">
+                    <div class="selectedlan">
+                        
+                            
+                            <img class="langselect" width="28px" title="English" src="/imgs/en.png" /> 
+                            English
+                           
+                        
+                    </div>
+                    <div class="langHover" >
+                        <span class="myselect-option" title="Change Language">
+                            <a href='@Url.Action("CultureMangement", "Home", new  {Culture = "ar", returnurl = @returnurl})' >
+                            <img class="langopt" width="20px" src="/imgs/ar.png" /> 
+                            Arabic 
+                           </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+                
+            }
+            else
+            {
+                 <div class="Langselect mx-0 mt-1">
+                <div class="myselect">
+                    <div class="selectedlan">
+                        
+                             <img class="langopt" width="20px" src="/imgs/ar.png" /> 
+                           
+                            العربية
+                           
+                        
+                    </div>
+                    <div class="langHover" >
+                            <span class="myselect-option" title="Change Language">
+                            <a href='@Url.Action("CultureMangement", "Home", new  {Culture = "en", returnurl = @returnurl})' >
+                            <img class="langselect" width="28px" title="English" src="/imgs/en.png" /> 
+                            الانجليزية 
+                           </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
 
-             <div class="Langselect mx-0 mt-1">
+            }
+             @* <div class="Langselect mx-0 mt-1">
                 <div class="myselect">
                     <div class="selectedlan">
                         <span>
                             <img class="langselect" width="28px" title="English" src="/imgs/en.png" /> 
                             <select class="culSelect" name="Culture" asp-for="@Culture.RequestCulture.UICulture.Name" asp-items="CultureList"
-                                onchange="this.form.submit();"></select>  
+                                onchange="this.form.submit();"></select>   
                         </span>
                     </div>
                     @* <div class="langHover" >
                         <span class="myselect-option" title="Change Language">
                             <img class="langopt" width="20px" src="/imgs/ar.png" />  
+<<<<<<< HEAD
+=======
+                              <span class="langName" > Ar </span> 
+>>>>>>> c9738228dfcaf3f7496722bb28c2b09a6582174d
                         </span>
                     </div> *@
                 </div>
             </div>
-        </form>
+        </form>  *@
     </div>

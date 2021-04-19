@@ -1,3 +1,4 @@
+
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 @inject Microsoft.Extensions.Options.IOptions<Microsoft.AspNetCore.Builder.RequestLocalizationOptions> LocalizationOptions
     @{
@@ -10,21 +11,22 @@
 
     <div>
         <form asp-action="CultureMangement" asp-controller="Home" asp-route-returnurl="@returnurl" method="POST">
-            @* <select class="myselect-option" name="Culture" asp-for="@Culture.RequestCulture.UICulture.Name" asp-items="CultureList"
+            @* <select  name="Culture" asp-for="@Culture.RequestCulture.UICulture.Name" asp-items="CultureList"
             onchange="this.form.submit();"></select> *@
+
              <div class="Langselect mx-0 mt-1">
                 <div class="myselect">
                     <div class="selectedlan">
                         <span>
-                            <img class="langselect" width="28px" title="English" src="/imgs/en.png" />  
+                            <img class="langselect" width="28px" title="English" src="/imgs/en.png" /> 
+                            <select class="culSelect" name="Culture" asp-for="@Culture.RequestCulture.UICulture.Name" asp-items="CultureList"
+                                onchange="this.form.submit();"></select>  
                         </span>
                     </div>
                     <div class="langHover" >
                         <span class="myselect-option" title="Change Language">
-                            <img class="langopt" width="20px" src="/imgs/ar.png" /> 
-                            <input name="Culture" asp-for="@Culture.RequestCulture.UICulture.Name" asp-items="CultureList"
-                            onchange="this.form.submit();" />
-                            @* <span class="langName" > Ar </span> *@
+                            <img class="langopt" width="20px" src="/imgs/ar.png" />  
+                             @* <span class="langName" > Ar </span>  *@
                         </span>
                     </div>
                 </div>

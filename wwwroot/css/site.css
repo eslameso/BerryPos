@@ -7,6 +7,7 @@ for details on configuring this project to bundle and minify static web assets. 
 p , a , span , h1,h2,h3,h4,h5,h6 , li ,ul , div{
   text-align: start;
 }
+a:hover{text-decoration: none;}
 .btn.focus, .btn:focus{box-shadow: none;}
 /* Header Style */
 a.navbar-brand {
@@ -157,7 +158,7 @@ a.navbar-brand {
     right: 0.2rem;
     box-sizing: border-box;
   }
-  .Langselect .selectedlan ,.bell,.msg{padding: 3px 8px;}
+  .Langselect .selectedlan ,.bell,.msg{padding: 4px 8px;}
   .Langselect .selectedlan img , .bell i , .msg i{
     box-shadow: 1px 1px 4px 0px #00bcd4;
     border: 2px solid hsl(187, 100%, 42%);
@@ -182,11 +183,11 @@ a.navbar-brand {
   font-weight: 700;
   margin-top: 2px;
 }
-.Langselect .culSelect option{
-  
+.selectedlan .langName{
+  color: #fff;
+  font-weight: 600;
+  margin: 3px;
 }
-
-/* contentPush */
 .langHover:after {
   content: '\25b2';
   position: absolute;
@@ -201,11 +202,16 @@ a.navbar-brand {
 .langHover span:last-child{border: none;}
 .Langselect:hover .selectedlan {
   background-color: #ffffffc2;
+  border-radius: 2px;
+  cursor: pointer;
 }
 .Langselect:hover .selectedlan img , .bell:hover i ,.msg:hover i{
   transform: rotateY(360deg);
   box-shadow: 1px 1px 6px 0px #00bcd4 !important;
   transition: all .4s ease-in;
+}
+.Langselect:hover .langName{
+  color: #333;
 }
 .bell:hover i ,.msg:hover i{
   background-color: #ffffffc2;

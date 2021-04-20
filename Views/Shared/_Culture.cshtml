@@ -9,57 +9,46 @@
     }
 
     <div>
-        @* <form asp-action="CultureMangement" asp-controller="Home" asp-route-returnurl="@returnurl" method="POST"> *@
-            @* <select  name="Culture" asp-for="@Culture.RequestCulture.UICulture.Name" asp-items="CultureList"
-            onchange="this.form.submit();"></select> *@
-            @if (Culture.RequestCulture.UICulture.Name =="en")
-            {
-                  <div class="Langselect mx-0 mt-1">
-                <div class="myselect">
-                    <div class="selectedlan">
-                        
-                            
-                            <img class="langselect" width="28px" title="English" src="/imgs/en.png" /> 
-                            English
-                           
-                        
-                    </div>
-                    <div class="langHover" >
-                        <span class="myselect-option" title="Change Language">
-                            <a href='@Url.Action("CultureMangement", "Home", new  {Culture = "ar", returnurl = @returnurl})' >
-                            <img class="langopt" width="20px" src="/imgs/ar.png" /> 
-                            Arabic 
-                           </a>
-                        </span>
-                    </div>
+        <input hidden id="langs" value="@Culture.RequestCulture.UICulture.Name"/>
+        @if (Culture.RequestCulture.UICulture.Name =="en")
+        {
+        <div class="Langselect mx-0 mt-1">
+            <div class="myselect">
+                <div class="selectedlan">
+                    <img class="langselect" width="25px" title="English" src="/imgs/en.png" /> 
+                    <span class="langName" > English </span> 
+                </div>
+                <div class="langHover" >
+                    <span class="myselect-option" title="Change Language">
+                        <a href='@Url.Action("CultureMangement", "Home", new  {Culture = "ar", returnurl = @returnurl})' >
+                        <img class="langopt" width="23px" title="Arabic"  src="/imgs/ar.png" /> 
+                        <span class="langName" >Arabic</span> 
+                        </a>
+                    </span>
                 </div>
             </div>
-                
-            }
-            else
-            {
-                 <div class="Langselect mx-0 mt-1">
-                <div class="myselect">
-                    <div class="selectedlan">
-                        
-                             <img class="langopt" width="20px" src="/imgs/ar.png" /> 
-                           
-                            العربية
-                           
-                        
-                    </div>
-                    <div class="langHover" >
-                            <span class="myselect-option" title="Change Language">
-                            <a href='@Url.Action("CultureMangement", "Home", new  {Culture = "en", returnurl = @returnurl})' >
-                            <img class="langselect" width="28px" title="English" src="/imgs/en.png" /> 
-                            الانجليزية 
-                           </a>
-                        </span>
-                    </div>
+        </div> 
+        }
+        else
+        {
+                <div class="Langselect mx-0 mt-1">
+            <div class="myselect">
+                <div class="selectedlan">
+                    <img class="langselect"  width="25px" title="عربي" src="/imgs/ar.png" /> 
+                    <span class="langName" >العربية</span>
+                </div>
+                <div class="langHover" >
+                    <span class="myselect-option" title="Change Language">
+                        <a href='@Url.Action("CultureMangement", "Home", new  {Culture = "en", returnurl = @returnurl})' >
+                        <img class="langopt" width="23px" title="الانجليزية" src="/imgs/en.png" /> 
+                        <span class="langName" >الانجليزية</span> 
+                        </a>
+                    </span>
                 </div>
             </div>
+        </div>
 
-            }
+        }
              @* <div class="Langselect mx-0 mt-1">
                 <div class="myselect">
                     <div class="selectedlan">

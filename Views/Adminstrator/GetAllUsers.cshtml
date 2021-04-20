@@ -1,4 +1,4 @@
-@model IEnumerable<ApplicationUsers>
+@model IEnumerable<Pos.Models.ApplicationUsers>
     <h2>Users</h2>
     <div>
          <a asp-action="Register" asp-controller="Account" class="btn btn-primary">Add New User</a>
@@ -10,7 +10,6 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Address</th>
-                <th>Age</th>
                 <th>Hire Date</th>
                 <th>Mobile Number</th>
                 <th>Actions</th>
@@ -20,10 +19,9 @@
             @foreach (var user in Model)
             {
                  <tr>
-                 <td>@user.UserName</td>
+                 <td>@user.EmployeeName</td>
                  <td>@user.Email</td>
                  <td>@(user.Address!=null ? user.Address:"") </td>
-                 <td>@(user.Age!=0 ? user.Age : "")</td>
                  <td>@(user.HireDate !=DateTime.Parse("1/1/0001 12:00:00 AM") ? user.HireDate : "")</td>
                  <td>@(user.MobileNumber!=null ? user.MobileNumber : "")</td>
                  <td>

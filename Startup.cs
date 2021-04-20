@@ -61,7 +61,8 @@ namespace Pos
             services.AddIdentity<ApplicationUsers,IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddScoped<IUnitOfWork,UnitOfWork>();
-           services.AddRazorPages();
+           services.AddRazorPages()
+           .AddRazorRuntimeCompilation();
            services.AddAuthorization(
                option => 
                {

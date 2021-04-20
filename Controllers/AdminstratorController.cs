@@ -291,7 +291,7 @@ namespace Pos.Controllers
             var Model = new EditUserMv()
             {
                 Id = User.Id,
-                UserName = User.UserName,
+                UserName = User.EmployeeName,
                 Email = User.Email,
                 MobileNumber = User.MobileNumber,
                 Address = User.Address,
@@ -331,6 +331,8 @@ namespace Pos.Controllers
                 User.BirthDate = Model.BirthDate;
                 User.HireDate = Model.HireDate;
                 User.NationalNumber = Model.NationalNumber;
+                User.BranchId=Model.BranchId;
+                User.JobtitleId=Model.JobtitleId;
 
                 var Result = await UserManager.UpdateAsync(User);
                 if (Result.Succeeded)

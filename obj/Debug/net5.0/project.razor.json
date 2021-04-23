@@ -1,5 +1,5 @@
 {
-  "FilePath": "f:\\Projects\\BerryPOS\\BerryPos-master\\Pos.csproj",
+  "FilePath": "e:\\Projects\\Pos\\Pos.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15636,6 +15636,11 @@
     {
       "FilePath": "e:\\Projects\\Pos\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Branches\\Index.cshtml",
+      "TargetPath": "Views\\Branches\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

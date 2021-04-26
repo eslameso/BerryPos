@@ -51,5 +51,47 @@
 
             globaltable = tablePlugin("#BranchesTable", "/Branches/GetListOfBranches", dataTableColumns);
          });
+       
+       $('#BranchesTable').on("click",'.delete-Item',function(){
+           var dataId = $(this).attr("data-id");
+         CustomDelete("/Branches/Delete",dataId);
+       });
+
+       $('#CreateBranch_btn').click(function(){
+          $.ajax({
+              url:"/Branches/Create",
+              method:"Get",
+              success:function(result)
+              {
+                  $('#modalcontent').html(result);
+                  $('#ItemsModal').modal("show");
+                 var form = $("form");
+                        form.removeData('validator');
+                        form.removeData('unobtrusiveValidation');
+                        $.validator.unobtrusive.parse(form);
+              }
+
+          });
+       });
+
+    function CreateSuccess()
+    {
+     $('#ItemsModal').modal("hide");
+    swal("Successfuly Create Branch ");
+    globaltable.ajax.reload();
+   
+    }
+
+    function CreateFailure()
+    {
+     $('#ItemsModal').modal("hide");
+    swal("Faild To Create Branch ");
+    
+   
+    }
+
+
+
+        
 </script>
 }

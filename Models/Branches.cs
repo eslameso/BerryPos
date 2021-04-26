@@ -14,6 +14,7 @@ namespace Pos.Models
         public ICollection<BranchesProducts> BranchesProducts { get; set; }
         public ICollection<SaleInvoices> SaleInvoices { get; set; }
         public ICollection<PurchaseInvoice> PurchaseInvoices { get; set; }
+        public ICollection<ApplicationUsers> Users { get; set; }
     
     }
 }

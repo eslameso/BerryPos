@@ -8,6 +8,16 @@ namespace Pos.Data.Interfaces
     {
      Task<List<Branches>> GetAllBranches();
      
+     //SD This Mean That This Action Is For Server Side Data Table
+     IEnumerable<Branches> GetAllBranchesSD(string SearchBar);
+     void DeleteBranch(int Id);
+     
+     bool HasForegnKeyWithUser(int Id);
+     bool IsCreateCodeExist(int Code);
+     bool IsCreateNameExist(string Name);
+
+     void CreateBranch(Branches branch);
+     
 
     }
 }

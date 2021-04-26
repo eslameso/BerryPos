@@ -15619,6 +15619,11 @@
   "RootNamespace": "Pos",
   "Documents": [
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Branches\\Create.cshtml",
+      "TargetPath": "Views\\Branches\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Shared\\_Culture.cshtml",
       "TargetPath": "Views\\Shared\\_Culture.cshtml",
       "FileKind": "mvc"

@@ -8,7 +8,7 @@ namespace Pos.Data.Intefaces
         IBranchesRepo Branches {get;}
         IJobtitlesRepo JobTitles {get;}
         
-        Task<bool> SaveAsync();
+        bool SaveAsync();
         
     }
 }

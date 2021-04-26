@@ -98,6 +98,7 @@ namespace Pos.Controllers
             };
             foreach (var item in UserManager.Users)
             {
+                
                 if (await UserManager.IsInRoleAsync(item, Role.Name))
                 {
                     model.User.Add(item.UserName);

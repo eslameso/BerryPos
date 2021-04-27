@@ -16,7 +16,12 @@ namespace Pos.Data.Interfaces
      bool IsCreateCodeExist(int Code);
      bool IsCreateNameExist(string Name);
 
+      bool IsEditCodeExist(int Code,int id);
+     bool IsEditNameExist(string Name,int id);
+
      void CreateBranch(Branches branch);
+
+     Branches FindBranch(int id);
      
 
     }

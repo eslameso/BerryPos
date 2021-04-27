@@ -84,8 +84,6 @@ public IActionResult Create(CreateBranchMv model)
      return PartialView(model);
 
 }
-
-
 [AcceptVerbs("Get","Post")]
 [AllowAnonymous]
 public IActionResult CreateCodeValidation(int Code)
@@ -99,6 +97,43 @@ public IActionResult IsCreateNameExist(string Name)
 {
     return Json(_uow.Branches.IsCreateNameExist(Name));
 }
+
+public IActionResult Edit(int id)
+{
+var Branch=_uow.Branches.FindBranch(id);
+
+EditBranchMv model=new EditBranchMv (){
+    Id=Branch.Id,
+    Code=Branch.Code,
+    Name=Branch.Name,
+    Address=Branch.Address,
+    Description=Branch.Description
+};
+return PartialView(model);
+}
+
+[HttpPost]
+public IActionResult Edit(EditBranchMv model)
+{
+
+}
+
+
+[AcceptVerbs("Get","Post")]
+[AllowAnonymous]
+public IActionResult EditCodeValidation(int Code,int id)
+{
+    return Json(_uow.Branches.IsEditCodeExist(Code,id));
+}
+
+[AcceptVerbs("Get","Post")]
+[AllowAnonymous]
+public IActionResult IsEditNameExist(string Name,int id)
+{
+    return Json(_uow.Branches.IsEditNameExist(Name,id));
+}
+
+
 
 
 

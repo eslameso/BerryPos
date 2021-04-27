@@ -71,5 +71,20 @@ namespace Pos.Data.Implementation
         {
             _db.Add(branch);
         }
+
+        public Branches FindBranch(int id)
+        {
+            return _db.Branches.Find(id);
+        }
+
+        public bool IsEditCodeExist(int Code, int id)
+        {
+            return (! _db.Branches.Any(m=>m.Id != id && m.Code==Code));
+        }
+
+        public bool IsEditNameExist(string Name, int id)
+        {
+            return (! _db.Branches.Any(m=>m.Id != id && m.Name==Name));
+        }
     }
 }

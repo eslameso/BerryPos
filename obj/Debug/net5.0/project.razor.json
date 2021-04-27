@@ -15634,6 +15634,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Branches\\Edit.cshtml",
+      "TargetPath": "Views\\Branches\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\GetAllRoles.cshtml",
       "TargetPath": "Views\\Adminstrator\\GetAllRoles.cshtml",
       "FileKind": "mvc"

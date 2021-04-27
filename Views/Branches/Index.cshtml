@@ -57,6 +57,24 @@
          CustomDelete("/Branches/Delete",dataId);
        });
 
+       $('#BranchesTable').on("click",'.edit-Item',function(){
+           var dataId = $(this).attr("data-id");
+          $.ajax({
+              url:"/Branches/Edit/"+dataId,
+              method:"Get",
+              success:function(result)
+              {
+                  $('#modalcontent').html(result);
+                  $('#ItemsModal').modal("show");
+                 var form = $("form");
+                        form.removeData('validator');
+                        form.removeData('unobtrusiveValidation');
+                        $.validator.unobtrusive.parse(form);
+              }
+
+          });
+       });
+
        $('#CreateBranch_btn').click(function(){
           $.ajax({
               url:"/Branches/Create",

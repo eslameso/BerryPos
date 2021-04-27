@@ -116,6 +116,24 @@ return PartialView(model);
 public IActionResult Edit(EditBranchMv model)
 {
 
+   if (ModelState.IsValid)
+   {
+        Branches branche=new Branches(){
+        Id=model.Id,
+        Code=model.Code,
+        Name=model.Name,
+        Address=model.Address,
+        Description=model.Description
+    };
+    _uow.Branches.EditBranch(branche);
+    _uow.SaveAsync();
+   }
+   else
+   {
+     ModelState.AddModelError(string.Empty,"Invalid Edit Branch Attempt !");
+   }
+   return PartialView(model);
+
 }
 
 

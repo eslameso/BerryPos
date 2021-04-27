@@ -33,7 +33,7 @@
 
 
 @section Scripts{
-     <script src="~/js/CustomDeleteSwal.js"></script>
+     <script src="~/js/CustomDeleteSwalServerSide.js"></script>
      <script src="~/js/ServerSideDataTable.js"></script>
 <script>
    $(document).ready(function(){
@@ -106,6 +106,22 @@
     swal("Faild To Create Branch ");
     
    
+    }
+
+
+     function EditSuccess()
+    {
+     $('#ItemsModal').modal("hide");
+    swal("Successfuly Edit Branch ");
+    globaltable.ajax.reload();
+   
+    }
+
+    function EditFailure()
+    {
+     $('#ItemsModal').modal("hide");
+    swal("Faild To Edit Branch ");
+    
     }
 
 

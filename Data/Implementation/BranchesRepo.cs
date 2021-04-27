@@ -44,17 +44,26 @@ namespace Pos.Data.Implementation
 
         public bool HasForegnKeyWithUser(int Id)
         {
-            bool Flag=false;
-            foreach (var user in _UserManager.Users)
-            {
-                if (user.BranchId==Id)
-                {
-                    Flag= true;
+           var count= _db.Branches.Include(m => m.Users).FirstOrDefault(s =>s.Id==Id).Users.Count();
+           if (count == 0)
+           {
+               return false;
+           }
+           else
+           {
+               return true;
+           }
+            // bool Flag=false;
+            // foreach (var user in _UserManager.Users)
+            // {
+            //     if (user.BranchId==Id)
+            //     {
+            //         Flag= true;
                     
-                }
+            //     }
                 
-            }
-            return Flag;
+            // }
+            // return Flag;
         }
 
         public bool IsCreateCodeExist(int Code)
@@ -85,6 +94,12 @@ namespace Pos.Data.Implementation
         public bool IsEditNameExist(string Name, int id)
         {
             return (! _db.Branches.Any(m=>m.Id != id && m.Name==Name));
+        }
+
+        public void EditBranch(Branches branche)
+        {
+            
+            _db.Update(branche);
         }
     }
 }

@@ -22,6 +22,8 @@ namespace Pos.Data.Interfaces
      void CreateBranch(Branches branch);
 
      Branches FindBranch(int id);
+
+     void EditBranch(Branches branche);
      
 
     }

@@ -40,7 +40,28 @@
      <script src="~/js/CustomDeleteSwal.js"></script>
     <script>
       $(document).ready(function() {
-      $('#UsersTable').DataTable();
+      $('#UsersTable').DataTable({
+        language: {
+
+            sProcessing: localizedData.sProcessing,
+            sLengthMenu: localizedData.sLengthMenu,
+            sZeroRecords: localizedData.sZeroRecords,
+            sInfo: localizedData.sInfo,
+            sInfoEmpty: localizedData.sInfoEmpty,
+            sInfoFiltered: localizedData.sInfoFiltered,
+            sInfoPostFix: "",
+            sSearch: localizedData.sSearch,
+            sUrl: "",
+            oPaginate: {
+                sFirst: localizedData.sFirst,
+                sPrevious: localizedData.sPrevious,
+                sNext: localizedData.sNext,
+                sLast: localizedData.sLast
+            }
+
+        }
+
+      });
        } );
 
      $('.deleteuser').click(function(){

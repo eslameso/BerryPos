@@ -49,7 +49,7 @@
                 }
             }];
 
-            globaltable = tablePlugin("#BranchesTable", "/Branches/GetListOfBranches", dataTableColumns);
+            globaltable = tablePlugin("#BranchesTable", "/Branches/GetListOfBranches", dataTableColumns,localizedData);
          });
        
        $('#BranchesTable').on("click",'.delete-Item',function(){

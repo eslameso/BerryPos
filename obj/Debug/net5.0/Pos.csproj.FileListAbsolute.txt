@@ -542,3 +542,5 @@ E:\Projects\Pos\obj\Debug\net5.0\Pos.MvcApplicationPartsAssemblyInfo.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Branches\Index.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Branches\Create.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Branches\Edit.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Shared._Layout.ar.resources
+E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Shared._Layout.en.resources

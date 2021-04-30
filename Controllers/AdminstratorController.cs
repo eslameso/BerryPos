@@ -292,7 +292,8 @@ namespace Pos.Controllers
             var Model = new EditUserMv()
             {
                 Id = User.Id,
-                UserName = User.EmployeeName,
+                UserName = User.UserName,
+                EmployeeName=User.EmployeeName,
                 Email = User.Email,
                 MobileNumber = User.MobileNumber,
                 Address = User.Address,

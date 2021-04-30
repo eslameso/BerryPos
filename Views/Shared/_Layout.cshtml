@@ -1,6 +1,8 @@
 ﻿@inject SignInManager<ApplicationUsers> SignInManager;
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
     @{
         ViewData["Title"]="Berry";
+        
     }
 <!DOCTYPE html>
 <html dir="ltr" unicode-bidi:bidi-override; lang="en">
@@ -86,6 +88,26 @@
                             <i class="fa fa-home" ></i> Home <span class="sr-only">(current)</span>
                         </a>
                     </li>
+
+                                        <div class="accordion">
+                        <li class="nav-item px-3 mb-1">
+                            <a class="nav-link p-2" asp-area="" asp-controller="" asp-action="" data-toggle="collapse" id="#adimnAccordId" data-target="#adimnAccord" aria-controls="adimnAccord">
+                                <i class="fa fa-user-circle" ></i> Master Data <i class="fa fa-angle-down" ></i>
+                            </a>
+                        </li>
+                        <div id="adimnAccord" class="collapse in" role="tabpanel">
+                            <li class="nav-item px-3 mb-1">
+                                <a class="nav-link p-2" asp-area="" asp-controller="Branches" asp-action="Index">
+                                    <i class="fa fa-home" ></i> Branches
+                                </a>
+                            </li>
+                            <li class="nav-item px-3 mb-1">
+                                <a class="nav-link p-2" asp-area="" asp-controller="Categories" asp-action="Index">
+                                    <i class="fa fa-home" ></i> Categories
+                                </a>
+                            </li>
+                        </div>
+                    </div>
                      @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                     {
                     <div class="accordion">
@@ -153,7 +175,22 @@
     <script src="~/js/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/js/datatable.min.js"></script>
     <script src="~/js/datatable.bootstrap.min.js"></script>
-
+    <script>
+    var localizedData = {
+           'sProcessing': '@Localizer["sProcessing"]',
+            'sLengthMenu': '@Localizer["sLengthMenu"]',
+            'sZeroRecords': '@Localizer["sZeroRecords"]',
+            'sInfo': '@Localizer["sInfo"]',
+            'sInfoEmpty': '@Localizer["sInfoEmpty"]',
+            'sInfoFiltered': '@Localizer["sInfoFiltered"]',
+            'sSearch': '@Localizer["sSearch"]',
+            'sFirst': '@Localizer["sFirst"]',
+            'sPrevious': '@Localizer["sPrevious"]',
+            'sNext': '@Localizer["sNext"]',
+            'sLast':'@Localizer["sLast"]'
+    
+    }
+</script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

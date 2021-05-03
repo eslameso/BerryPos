@@ -544,3 +544,9 @@ E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Branches\Create.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Branches\Edit.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Shared._Layout.ar.resources
 E:\Projects\Pos\obj\Debug\net5.0\Pos.Resources.Views.Shared._Layout.en.resources
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Categories\Create.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Categories\Edit.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Categories\Index.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\JobTitles\Create.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\JobTitles\Edit.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\JobTitles\Index.cshtml.g.cs

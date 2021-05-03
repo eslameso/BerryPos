@@ -106,6 +106,12 @@
                                     <i class="fa fa-home" ></i> Categories
                                 </a>
                             </li>
+
+                            <li class="nav-item px-3 mb-1">
+                                <a class="nav-link p-2" asp-area="" asp-controller="JobTitles" asp-action="Index">
+                                    <i class="fa fa-home" ></i> JobTitles
+                                </a>
+                            </li>
                         </div>
                     </div>
                      @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))

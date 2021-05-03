@@ -8,11 +8,11 @@ using Pos.ViewModels;
 
 namespace Pos.Controllers
 {
-    public class BranchesController : Controller
+    public class JobTitlesController : Controller
     {
         
         private readonly IUnitOfWork _uow;
-        public BranchesController(IUnitOfWork uow)
+        public JobTitlesController(IUnitOfWork uow)
         {
             _uow = uow;
           
@@ -22,12 +22,12 @@ namespace Pos.Controllers
      return View();
  }
  
-public IActionResult GetListOfBranches (int start=0,int length=10 )
+public IActionResult GetListOfJobtitles (int start=0,int length=10 )
 {
 var SearchBar=HttpContext.Request.Query["search[value]"].ToString();
 var Order= int.Parse((HttpContext.Request.Query["order[0][column]"]));
 var OrderDir=HttpContext.Request.Query["order[0][dir]"].ToString();
-var Query=_uow.Branches.GetAllBranchesSD(SearchBar);
+var Query=_uow.JobTitles.GetAllJobTitlesSD(SearchBar);
 
 if (Order==0)
 {
@@ -39,15 +39,12 @@ else if (Order==1)
 }
 else if (Order==2)
 {
-    Query=(OrderDir=="asc" ? Query.OrderBy(m =>m.Address) : Query.OrderByDescending(m=>m.Address));
+    Query=(OrderDir=="asc" ? Query.OrderBy(m =>m.Notes) : Query.OrderByDescending(m=>m.Notes));
 }
-else if (Order==3)
-{
-    Query=(OrderDir=="asc" ? Query.OrderBy(m =>m.Description) : Query.OrderByDescending(m=>m.Description));
-}
+
 var Count = Query.Count();
 var Model=Query.Skip(start).Take(length).Select(m => new {
-m.Id,m.Code,m.Name,m.Address,m.Description
+m.Id,m.Code,m.Name,m.Notes
 }
     
 ).ToList();
@@ -62,25 +59,23 @@ public IActionResult Create()
 }
 
 [HttpPost]
-public IActionResult Create(CreateBranchMv model)
+public IActionResult Create(CreateJobTitlesMv model)
 {
     if (ModelState.IsValid)
     {
-        Branches branches=new Branches(){
+        JobTitles jobTitle=new JobTitles(){
            Code=model.Code,
            Name=model.Name,
-           Address=model.Address,
-           Description=model.Description
+           Notes=model.Notes
         };
 
-        _uow.Branches.CreateBranch(branches);
+        _uow.JobTitles.CreateJobTitle(jobTitle);
         _uow.SaveAsync();
 
     }
     else
     {
         ModelState.AddModelError(string.Empty,"Invalid Create Attempt");
-       
      }
      return PartialView(model);
 
@@ -89,44 +84,43 @@ public IActionResult Create(CreateBranchMv model)
 [AllowAnonymous]
 public IActionResult CreateCodeValidation(int Code)
 {
-    return Json(_uow.Branches.IsCreateCodeExist(Code));
+    return Json(_uow.JobTitles.IsCreateCodeExist(Code));
 }
 
 [AcceptVerbs("Get","Post")]
 [AllowAnonymous]
 public IActionResult IsCreateNameExist(string Name)
 {
-    return Json(_uow.Branches.IsCreateNameExist(Name));
+    return Json(_uow.JobTitles.IsCreateNameExist(Name));
 }
 
 public IActionResult Edit(int id)
 {
-var Branch=_uow.Branches.FindBranch(id);
+var jobTitle=_uow.JobTitles.FindJobTitle(id);
 
-EditBranchMv model=new EditBranchMv (){
-    Id=Branch.Id,
-    Code=Branch.Code,
-    Name=Branch.Name,
-    Address=Branch.Address,
-    Description=Branch.Description
+EditJobTitlesMv model=new EditJobTitlesMv (){
+    Id=jobTitle.Id,
+    Code=jobTitle.Code,
+    Name=jobTitle.Name,
+    Notes=jobTitle.Notes
+    
 };
 return PartialView(model);
 }
 
 [HttpPost]
-public IActionResult Edit(EditBranchMv model)
+public IActionResult Edit(EditJobTitlesMv model)
 {
 
    if (ModelState.IsValid)
    {
-        Branches branche=new Branches(){
+        JobTitles jobTitle=new JobTitles(){
         Id=model.Id,
         Code=model.Code,
         Name=model.Name,
-        Address=model.Address,
-        Description=model.Description
+        Notes=model.Notes
     };
-    _uow.Branches.EditBranch(branche);
+    _uow.JobTitles.EditJobTitle(jobTitle);
     _uow.SaveAsync();
    }
    else
@@ -142,14 +136,14 @@ public IActionResult Edit(EditBranchMv model)
 [AllowAnonymous]
 public IActionResult EditCodeValidation(int Code,int id)
 {
-    return Json(_uow.Branches.IsEditCodeExist(Code,id));
+    return Json(_uow.JobTitles.IsEditCodeExist(Code,id));
 }
 
 [AcceptVerbs("Get","Post")]
 [AllowAnonymous]
 public IActionResult IsEditNameExist(string Name,int id)
 {
-    return Json(_uow.Branches.IsEditNameExist(Name,id));
+    return Json(_uow.JobTitles.IsEditNameExist(Name,id));
 }
 
 
@@ -162,7 +156,7 @@ public IActionResult Delete(int Id)
     try{
         if (! HasForegnKey(Id))
         {
-        _uow.Branches.DeleteBranch(Id);
+        _uow.JobTitles.DeleteJobTitle(Id);
         _uow.SaveAsync();
          return Json(true);
         }
@@ -181,7 +175,7 @@ public IActionResult Delete(int Id)
 public bool HasForegnKey(int id)
 {
 
-    return _uow.Branches.HasForegnKeyWithUser(id);
+    return _uow.JobTitles.HasForegnKeyWithUser(id);
 }
 
 

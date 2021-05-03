@@ -2,17 +2,15 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Pos.Models;
 
-namespace Pos.Data.Intefaces
+namespace Pos.Data.Interfaces
 {
-    public interface IJobtitlesRepo
+    public interface IBranchesRepo
     {
-         Task<List<JobTitles>> GetAllJobTitles();
-         
+     Task<List<Branches>> GetAllBranches();
      
      //SD This Mean That This Action Is For Server Side Data Table
-     IEnumerable<JobTitles> GetAllJobTitlesSD(string SearchBar);
-     void DeleteJobTitle(int Id);
-     
+     IEnumerable<Branches> GetAllBranchesSD(string SearchBar);
+     void DeleteBranch(int Id);
      bool HasForegnKeyWithUser(int Id);
      bool IsCreateCodeExist(int Code);
      bool IsCreateNameExist(string Name);
@@ -20,10 +18,12 @@ namespace Pos.Data.Intefaces
       bool IsEditCodeExist(int Code,int id);
      bool IsEditNameExist(string Name,int id);
 
-     void CreateJobTitle(JobTitles JobTitle);
+     void CreateBranch(Branches branch);
 
-     JobTitles FindJobTitle(int id);
+     Branches FindBranch(int id);
 
-     void EditJobTitle(JobTitles JobTitle);
+     void EditBranch(Branches branche);
+     
+
     }
 }

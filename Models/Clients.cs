@@ -9,9 +9,9 @@ namespace Pos.Models
         public string Name { get; set; }
         public string NameA { get; set; }
         public string Address { get; set; }
-        public int MobileNumber { get; set; }
-        public int OthrMobileNumber { get; set; }
-        public int PhoneNumber { get; set; }
+        public string MobileNumber { get; set; }
+        public string OthrMobileNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public int Age { get; set; }
         public string Email { get; set; }
         public string Notes { get; set; }

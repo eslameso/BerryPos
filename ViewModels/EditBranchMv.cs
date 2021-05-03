@@ -3,21 +3,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Pos.ViewModels
 {
-    public class EditBranchMv
+    public class EditClientMv
     {
      public int Id { get; set; }
-    [Required]
-     [Display(Name="Branch Code")]
-     [Remote(action:"EditCodeValidation",controller:"Branches",AdditionalFields="Id",ErrorMessage="This Code Is Already Exist .")]
+     [Required]
+     [Display(Name="Client Code")]
+     [Remote(action:"CreateCodeValidation",controller:"Clients",ErrorMessage="This Code Is Already Exist .")]
       public int Code { get; set; }
       [Required]
-      [Display(Name="Branch Name")]
-      [Remote(action:"IsEditNameExist",controller:"Branches",AdditionalFields="Id",ErrorMessage="This Name Is Already Exist .")]
+      [Display(Name="Client Name")]
+      [Remote(action:"IsCreateNameExist",controller:"Clients",ErrorMessage="This Name Is Already Exist .")]
       public string Name { get; set; }
-      [Required]
-      [Display(Name="Branch Address")]
-      public string Address { get; set; }
-      [Display(Name="Description")]
-      public string Description { get; set; }
+       [Required(ErrorMessage="The Email field is required")]
+        [EmailAddress]
+        [Display(Name="Email Address")]
+        // [Remote(action:"IsEmailInUse",controller:"Clients")]
+      public string Email { get; set; }
+      [RegularExpression(@"^(?:\d{2}-\d{3}-\d{3}-\d{3}|\d{11})$", ErrorMessage = "Entered phone format is not valid.")]
+      [Display(Name="Mobile Number")]
+      public string MobileNumber { get; set; }
     }
 }

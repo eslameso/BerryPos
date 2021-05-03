@@ -21,7 +21,13 @@ namespace Pos.Data.Implementation
         new BranchesRepo(_db,_UserManager);
 
         public IJobtitlesRepo JobTitles => 
-        new JobtitlesRepo(_db);
+        new JobtitlesRepo(_db,_UserManager);
+
+        public ICategoriesRepo categories => 
+        new CategoriesRepo(_db,_UserManager);
+
+        public IClientsRepo clients =>
+        new ClientsRepo(_db,_UserManager);
 
         public bool SaveAsync()
         {

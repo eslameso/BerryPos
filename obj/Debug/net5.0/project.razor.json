@@ -15619,6 +15619,11 @@
   "RootNamespace": "Pos",
   "Documents": [
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Branches copy\\Create.cshtml",
+      "TargetPath": "Views\\Branches copy\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Branches\\Create.cshtml",
       "TargetPath": "Views\\Branches\\Create.cshtml",
       "FileKind": "mvc"
@@ -15664,6 +15669,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Categories\\Index.cshtml",
+      "TargetPath": "Views\\Categories\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Account\\CompleteProfile.cshtml",
       "TargetPath": "Views\\Account\\CompleteProfile.cshtml",
       "FileKind": "mvc"
@@ -15671,6 +15681,11 @@
     {
       "FilePath": "e:\\Projects\\Pos\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Categories\\Create.cshtml",
+      "TargetPath": "Views\\Categories\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15704,6 +15719,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Branches copy\\Index.cshtml",
+      "TargetPath": "Views\\Branches copy\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Categories\\Edit.cshtml",
+      "TargetPath": "Views\\Categories\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -15731,6 +15756,11 @@
     {
       "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\MangeRolesOfUsers.cshtml",
       "TargetPath": "Views\\Adminstrator\\MangeRolesOfUsers.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Branches copy\\Edit.cshtml",
+      "TargetPath": "Views\\Branches copy\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {

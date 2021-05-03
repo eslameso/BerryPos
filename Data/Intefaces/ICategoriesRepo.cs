@@ -4,26 +4,26 @@ using Pos.Models;
 
 namespace Pos.Data.Interfaces
 {
-    public interface IBranchesRepo
+    public interface ICategoriesRepo
     {
-     Task<List<Branches>> GetAllBranches();
+     Task<List<Category>> GetAllCategories();
      
      //SD This Mean That This Action Is For Server Side Data Table
-     IEnumerable<Branches> GetAllBranchesSD(string SearchBar);
-     void DeleteBranch(int Id);
+     IEnumerable<Category> GetAllCategoriessSD(string SearchBar);
+     void DeleteCategory(int Id);
      
-     bool HasForegnKeyWithUser(int Id);
+     bool HasForegnKeyWithProduct(int Id);
      bool IsCreateCodeExist(int Code);
      bool IsCreateNameExist(string Name);
 
       bool IsEditCodeExist(int Code,int id);
      bool IsEditNameExist(string Name,int id);
 
-     void CreateBranch(Branches branch);
+     void CreateCategory(Category category);
 
-     Branches FindBranch(int id);
+     Category FindCategory(int id);
 
-     void EditBranch(Branches branche);
+     void EditCategory(Category category);
      
 
     }

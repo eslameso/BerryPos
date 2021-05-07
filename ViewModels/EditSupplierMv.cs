@@ -3,16 +3,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Pos.ViewModels
 {
-    public class EditClientMv
+    public class EditSupplierMv
     {
      public int Id { get; set; }
      [Required]
-     [Display(Name="Client Code")]
-     [Remote(action:"EditCodeValidation",controller:"Clients",AdditionalFields="Id",ErrorMessage="This Code Is Already Exist .")]
+     [Display(Name="Supplier Code")]
+     [Remote(action:"EditCodeValidation",controller:"Suppliers",AdditionalFields="Id",ErrorMessage="This Code Is Already Exist .")]
       public int Code { get; set; }
       [Required]
-      [Display(Name="Client Name")]
-     [Remote(action:"IsEditNameExist",controller:"Clients",AdditionalFields="Id",ErrorMessage="This Name Is Already Exist .")]
+      [Display(Name="Supplier Name")]
+     [Remote(action:"IsEditNameExist",controller:"Suppliers",AdditionalFields="Id",ErrorMessage="This Name Is Already Exist .")]
       public string Name { get; set; }
        [Required(ErrorMessage="The Email field is required")]
         [EmailAddress]

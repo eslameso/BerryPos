@@ -4,13 +4,13 @@ using Pos.Models;
 
 namespace Pos.Data.Interfaces
 {
-    public interface IClientsRepo
+    public interface ISuppliersRepo
     {
-     Task<List<Clients>> GetAllClients();
+     Task<List<Suppliers>> GetAllSuppliers();
      
      //SD This Mean That This Action Is For Server Side Data Table
-     IEnumerable<Clients> GetAllClientsSD(string SearchBar);
-     void DeleteClient(int Id);
+     IEnumerable<Suppliers> GetAllSuppliersSD(string SearchBar);
+     void DeleteSupplier(int Id);
       bool IsCreateCodeExist(int Code);
      bool IsCreateNameExist(string Name);
       bool IsEmailInUse(string Email);
@@ -18,13 +18,13 @@ namespace Pos.Data.Interfaces
       bool IsEditCodeExist(int Code,int id);
      bool IsEditNameExist(string Name,int id);
 
-     void CreateClient(Clients Client);
+     void CreateSupplier(Suppliers Supplier);
 
-     Clients FindClient(int id);
+     Suppliers FindSupplier(int id);
 
-     void EditClient(Clients Client);
+     void EditSupplier(Suppliers Supplier);
 
-     bool HasForegnKeyWithSalesInvoice(int id);
+     bool HasForegnKeyWithPurchaseInvoice(int id);
      
 
     }

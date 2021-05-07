@@ -8,6 +8,8 @@ namespace Pos.Data.Intefaces
         IBranchesRepo Branches {get;}
         IJobtitlesRepo JobTitles {get;}
         ICategoriesRepo categories{get;}
+        IClientsRepo  clients{get;}
+        ISuppliersRepo Suppliers{get;}
         
         bool SaveAsync();
         

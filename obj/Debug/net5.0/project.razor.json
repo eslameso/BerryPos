@@ -15619,11 +15619,6 @@
   "RootNamespace": "Pos",
   "Documents": [
     {
-      "FilePath": "e:\\Projects\\Pos\\Views\\Branches copy\\Create.cshtml",
-      "TargetPath": "Views\\Branches copy\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Branches\\Create.cshtml",
       "TargetPath": "Views\\Branches\\Create.cshtml",
       "FileKind": "mvc"
@@ -15669,8 +15664,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Suppliers\\Create.cshtml",
+      "TargetPath": "Views\\Suppliers\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Categories\\Index.cshtml",
       "TargetPath": "Views\\Categories\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Clients\\Index.cshtml",
+      "TargetPath": "Views\\Clients\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\JobTitles\\Edit.cshtml",
+      "TargetPath": "Views\\JobTitles\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15694,8 +15704,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\JobTitles\\Index.cshtml",
+      "TargetPath": "Views\\JobTitles\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Suppliers\\Edit.cshtml",
+      "TargetPath": "Views\\Suppliers\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15719,11 +15739,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\Projects\\Pos\\Views\\Branches copy\\Index.cshtml",
-      "TargetPath": "Views\\Branches copy\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Categories\\Edit.cshtml",
       "TargetPath": "Views\\Categories\\Edit.cshtml",
       "FileKind": "mvc"
@@ -15731,6 +15746,11 @@
     {
       "FilePath": "e:\\Projects\\Pos\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Clients\\Create.cshtml",
+      "TargetPath": "Views\\Clients\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15744,6 +15764,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Clients\\Edit.cshtml",
+      "TargetPath": "Views\\Clients\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Account\\Register.cshtml",
       "TargetPath": "Views\\Account\\Register.cshtml",
       "FileKind": "mvc"
@@ -15754,13 +15779,18 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\MangeRolesOfUsers.cshtml",
-      "TargetPath": "Views\\Adminstrator\\MangeRolesOfUsers.cshtml",
+      "FilePath": "e:\\Projects\\Pos\\Views\\Suppliers\\Index.cshtml",
+      "TargetPath": "Views\\Suppliers\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\Projects\\Pos\\Views\\Branches copy\\Edit.cshtml",
-      "TargetPath": "Views\\Branches copy\\Edit.cshtml",
+      "FilePath": "e:\\Projects\\Pos\\Views\\JobTitles\\Create.cshtml",
+      "TargetPath": "Views\\JobTitles\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\MangeRolesOfUsers.cshtml",
+      "TargetPath": "Views\\Adminstrator\\MangeRolesOfUsers.cshtml",
       "FileKind": "mvc"
     },
     {

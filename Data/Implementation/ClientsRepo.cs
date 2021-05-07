@@ -85,5 +85,17 @@ namespace Pos.Data.Implementation
             bool Result = _db.Clients.Where(c => c.Email ==Email).Any();
             return Result;
         }
+
+        public bool HasForegnKeyWithSalesInvoice(int id)
+        {
+            var Count = _db.Clients.Include(m => m.SaleInvoices).FirstOrDefault(m=>m.Id==id).SaleInvoices.Count();
+             if (Count == 0)
+             {
+                 return false;
+             }
+             else{
+                 return true;
+             }
+        }
     }
 }

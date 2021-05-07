@@ -550,3 +550,9 @@ E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Categories\Index.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\JobTitles\Create.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\JobTitles\Edit.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\JobTitles\Index.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Clients\Create.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Clients\Edit.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Clients\Index.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Suppliers\Create.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Suppliers\Edit.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Suppliers\Index.cshtml.g.cs

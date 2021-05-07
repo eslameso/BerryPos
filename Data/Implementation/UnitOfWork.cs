@@ -29,6 +29,9 @@ namespace Pos.Data.Implementation
         public IClientsRepo clients =>
         new ClientsRepo(_db,_UserManager);
 
+        public ISuppliersRepo Suppliers =>
+         new SuppliersRepo(_db,_UserManager);
+
         public bool SaveAsync()
         {
              return _db.SaveChanges() > 0;

@@ -15619,6 +15619,11 @@
   "RootNamespace": "Pos",
   "Documents": [
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\CompanyProfile\\Create.cshtml",
+      "TargetPath": "Views\\CompanyProfile\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Branches\\Create.cshtml",
       "TargetPath": "Views\\Branches\\Create.cshtml",
       "FileKind": "mvc"
@@ -15656,6 +15661,11 @@
     {
       "FilePath": "e:\\Projects\\Pos\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Stores\\Create.cshtml",
+      "TargetPath": "Views\\Stores\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15719,6 +15729,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\CompanyProfile\\Index.cshtml",
+      "TargetPath": "Views\\CompanyProfile\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\EditRole.cshtml",
       "TargetPath": "Views\\Adminstrator\\EditRole.cshtml",
       "FileKind": "mvc"
@@ -15731,6 +15746,11 @@
     {
       "FilePath": "e:\\Projects\\Pos\\Views\\Account\\AccessDenied.cshtml",
       "TargetPath": "Views\\Account\\AccessDenied.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Stores\\Index.cshtml",
+      "TargetPath": "Views\\Stores\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15754,6 +15774,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Projects\\Pos\\Views\\CompanyProfile\\Edit.cshtml",
+      "TargetPath": "Views\\CompanyProfile\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Projects\\Pos\\Views\\Adminstrator\\CreateRole.cshtml",
       "TargetPath": "Views\\Adminstrator\\CreateRole.cshtml",
       "FileKind": "mvc"
@@ -15766,6 +15791,11 @@
     {
       "FilePath": "e:\\Projects\\Pos\\Views\\Clients\\Edit.cshtml",
       "TargetPath": "Views\\Clients\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Projects\\Pos\\Views\\Stores\\Edit.cshtml",
+      "TargetPath": "Views\\Stores\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {

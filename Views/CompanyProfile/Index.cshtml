@@ -1,0 +1,41 @@
+@model CompanyProfile
+@{
+    ViewData["Title"]="Company Profile";
+}
+<h3>Company Profile</h3>
+<br>
+@if (Model !=null)
+{
+<div class="card ">
+  <div class="card-header ">
+     <h4 class="text-primary"> Comapny Name : @(string.IsNullOrEmpty(Model.CompanyName) ? "" : @Model.CompanyName )</h4>
+  </div>
+  <div class="card-body">
+    <h5 class="card-text text-primary">Comapany Logo : </h5>
+    <img src="/Uploads/@Model.CompanyLogo" style="width: 100px; height:70px;" > 
+    <h5 class="card-text text-primary">Comapany Owner Name : </h5> <h5> @(Model.OwnerName == null ? "" : @Model.OwnerName) </h5>
+    <h5 class="card-text text-primary">Comapany Type : </h5> <h5> @(Model.ComapanyType == null ? "" : @Model.ComapanyType) </h5>
+     <h5 class="card-text text-primary">Comapany Description : </h5> <h5> @(Model.CompanyDescription == null ? "" : @Model.CompanyDescription) </h5>
+    <h5 class="card-text text-primary"> Notes : </h5> <h5> @(Model.Notes == null ? "" : @Model.Notes) </h5>
+   </div>
+  <div class="card-footer text-muted">
+    <a class="btn btn-primary" asp-action="Edit" asp-controller="companyprofile" asp-route-id="@Model.Id">Edit</a>
+   
+  </div>
+</div>
+}
+else
+{
+ <div class="card ">
+  <div class="card-header">
+     <h4 class="text-primary"> Comapny Name : No Name</h4>
+  </div>
+  <div class="card-body">
+    <h5 class="card-text">There Is No Data About Your Company</h5>
+   </div>
+  <div class="card-footer text-muted">
+    <a class="btn btn-primary" asp-action="Create" asp-controller="companyprofile">Add Data</a>
+   
+  </div>
+</div>   
+}

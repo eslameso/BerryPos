@@ -10,6 +10,9 @@ namespace Pos.Data.Intefaces
         ICategoriesRepo categories{get;}
         IClientsRepo  clients{get;}
         ISuppliersRepo Suppliers{get;}
+        IStoresRepo Stores {get;}
+        ICompanyProfileRepo CompanyProfile {get;}
+        
         
         bool SaveAsync();
         

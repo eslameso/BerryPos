@@ -32,6 +32,12 @@ namespace Pos.Data.Implementation
         public ISuppliersRepo Suppliers =>
          new SuppliersRepo(_db,_UserManager);
 
+        public IStoresRepo Stores => 
+        new StoresRepo(_db,_UserManager);
+
+        public ICompanyProfileRepo CompanyProfile =>
+         new CompanyProfileRepo(_db);
+
         public bool SaveAsync()
         {
              return _db.SaveChanges() > 0;

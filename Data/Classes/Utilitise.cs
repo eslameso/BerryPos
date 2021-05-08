@@ -1,0 +1,54 @@
+using System.IO;
+using System.Linq;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+
+namespace Pos.Data.Classes
+{
+    public class Utilitise
+    {
+         private readonly IWebHostEnvironment _hosting;
+
+         public Utilitise(IWebHostEnvironment hosting)
+         {
+           _hosting=hosting;
+         }
+        //ToDo Function To Check If The File Is Image Or Not
+           public bool IsImageUpload(string FileName)
+        {
+             var supportedTypes = new[] { "JPEG ", "JPG", "PNG","jpeg","jpg","png"};
+              var fileExt = Path.GetExtension(FileName).Substring(1);  
+                if (supportedTypes.Contains(fileExt))  
+                {  
+                            return true;
+                 }
+                 else
+                 {
+                             return false;
+                 }
+        }
+
+         public void UploadImage(string FileName,IFormFile Photo)
+          {         
+                 string Uploads=Path.Combine(_hosting.WebRootPath,"Uploads");
+                 string FullPath=Path.Combine(Uploads,FileName);
+                 Photo.CopyTo(new FileStream(FullPath,FileMode.Create));
+          }
+
+       public void EditImage(string FileName,IFormFile Photo,string OldFileName)
+       {
+           string Uploads=Path.Combine(_hosting.WebRootPath,"Uploads");
+                 string FullPath=Path.Combine(Uploads,FileName);
+                
+                 string FullOldPath=Path.Combine(Uploads,OldFileName);
+                 if (!string.IsNullOrEmpty(OldFileName) && FullPath != FullOldPath)
+                 {
+                     File.Delete(FullOldPath);
+                     
+                 }
+                 Photo.CopyTo(new FileStream(FullPath,FileMode.Create));
+                 
+
+       }
+    }
+}

@@ -32,7 +32,10 @@ namespace Pos.Data.Classes
           {         
                  string Uploads=Path.Combine(_hosting.WebRootPath,"Uploads");
                  string FullPath=Path.Combine(Uploads,FileName);
-                 Photo.CopyTo(new FileStream(FullPath,FileMode.Create));
+                 using (var fileStream = new FileStream(FullPath, FileMode.Create))  
+                {  
+                    Photo.CopyTo(fileStream);  
+                } 
           }
 
        public void EditImage(string FileName,IFormFile Photo,string OldFileName)
@@ -46,8 +49,13 @@ namespace Pos.Data.Classes
                      File.Delete(FullOldPath);
                      
                  }
-                 Photo.CopyTo(new FileStream(FullPath,FileMode.Create));
+                
+                 using (var fileStream = new FileStream(FullPath, FileMode.Create))  
+                {  
+                    Photo.CopyTo(fileStream);  
+                } 
                  
+                
 
        }
     }

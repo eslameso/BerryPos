@@ -247,10 +247,12 @@ namespace Pos.Controllers
             return RedirectToAction("EditRole", new { id = roleid });
         }
 
-
-        public IActionResult GetAllUsers()
+        [HttpGet]
+        public  IActionResult GetAllUsers()
         {
-            var Users = UserManager.Users.ToList();
+            var Users =  UserManager.Users.Select(m => new EmployeeDataMv{Id=m.Id,Name= m.EmployeeName
+            ,BranchName=m.Branches.Name,Email=m.Email,JobTitleName=m.jobTitles.Name,HireDate=m.HireDate
+            ,MobileNumber=m.MobileNumber}).ToList();
             return View(Users);
         }
 

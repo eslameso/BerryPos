@@ -4,8 +4,10 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Pos.Data.Classes;
 using Pos.Data.Intefaces;
 using Pos.Models;
 using Pos.ViewModels;
@@ -18,13 +20,16 @@ namespace Pos.Controllers
         public RoleManager<IdentityRole> RoleManager { get; }
         public UserManager<ApplicationUsers> UserManager { get; }
         public readonly IUnitOfWork _uow;
+         private readonly IWebHostEnvironment _hosting;
+        Utilitise utilitise;
 
-        public AdminstratorController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUsers> userManager, IUnitOfWork uow)
+        public AdminstratorController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUsers> userManager, IUnitOfWork uow,IWebHostEnvironment hosting)
         {
             _uow = uow;
             this.UserManager = userManager;
             this.RoleManager = roleManager;
-
+            _hosting=hosting;
+            utilitise =new Utilitise(_hosting);
         }
 
 
@@ -290,7 +295,7 @@ namespace Pos.Controllers
             var _Claims = await UserManager.GetClaimsAsync(User);
             var _Branches= await _uow.Branches.GetAllBranches();
             var _JobTitles=await _uow.JobTitles.GetAllJobTitles();
-
+            ViewBag.ImageUrl=User.Photo;
             var Model = new EditUserMv()
             {
                 Id = User.Id,
@@ -307,7 +312,8 @@ namespace Pos.Controllers
                 BranchId=User.BranchId,
                 JobtitleId=User.JobtitleId,
                 Roles = _Roles,
-                Claims = _Claims.Select(m => m.Value).ToList()
+                Claims = _Claims.Select(m => m.Value).ToList(),
+                
 
             };
 
@@ -327,6 +333,23 @@ namespace Pos.Controllers
                     return View("NotFound");
                 }
 
+                string FileName=string.Empty;
+                string OldFileName=string.Empty;
+                if (Model.Image !=null)
+                {
+                    
+                    if (utilitise.IsImageUpload(Model.Image.FileName))
+                    {
+                        FileName=Model.Image.FileName;
+                        OldFileName=User.Photo;
+                        utilitise.EditImage(FileName,Model.Image,OldFileName);
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty,"You Can Choose Images Only.");
+                        return View(Model);
+                    }
+                }
                 User.UserName = Model.UserName;
                 User.EmployeeName = Model.EmployeeName;
                 User.Email = Model.Email;
@@ -337,6 +360,7 @@ namespace Pos.Controllers
                 User.NationalNumber = Model.NationalNumber;
                 User.BranchId=Model.BranchId;
                 User.JobtitleId=Model.JobtitleId;
+                User.Photo=FileName;
 
                 var Result = await UserManager.UpdateAsync(User);
                 if (Result.Succeeded)

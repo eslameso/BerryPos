@@ -14,7 +14,7 @@ namespace Pos.Data.Interfaces
       bool IsCreateCodeExist(int Code);
      bool IsCreateNameExist(string Name);
       bool IsEmailInUse(string Email);
-
+      bool IsEmailInUseEdit (string Email,int Id);
       bool IsEditCodeExist(int Code,int id);
      bool IsEditNameExist(string Name,int id);
 

@@ -13,7 +13,7 @@ namespace Pos
         {
             this.AllowedDomain = AllowedDomain;
             
-        }
+        } 
         public override bool IsValid(object value)
         {
             //ToDo Split The Email To Two Part

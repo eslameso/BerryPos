@@ -152,7 +152,19 @@ public IActionResult IsEditNameExist(string Name,int id)
     return Json(_uow.Suppliers.IsEditNameExist(Name,id));
 }
 
+[AcceptVerbs("Get","Post")]
+[AllowAnonymous]
+public IActionResult IsEmailInUseEdit(string Email,int Id)
+{
+    return Json(_uow.Suppliers.IsEmailInUseEdit(Email,Id));
+}
 
+[AcceptVerbs("Get","Post")]
+[AllowAnonymous]
+public IActionResult IsEmailInUse(string Email)
+{
+    return Json(_uow.Suppliers.IsEmailInUse(Email));
+}
 
 
 

@@ -86,6 +86,12 @@ namespace Pos.Data.Implementation
             return Result;
         }
 
+          public bool IsEmailInUseEdit(string Email,int Id)
+        {
+            bool Result = _db.Clients.Where(c => c.Email ==Email && c.Id != Id).Any();
+            return Result;
+        }
+
         public bool HasForegnKeyWithSalesInvoice(int id)
         {
             var Count = _db.Clients.Include(m => m.SaleInvoices).FirstOrDefault(m=>m.Id==id).SaleInvoices.Count();

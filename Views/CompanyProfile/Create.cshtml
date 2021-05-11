@@ -43,7 +43,7 @@
         <label asp-for="CompanyLogo" class="control-label"></label>
           <div class="imgSec col-12 row">
            <img class="col-md-2 col-4" id="LogoImg" src="" alt="" width="100px" height="70px"  style="border: 1px solid #9e9e9e;padding: 5px;background-color: #ffffff8a;margin-bottom: 5px;"/> 
-           <input class="col-md-10 col-8" asp-for="CompanyLogo" type="file" class="form-control-file" id="imgInp" />
+           <input asp-for="CompanyLogo" type="file" class="form-control" id="customFile" />
             </div>
            <span asp-validation-for="CompanyLogo" class="text-danger"></span>
        </div>
@@ -80,7 +80,7 @@
         }   
         reader.readAsDataURL(input.files[0]); // convert to base64 string
       }}
-      $("#imgInp").change(function() {
+      $("#customFile").change(function() {
        readURL(this);
    }); 
     </script>

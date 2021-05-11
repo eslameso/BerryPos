@@ -92,6 +92,21 @@ public IActionResult CreateCodeValidation(int Code)
     return Json(_uow.clients.IsCreateCodeExist(Code));
 }
 
+
+[AcceptVerbs("Get","Post")]
+[AllowAnonymous]
+public IActionResult IsEmailInUseEdit(string Email,int Id)
+{
+    return Json(_uow.clients.IsEmailInUseEdit(Email,Id));
+}
+
+[AcceptVerbs("Get","Post")]
+[AllowAnonymous]
+public IActionResult IsEmailInUse(string Email)
+{
+    return Json(_uow.clients.IsEmailInUse(Email));
+}
+
 [AcceptVerbs("Get","Post")]
 [AllowAnonymous]
 public IActionResult IsCreateNameExist(string Name)

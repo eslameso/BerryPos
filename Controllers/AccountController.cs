@@ -178,6 +178,32 @@ namespace Pos.Controllers
 
         }
 
+         [AcceptVerbs("Get", "Post")]
+        [AllowAnonymous]
+        public IActionResult IsEmailInUseEdit(string Email,string Id)
+        {
+
+           bool Flag=true;
+             foreach (var item in  UserManager.Users)
+             {
+                 if (item.Id !=Id && item.Email == Email)
+                 {
+                     Flag=false;
+                 }
+             }
+            if (Flag == true )
+            {
+                return Json(data: true);
+            }
+            else
+            {
+
+                return Json(data: $"This Email {Email} Is Already Exist");
+            }
+
+
+        }
+
       
      
 

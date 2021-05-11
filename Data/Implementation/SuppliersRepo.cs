@@ -98,6 +98,10 @@ namespace Pos.Data.Implementation
              }
         }
 
-      
+        public bool IsEmailInUseEdit(string Email, int Id)
+        {
+           bool Result = _db.Suppliers.Where(c => c.Email ==Email && c.Id != Id).Any();
+            return Result;
+        }
     }
 }

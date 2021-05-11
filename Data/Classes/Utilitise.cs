@@ -43,7 +43,7 @@ namespace Pos.Data.Classes
            string Uploads=Path.Combine(_hosting.WebRootPath,"Uploads");
                  string FullPath=Path.Combine(Uploads,FileName);
                 
-                 string FullOldPath=Path.Combine(Uploads,OldFileName);
+                 string FullOldPath=Path.Combine(Uploads,(OldFileName == null ? "" : OldFileName));
                  if (!string.IsNullOrEmpty(OldFileName) && FullPath != FullOldPath)
                  {
                      File.Delete(FullOldPath);

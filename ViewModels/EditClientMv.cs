@@ -19,7 +19,7 @@ namespace Pos.ViewModels
         [Display(Name="Email Address")]
         // [Remote(action:"IsEmailInUse",controller:"Clients")]
         
-      [Remote(action:"IsEmailInUseEdit",controller:"Clients",AdditionalFields="Id",ErrorMessage="This Name Is Already Exist .")]
+      [Remote(action:"IsEmailInUseEdit",controller:"Clients",AdditionalFields="Id",ErrorMessage="This Email Is Already Exist .")]
       public string Email { get; set; }
       [Required]
       [RegularExpression(@"^(?:\d{2}-\d{3}-\d{3}-\d{3}|\d{11})$", ErrorMessage = "Entered phone format is not valid.")]

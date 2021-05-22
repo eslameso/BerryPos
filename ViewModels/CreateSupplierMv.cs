@@ -16,7 +16,7 @@ namespace Pos.ViewModels
        [Required(ErrorMessage="The Email field is required")]
         [EmailAddress]
         [Display(Name="Email Address")]
-        [Remote(action:"IsEmailInUse",controller:"Suppliers")]
+        [Remote(action:"IsEmailInUse",controller:"Suppliers",ErrorMessage="This Email Is Already Exist .")]
       public string Email { get; set; }
       [Required]
       [RegularExpression(@"^(?:\d{2}-\d{3}-\d{3}-\d{3}|\d{11})$", ErrorMessage = "Entered phone format is not valid.")]

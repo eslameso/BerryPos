@@ -82,13 +82,13 @@ namespace Pos.Data.Implementation
 
         public bool IsEmailInUse(string Email)
         {
-            bool Result = _db.Clients.Where(c => c.Email ==Email).Any();
+            bool Result =(! _db.Clients.Any(c => c.Email ==Email));
             return Result;
         }
 
           public bool IsEmailInUseEdit(string Email,int Id)
         {
-            bool Result = _db.Clients.Where(c => c.Email ==Email && c.Id != Id).Any();
+            bool Result =(! _db.Clients.Any(c => c.Email ==Email && c.Id != Id));
             return Result;
         }
 

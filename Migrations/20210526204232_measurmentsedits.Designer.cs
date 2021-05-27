@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pos.Models;
 
 namespace Pos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210526204232_measurmentsedits")]
+    partial class measurmentsedits
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -444,9 +446,6 @@ namespace Pos.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -455,9 +454,6 @@ namespace Pos.Migrations
 
                     b.Property<bool>("IsMain")
                         .HasColumnType("bit");
-
-                    b.Property<int>("MeasurmentType")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -504,6 +500,9 @@ namespace Pos.Migrations
                     b.Property<string>("Place")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Rack")
                         .HasColumnType("nvarchar(max)");
 
@@ -522,8 +521,14 @@ namespace Pos.Migrations
                     b.Property<int>("MeasurmentId")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MeasurmentType")
+                        .HasColumnType("int");
 
                     b.HasKey("ProductId", "MeasurmentId");
 
@@ -576,9 +581,6 @@ namespace Pos.Migrations
                     b.Property<int?>("BranchId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Discount")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<DateTime>("ExpireDate")
                         .HasColumnType("datetime2");
 
@@ -588,9 +590,6 @@ namespace Pos.Migrations
                     b.Property<DateTime>("PurchaseDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("PurchasePrice")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
@@ -599,12 +598,6 @@ namespace Pos.Migrations
 
                     b.Property<int?>("StoreId")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("Tax")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id", "ProductId", "SupplierId");
 
@@ -638,9 +631,6 @@ namespace Pos.Migrations
                     b.Property<int?>("BranchId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Discount")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
@@ -650,17 +640,8 @@ namespace Pos.Migrations
                     b.Property<DateTime>("SaleDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("SalesPrice")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<int?>("StoreId")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("Tax")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id", "ProductId", "ClientID");
 
@@ -741,46 +722,6 @@ namespace Pos.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Suppliers");
-                });
-
-            modelBuilder.Entity("Pos.Models.TransformationInvoices", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AppUserID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("From")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SerialNumber")
-                        .HasColumnType("int");
-
-                    b.Property<int>("To")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("TransformationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("TransformationType")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserID");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("TransformationInvoices");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -995,30 +936,11 @@ namespace Pos.Migrations
                     b.Navigation("Stores");
                 });
 
-            modelBuilder.Entity("Pos.Models.TransformationInvoices", b =>
-                {
-                    b.HasOne("Pos.Models.ApplicationUsers", "ApplicationUsers")
-                        .WithMany("TransformationInvoices")
-                        .HasForeignKey("AppUserID");
-
-                    b.HasOne("Pos.Models.Products", "Products")
-                        .WithMany("TransformationInvoices")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ApplicationUsers");
-
-                    b.Navigation("Products");
-                });
-
             modelBuilder.Entity("Pos.Models.ApplicationUsers", b =>
                 {
                     b.Navigation("PurchaseInvoices");
 
                     b.Navigation("SaleInvoices");
-
-                    b.Navigation("TransformationInvoices");
                 });
 
             modelBuilder.Entity("Pos.Models.Branches", b =>
@@ -1066,8 +988,6 @@ namespace Pos.Migrations
                     b.Navigation("ProductsStore");
 
                     b.Navigation("SaleInvoices");
-
-                    b.Navigation("TransformationInvoices");
                 });
 
             modelBuilder.Entity("Pos.Models.Stores", b =>

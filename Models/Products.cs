@@ -9,7 +9,8 @@ namespace Pos.Models
    public int Id { get; set; }
    public string Name { get; set; }
    public string NameA { get; set; }
-   public decimal Price { get; set; }
+  //  public decimal SalesPrice { get; set; }
+  //   public decimal PurchasePrice { get; set; }
    public string Barcode { get; set; }
    public string Photo { get; set; }
 
@@ -26,6 +27,7 @@ namespace Pos.Models
    public ICollection<BranchesProducts> BranchesProducts { get; set; }
    public ICollection<SaleInvoices> SaleInvoices { get; set; }
    public ICollection<ProductsMeasurments> ProductsMeasurments { get; set; }
+   public ICollection<TransformationInvoices> TransformationInvoices { get; set; }
 
 
  }

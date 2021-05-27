@@ -30,5 +30,6 @@ namespace Pos.Models
         
          public ICollection<SaleInvoices> SaleInvoices { get; set; }
          public ICollection<PurchaseInvoice> PurchaseInvoices { get; set; }
+         public ICollection<TransformationInvoices> TransformationInvoices { get; set; }
     }
 }

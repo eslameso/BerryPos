@@ -16,6 +16,10 @@ namespace Pos.Models
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
         public Products Products { get; set; }
+        public decimal SalesPrice { get; set; }
+        public decimal Tax { get; set; }
+        public decimal Discount { get; set; }
+        public decimal TotalPrice { get; set; }
         public int Quantity { get; set; }
         public DateTime SaleDateTime { get; set; }
         public int? StoreId { get; set; }

@@ -15,6 +15,11 @@ namespace Pos.Data.Implementation
 
         }
 
+        public void CreateProduct(Products product)
+        {
+            _db.Products.Add(product);
+        }
+
         public List<Products> GetAllProducts()
         {
           return _db.Products.ToList();

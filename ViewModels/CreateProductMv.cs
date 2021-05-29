@@ -13,6 +13,7 @@ namespace Pos.ViewModels
         public string NameA { get; set; }
         public string Barcode { get; set; }
         public List<Category> Categories { get; set; }
+        public int CategoryId { get; set; }
         public MeasurmentType MeasurmentTypes { get; set; }
         public string Descriptions { get; set; }
         public string Notes { get; set; }

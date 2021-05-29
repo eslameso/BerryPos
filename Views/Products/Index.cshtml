@@ -48,6 +48,39 @@ $(document).ready(function(){
 
 });
 
+$("#CreateProduct_btn").click(function(){
+    $.ajax({
+        url:"/Products/Create",
+        method:"Get",
+        success:function(result){
+            $('#modalcontent').html(result);
+                  $('#ItemsModal').modal("show");
+                 var form = $("form");
+                        form.removeData('validator');
+                        form.removeData('unobtrusiveValidation');
+                        $.validator.unobtrusive.parse(form);
+        }
+    });
+});
+
+    function CreateSuccess()
+    {
+     $('#ItemsModal').modal("hide");
+    swal("Successfuly Create Product ");
+    globalTable.ajax.reload();
+   
+    }
+
+    function CreateFailure()
+    {
+     $('#ItemsModal').modal("hide");
+    swal("Faild To Create Product ");
+    
+   
+    }
+
+
+
         
 </script>
 }

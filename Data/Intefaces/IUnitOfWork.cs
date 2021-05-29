@@ -12,6 +12,7 @@ namespace Pos.Data.Intefaces
         ISuppliersRepo Suppliers{get;}
         IStoresRepo Stores {get;}
         ICompanyProfileRepo CompanyProfile {get;}
+        IProductsRepo Products{get;}
         
         
         bool SaveAsync();

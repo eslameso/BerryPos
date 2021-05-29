@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"]="Branches";
+}
+
+<h2>Products</h2>
+
+<button id="CreateProduct_btn" class=" btn btn-primary mt-2">Create new Product</button>
+<br />
+<br />
+<table style="width:100%" class="table table-striped table-bordered" style="width:100%" id="ProductsTable">
+    <thead>
+        <tr>
+            <th>Bar Code</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="ItemsModal">
+    <div class="modal-dialog" role="document" id="modalcontent">
+
+    </div>
+</div>
+
+
+
+
+
+@section Scripts{
+     <script src="~/js/ServerSideDataTable.js"></script>
+<script>
+$(document).ready(function(){
+   let Coulmns=[{data:"barcode"},{data:"name"},{data:"categoryname"},{data:"descriptions"},
+   {data:"id",orderable:false, render: function (result, x, y) {
+                    return `<button class="btn default btn-editable edit-Item btn-primary" data-id="${result}"> <i class="fa fa-pencil"> </i> Edit </button>
+                            <button class="btn red btn delete-Item btn-danger" data-id="${result}"> <i class="glyphicon glyphicon-remove"> </i> Delete </button>`;
+                }
+
+   }];
+      
+      globalTable=tablePlugin("#ProductsTable","/Products/GetAllProducts",Coulmns,localizedData)
+
+});
+
+        
+</script>
+}

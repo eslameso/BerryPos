@@ -38,6 +38,9 @@ namespace Pos.Data.Implementation
         public ICompanyProfileRepo CompanyProfile =>
          new CompanyProfileRepo(_db);
 
+        public IProductsRepo Products =>
+        new ProductsRepo(_db);
+
         public bool SaveAsync()
         {
              return _db.SaveChanges() > 0;

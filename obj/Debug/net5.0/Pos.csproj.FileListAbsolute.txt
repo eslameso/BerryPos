@@ -562,3 +562,4 @@ E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Stores\Index.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\CompanyProfile\Index.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\CompanyProfile\Create.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\CompanyProfile\Edit.cshtml.g.cs
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Products\Index.cshtml.g.cs

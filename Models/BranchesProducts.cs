@@ -18,7 +18,11 @@ namespace Pos.Models
         public int Quantity { get; set; }
         public DateTime ExpireDate { get; set; }
         
-        public ICollection<ApplicationUsers> Users { get; set; }
+         public string Rack { get; set; }
+          public string Coulmn { get; set; }
+          public string Cell { get; set; }
+          public string Place { get; set; }
+         public ICollection<ApplicationUsers> Users { get; set; }
 
     }
 }

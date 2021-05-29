@@ -17,10 +17,7 @@ namespace Pos.Models
    public int CategoryId { get; set; }
    [ForeignKey("CategoryId")]
    public Category Category { get; set; }
-   public string Rack { get; set; }
-   public string Coulmn { get; set; }
-   public string Cell { get; set; }
-   public string Place { get; set; }
+    public string Descriptions { get; set; }
    public string Notes { get; set; }
 
    public ICollection<ProductsStore> ProductsStore { get; set; }

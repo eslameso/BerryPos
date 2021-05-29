@@ -59,14 +59,14 @@ namespace Pos.Data.Classes
 
        }
 
-         enum MeasurmentType
+        public enum MeasurmentType
          {
              Grams,
              Piece,
              Centimeter,
              Milliliter
          }
-         enum TransformationType
+        public enum TransformationType
          {
              StoreToStore,
              StoreToBranch,

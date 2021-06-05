@@ -6,10 +6,12 @@ namespace Pos.Models
     {
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
-        public Products Products { get; set; }
+        public virtual Products Products { get; set; }
         public int MeasurmentId { get; set; }
         [ForeignKey("MeasurmentId")]
         public Measurments Measurments { get; set; }
+        public decimal SalesPrice { get; set; }
+        public decimal PurchasePrice { get; set; }
         public string Description { get; set; }
     }
 }

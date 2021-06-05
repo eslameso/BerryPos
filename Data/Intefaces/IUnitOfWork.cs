@@ -16,6 +16,7 @@ namespace Pos.Data.Intefaces
         
         
         bool SaveAsync();
+         Task<bool> AsyncSaving();
         
     }
 }

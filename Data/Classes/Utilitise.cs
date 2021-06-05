@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Hosting;
@@ -61,16 +62,20 @@ namespace Pos.Data.Classes
 
         public enum MeasurmentType
          {
-             Grams,
-             Piece,
-             Centimeter,
-             Milliliter
+             [Display(Name="Grams")]
+             Grams=1,
+             [Display(Name="Piece")]
+             Piece=2,
+             [Display(Name="Centimeter")]
+             Centimeter=3,
+             [Display(Name="Milliliter")]
+             Milliliter=4
          }
         public enum TransformationType
          {
-             StoreToStore,
-             StoreToBranch,
-             BranchToBranch
+             StoreToStore=1,
+             StoreToBranch=2,
+             BranchToBranch=3
          }
 
 

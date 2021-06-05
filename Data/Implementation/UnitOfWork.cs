@@ -45,5 +45,10 @@ namespace Pos.Data.Implementation
         {
              return _db.SaveChanges() > 0;
         }
+
+        public async Task<bool> AsyncSaving()
+        {
+             return await _db.SaveChangesAsync() > 0;
+        }
     }
 }

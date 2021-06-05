@@ -27,14 +27,14 @@ using Pos.Models;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "E:\Projects\Pos\Views\_ViewImports.cshtml"
+#line 5 "E:\Projects\Pos\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b1ca069c68723faaa1ebc7fd5d6a78fbf060d5e9", @"/Views/Employees/GetEmployeeProfile.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e84b77374bff3990af5e26d9be8e813183176751", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"743712596874420410edbf14c56f7d7d037dbe42", @"/Views/_ViewImports.cshtml")]
     public class Views_Employees_GetEmployeeProfile : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Pos.Models.ApplicationUsers>
     {
         #pragma warning disable 1998

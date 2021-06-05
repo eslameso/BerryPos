@@ -27,10 +27,15 @@ namespace Pos.Data.Implementation
 
         public IEnumerable<Products> GetAllProductsSD(string SearchBar)
         {
-           var Data=_db.Products.Where(m=>m.Name.Contains(SearchBar) 
+           var Data=_db.Products.Include(z=>z.Category).Where(m=>m.Name.Contains(SearchBar) 
            || m.Barcode.Contains(SearchBar) || m.Category.Name.Contains(SearchBar));
            
            return Data;
+        } 
+
+        public int GetMainMeasurments(int MeasurmnetType)
+        {
+            return _db.Measurments.Where(m=>m.MeasurmentType==MeasurmnetType && m.IsMain==true).Select(m=>m.Id).FirstOrDefault();
         }
     }
 }

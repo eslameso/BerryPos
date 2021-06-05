@@ -18,11 +18,15 @@
         @Html.ValidationSummary(true, null, new { @class = "text-danger" })
         <div class="modal-body">
          
-          <div class="form-group">
+        <div class="form-group">
         <label asp-for="Barcode" class="control-label"></label>
-        <input type="text" asp-for="Barcode" class="form-control">
+        <input type="text" asp-for="Barcode" class="form-control" id="BarcodeText">
         <span asp-validation-for="Barcode" class="text-danger"></span>
         </div>
+        
+        
+      
+      
 
          <div class="form-group">
         <label asp-for="Name" class="control-label"></label>
@@ -39,11 +43,21 @@
         </div>
 
         <div class="form-group">
-        <label asp-for="MeasurmentTypes" class="control-label"></label>
-        <select asp-for="MeasurmentTypes" asp-items="Html.GetEnumSelectList<Pos.Data.Classes.Utilitise.MeasurmentType>()" class="form-control">
+        <label asp-for="MeasurmentTypeId" class="control-label"></label>
+        <select asp-for="MeasurmentTypeId" asp-items="Html.GetEnumSelectList<Pos.Data.Classes.Utilitise.MeasurmentType>()" class="form-control">
              <option></option>
         </select>
-        <span asp-validation-for="MeasurmentTypes" class="text-danger"></span>
+        <span asp-validation-for="MeasurmentTypeId" class="text-danger"></span>
+        </div>
+         <div class="form-group">
+        <label asp-for="SalesPrice" class="control-label"></label>
+        <input asp-for="SalesPrice" class="form-control">
+        <span asp-validation-for="SalesPrice" class="text-danger"></span>
+        </div>
+         <div class="form-group">
+        <label asp-for="PurchasePrice" class="control-label"></label>
+        <input asp-for="PurchasePrice" class="form-control">
+        <span asp-validation-for="PurchasePrice" class="text-danger"></span>
         </div>
 
         <div class="form-group">

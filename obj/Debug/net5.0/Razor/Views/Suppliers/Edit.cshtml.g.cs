@@ -27,14 +27,14 @@ using Pos.Models;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "E:\Projects\Pos\Views\_ViewImports.cshtml"
+#line 5 "E:\Projects\Pos\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0565997cb38960c5eab632941c8c14f6b700bfbf", @"/Views/Suppliers/Edit.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e84b77374bff3990af5e26d9be8e813183176751", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"743712596874420410edbf14c56f7d7d037dbe42", @"/Views/_ViewImports.cshtml")]
     public class Views_Suppliers_Edit : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Pos.ViewModels.EditSupplierMv>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", "hidden", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

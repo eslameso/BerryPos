@@ -59,6 +59,12 @@ $("#CreateProduct_btn").click(function(){
                         form.removeData('validator');
                         form.removeData('unobtrusiveValidation');
                         $.validator.unobtrusive.parse(form);
+                           $('#BarcodeText').on('input', function() {
+                               @* debugger;
+                               var text=$(this).val();
+                               $("#BarcodeDraw").attr("content", text); *@
+                               
+                               });
         }
     });
 });

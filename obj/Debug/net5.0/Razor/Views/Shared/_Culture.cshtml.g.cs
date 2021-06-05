@@ -27,14 +27,14 @@ using Pos.Models;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "E:\Projects\Pos\Views\_ViewImports.cshtml"
+#line 5 "E:\Projects\Pos\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8ca47299a701109f8f233ed1e687abff9f46199e", @"/Views/Shared/_Culture.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e84b77374bff3990af5e26d9be8e813183176751", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"743712596874420410edbf14c56f7d7d037dbe42", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__Culture : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

@@ -8,5 +8,6 @@ namespace Pos.Data.Intefaces
         List<Products> GetAllProducts();
         IEnumerable<Products> GetAllProductsSD(string SearchBar);
         void CreateProduct(Products product);
+        int GetMainMeasurments(int MeasurmnetType);
     }
 }

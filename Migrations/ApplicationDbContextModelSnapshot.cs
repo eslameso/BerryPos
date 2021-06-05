@@ -528,6 +528,12 @@ namespace Pos.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("PurchasePrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("SalesPrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("ProductId", "MeasurmentId");
 
                     b.HasIndex("MeasurmentId");
@@ -947,7 +953,7 @@ namespace Pos.Migrations
                         .HasForeignKey("BranchId");
 
                     b.HasOne("Pos.Models.Products", "Products")
-                        .WithMany()
+                        .WithMany("purchaseInvoices")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1079,6 +1085,8 @@ namespace Pos.Migrations
                     b.Navigation("ProductsMeasurments");
 
                     b.Navigation("ProductsStore");
+
+                    b.Navigation("purchaseInvoices");
 
                     b.Navigation("SaleInvoices");
 

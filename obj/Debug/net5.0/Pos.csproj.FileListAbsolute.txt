@@ -564,3 +564,8 @@ E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\CompanyProfile\Create.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\CompanyProfile\Edit.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Products\Index.cshtml.g.cs
 E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Products\Create.cshtml.g.cs
+E:\Projects\Pos\bin\Debug\net5.0\System.Drawing.Common.dll
+E:\Projects\Pos\bin\Debug\net5.0\zxing.dll
+E:\Projects\Pos\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\Projects\Pos\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\Projects\Pos\obj\Debug\net5.0\Razor\Views\Products\_BarCode.cshtml.g.cs

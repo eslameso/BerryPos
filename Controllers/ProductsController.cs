@@ -45,7 +45,7 @@ namespace Pos.Controllers
             var Count = Query.Count();
             var Model=Query.Skip(start).Take(length).Select(m => new 
             {
-            id=m.Id,barcode=m.Barcode,name=m.Name,categoryname="test",descriptions=m.Descriptions
+            id=m.Id,barcode=m.Barcode,name=m.Name,categoryname=m.Category.Name,descriptions=m.Descriptions
              }).ToList();
     
              return Json(new { data = Model, recordsFiltered = Count, recordsTotal = Count });
@@ -61,22 +61,20 @@ namespace Pos.Controllers
             return PartialView(Model);
         }
        [HttpPost]
-       public IActionResult Create(CreateProductMv Model)
+       public async Task<IActionResult> Create(CreateProductMv Model)
        {
            if (ModelState.IsValid)
            {
-             Products product = new Products(){
-                 Barcode=Model.Barcode,
-                 Name=Model.Name,
-                 CategoryId=Model.CategoryId,
-                 Descriptions=Model.Descriptions
-
-             };
-            //  ProductsMeasurments productsMeasurment=new ProductsMeasurments(){
-            //      ProductId=
-            //  };
+            int MainMeasurment=_uow.Products.GetMainMeasurments(Model.MeasurmentTypeId);
+             Products product = new Products();
+                 product.Barcode=Model.Barcode;
+                 product.Name=Model.Name;
+                 product.CategoryId=Model.CategoryId;
+                 product.Descriptions=Model.Descriptions;
+                            
+             product.ProductsMeasurments.Add(new ProductsMeasurments(){MeasurmentId=MainMeasurment,SalesPrice=Model.SalesPrice,PurchasePrice=Model.PurchasePrice,Description=""});
             _uow.Products.CreateProduct(product);
-            _uow.SaveAsync();
+             await _uow.AsyncSaving();
                
            }
            else
@@ -85,6 +83,13 @@ namespace Pos.Controllers
            }
 
          return PartialView(Model);
+       }
+
+       [HttpPost]
+       public IActionResult GenerateBarCode(string value)
+       {
+           ViewBag.Data=value;
+           return PartialView("_BarCode");
        }
 
     }

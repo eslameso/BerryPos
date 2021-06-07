@@ -23,12 +23,17 @@
         <input type="text" asp-for="Barcode" class="form-control" id="BarcodeText">
         <span asp-validation-for="Barcode" class="text-danger"></span>
         </div>
-        
-        
-      
+
+        <div class="form-group">
+        <svg class="row col-12" id="barcode"  jsbarcode-format="upc"
+         jsbarcode-value="123456789012"
+         jsbarcode-textmargin="0"
+         jsbarcode-fontoptions="bold"
+         ></svg>
+        </div>
       
 
-         <div class="form-group">
+        <div class="form-group">
         <label asp-for="Name" class="control-label"></label>
         <input type="text" asp-for="Name" class="form-control">
         <span asp-validation-for="Name" class="text-danger"></span>
@@ -76,3 +81,12 @@
 
     </form>
 </div>   
+
+@* <style>
+    .form-group svg{
+        display: none;
+     }
+    .form-group svg g rect{
+        height: 600px !important;
+     }
+</style> *@

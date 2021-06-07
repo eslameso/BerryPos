@@ -59,13 +59,35 @@ $("#CreateProduct_btn").click(function(){
                         form.removeData('validator');
                         form.removeData('unobtrusiveValidation');
                         $.validator.unobtrusive.parse(form);
+                        
+                                JsBarcode("#barcode", "BarCode",{
+                                  height: 50,
+                                  width: 1
+                              });
+                           
                            $('#BarcodeText').on('input', function() {
-                               @* debugger;
-                               var text=$(this).val();
-                               $("#BarcodeDraw").attr("content", text); *@
-                               
+                              var Data=$(this).val();
+                              if (Data!="")
+                              {
+                                JsBarcode("#barcode", Data,{
+                                  height: 50,
+                                  width: 1
+                              });
+                              }
+                              else
+                              {
+                                   JsBarcode("#barcode", "BarCode",{
+                                  height: 50,
+                                  width: 1
+                              });
+                              }
+                                                           
                                });
+                               
+                               
+                        
         }
+        
     });
 });
 

@@ -1,6 +1,9 @@
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Pos.Data.Classes;
 using Pos.Data.Intefaces;
 using Pos.Models;
 using Pos.ViewModels;
@@ -10,9 +13,13 @@ namespace Pos.Controllers
     public class ProductsController : Controller
     {
         private readonly IUnitOfWork _uow;
-        public ProductsController(IUnitOfWork uow)
+         private readonly IWebHostEnvironment _hosting;
+        Utilitise utilitise;
+        public ProductsController(IUnitOfWork uow,IWebHostEnvironment hosting)
         {
             _uow = uow;
+            _hosting=hosting;
+            utilitise =new Utilitise(_hosting);
 
         }
         public IActionResult Index()
@@ -66,11 +73,32 @@ namespace Pos.Controllers
            if (ModelState.IsValid)
            {
             int MainMeasurment=_uow.Products.GetMainMeasurments(Model.MeasurmentTypeId);
+
+             string FileName=string.Empty;
+                 if (Model.Photo !=null)
+                {
+                    
+                    if (utilitise.IsImageUpload(Model.Photo.FileName))
+                    {
+                        FileName=Model.Photo.FileName;
+                        utilitise.UploadImage(FileName,Model.Photo);
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty,"You Can Choose Images Only.");
+                        return PartialView(Model);
+                    }
+                   
+                 }
+
+
+
              Products product = new Products();
                  product.Barcode=Model.Barcode;
                  product.Name=Model.Name;
                  product.CategoryId=Model.CategoryId;
                  product.Descriptions=Model.Descriptions;
+                 product.Photo=FileName;
                             
              product.ProductsMeasurments.Add(new ProductsMeasurments(){MeasurmentId=MainMeasurment,SalesPrice=Model.SalesPrice,PurchasePrice=Model.PurchasePrice,Description=""});
             _uow.Products.CreateProduct(product);
@@ -85,12 +113,12 @@ namespace Pos.Controllers
          return PartialView(Model);
        }
 
-       [HttpPost]
-       public IActionResult GenerateBarCode(string value)
-       {
-           ViewBag.Data=value;
-           return PartialView("_BarCode");
-       }
+    [AcceptVerbs("Get","Post")]
+    [AllowAnonymous]
+    public IActionResult CreateNameValidation(string Name)
+    {
+      return Json(true);
+    }
 
     }
 

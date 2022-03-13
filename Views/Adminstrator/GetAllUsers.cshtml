@@ -1,32 +1,36 @@
-@model IEnumerable<Pos.Models.ApplicationUsers>
+@model IEnumerable<Pos.ViewModels.EmployeeDataMv>
     <h2>Users</h2>
     <div>
          <a asp-action="Register" asp-controller="Account" class="btn btn-primary">Add New User</a>
     </div>
-   
+   <br>
     <table id="UsersTable" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Address</th>
+                <th>Branch</th>
+                <th>Job Title</th>
                 <th>Hire Date</th>
                 <th>Mobile Number</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var user in Model)
+           @foreach (var user in Model)
             {
                  <tr>
-                 <td>@user.EmployeeName</td>
+                 <td>@user.Name</td>
                  <td>@user.Email</td>
-                 <td>@(user.Address!=null ? user.Address:"") </td>
-                 <td>@(user.HireDate !=DateTime.Parse("1/1/0001 12:00:00 AM") ? user.HireDate : "")</td>
+                 <td>@user.BranchName  </td>
+                 <td>@user.JobTitleName</td>
+                 <td>@(user.HireDate !=DateTime.Parse("1/1/0001 12:00:00 AM") ? user.HireDate.ToString("dd/MM/yyyy") : "")</td>
                  <td>@(user.MobileNumber!=null ? user.MobileNumber : "")</td>
                  <td>
                      <a asp-action="EditUser" asp-controller="Adminstrator" class="btn btn-primary" asp-route-id="@user.Id">Edit </a>
+                     
                     <input type="button" value="Delete" data-id="@user.Id"  class="btn btn-danger deleteuser">
+                    <a asp-action="GetEmployeeProfile" asp-controller="Employees" class="btn btn-primary" asp-route-Id="@user.Id">View </a>
                  </td>
                 </tr>
                 
@@ -38,7 +42,28 @@
      <script src="~/js/CustomDeleteSwal.js"></script>
     <script>
       $(document).ready(function() {
-      $('#UsersTable').DataTable();
+      $('#UsersTable').DataTable({
+        language: {
+
+            sProcessing: localizedData.sProcessing,
+            sLengthMenu: localizedData.sLengthMenu,
+            sZeroRecords: localizedData.sZeroRecords,
+            sInfo: localizedData.sInfo,
+            sInfoEmpty: localizedData.sInfoEmpty,
+            sInfoFiltered: localizedData.sInfoFiltered,
+            sInfoPostFix: "",
+            sSearch: localizedData.sSearch,
+            sUrl: "",
+            oPaginate: {
+                sFirst: localizedData.sFirst,
+                sPrevious: localizedData.sPrevious,
+                sNext: localizedData.sNext,
+                sLast: localizedData.sLast
+            }
+
+        }
+
+      });
        } );
 
      $('.deleteuser').click(function(){

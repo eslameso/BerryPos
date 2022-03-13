@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Localization;
+using Pos.Data.Classes;
 using Pos.Data.Implementation;
 using Pos.Data.Intefaces;
 using Pos.Models;
@@ -63,11 +64,12 @@ namespace Pos.Controllers
                 string FileName=string.Empty;
                  if (model.Photo !=null)
                 {
-                    if (IsImageUpload(model.Photo.FileName))
+                    Utilitise utilitise =new Utilitise(_hosting);
+                    if (utilitise.IsImageUpload(model.Photo.FileName))
                     {
                         FileName=model.Photo.FileName;
-                        UploadImage(FileName,model.Photo);
-                                            }
+                        utilitise.UploadImage(FileName,model.Photo);
+                    }
                     else
                     {
                         ModelState.AddModelError(string.Empty,"You Can Choose Images Only.");
@@ -176,25 +178,34 @@ namespace Pos.Controllers
 
         }
 
-       public void UploadImage(string FileName,IFormFile Photo)
-       {         
-                 string Uploads=Path.Combine(_hosting.WebRootPath,"Uploads");
-                 string FullPath=Path.Combine(Uploads,FileName);
-                 Photo.CopyTo(new FileStream(FullPath,FileMode.Create));
-       }
-        public bool IsImageUpload(string FileName)
+         [AcceptVerbs("Get", "Post")]
+        [AllowAnonymous]
+        public IActionResult IsEmailInUseEdit(string Email,string Id)
         {
-             var supportedTypes = new[] { "JPEG ", "JPG", "PNG","jpeg","jpg","png"};
-              var fileExt = Path.GetExtension(FileName).Substring(1);  
-                if (supportedTypes.Contains(fileExt))  
-                {  
-                            return true;
-                 }
-                 else
+
+           bool Flag=true;
+             foreach (var item in  UserManager.Users)
+             {
+                 if (item.Id !=Id && item.Email == Email)
                  {
-                             return false;
+                     Flag=false;
                  }
+             }
+            if (Flag == true )
+            {
+                return Json(data: true);
+            }
+            else
+            {
+
+                return Json(data: $"This Email {Email} Is Already Exist");
+            }
+
+
         }
+
+      
+     
 
         [HttpGet]
         public IActionResult CompleteProfile()

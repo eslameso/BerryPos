@@ -23,6 +23,8 @@ namespace Pos.Models
         public DbSet<Stores> Stores { get; set; }
         public DbSet<Suppliers> Suppliers { get; set; }
         public DbSet<JobTitles> JobTitles { get; set; }
+        public DbSet<CompanyProfile> CompanyProfile { get; set; }
+        public DbSet<TransformationInvoices> TransformationInvoices { get; set; }
 
        protected override void OnModelCreating(ModelBuilder modelBuilder)
 {

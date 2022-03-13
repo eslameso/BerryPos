@@ -26,8 +26,8 @@ namespace Pos.ViewModels
         [Required(ErrorMessage="The Email field is required")]
         [EmailAddress]
         [Display(Name="Email")]
-        [Remote(action:"IsEmailInUse",controller:"Account")]
         [ValideEmailDomain(AllowedDomain:"pos.com",ErrorMessage="Domain Name Should be (pos.com)")]
+        [Remote(action:"IsEmailInUse",controller:"Account")]
         public string Email { get; set; }
 
         [Required(ErrorMessage="The Password field is required")]

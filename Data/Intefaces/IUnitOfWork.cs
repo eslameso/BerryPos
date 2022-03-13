@@ -7,8 +7,16 @@ namespace Pos.Data.Intefaces
     {
         IBranchesRepo Branches {get;}
         IJobtitlesRepo JobTitles {get;}
+        ICategoriesRepo categories{get;}
+        IClientsRepo  clients{get;}
+        ISuppliersRepo Suppliers{get;}
+        IStoresRepo Stores {get;}
+        ICompanyProfileRepo CompanyProfile {get;}
+        IProductsRepo Products{get;}
         
-        Task<bool> SaveAsync();
+        
+        bool SaveAsync();
+         Task<bool> AsyncSaving();
         
     }
 }

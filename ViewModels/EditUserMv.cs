@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Pos.Models;
 
 namespace Pos.ViewModels
@@ -16,6 +18,8 @@ namespace Pos.ViewModels
         public string Id { get; set; }
         public string UserName { get; set; }
         public string EmployeeName { get; set; }
+        [Remote(action:"IsEmailInUseEdit",controller:"Account",AdditionalFields="Id",ErrorMessage="This Name Is Already Exist .")]
+        [EmailAddress]
         public string Email { get; set; }
         [Display(Name="Address")]
         public string Address { get; set; }
@@ -50,6 +54,7 @@ namespace Pos.ViewModels
 
         public IList<Branches> Branches { get; set; }
          public IList<JobTitles> JobTitles { get; set; }
+         public IFormFile Image { get; set; }
 
 
 

@@ -20,6 +20,10 @@ namespace Pos.Models
         public decimal purchaseprice { get; set; }
 
         public DateTime ExpireDate { get; set; }
+          public string Rack { get; set; }
+          public string Coulmn { get; set; }
+          public string Cell { get; set; }
+   public string Place { get; set; }
 
     }
 }

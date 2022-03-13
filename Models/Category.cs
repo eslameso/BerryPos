@@ -8,11 +8,7 @@ namespace Pos.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string  NameA { get; set; }
-
-        public int? ParentId { get; set; }
-        [ForeignKey("ParentId")]
-        public Category Parent { get; set; }
-
+        public string Description { get; set; }
         public ICollection<Products> Products { get; set; }
     }
 }

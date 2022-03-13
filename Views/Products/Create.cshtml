@@ -1,0 +1,101 @@
+@model Pos.ViewModels.CreateProductMv
+@{
+    ViewData["Title"]="Create Product";
+}
+<div class="modal-content">
+    <div class="modal-header">
+        <h2 class="modal-title text-primary" style="display:inline-block">Create Product</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="display:inline-block">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+ 
+   <form asp-controller="Products" asp-action="Create" data-ajax="true" data-ajax-method="POST" data-ajax-success="CreateSuccess" data-ajax-failure="CreateFailure">
+
+
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+        <div class="modal-body">
+         
+        <div class="form-group">
+        <label asp-for="Barcode" class="control-label"></label>
+        <input type="text" asp-for="Barcode" class="form-control" id="BarcodeText">
+        <span asp-validation-for="Barcode" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+        <svg class="row col-12" id="barcode"  jsbarcode-format="upc"
+         jsbarcode-value="123456789012"
+         jsbarcode-textmargin="0"
+         jsbarcode-fontoptions="bold"
+         ></svg>
+        </div>
+      
+
+        <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input type="text" asp-for="Name" class="form-control">
+        <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+        <label asp-for="CategoryId" class="control-label"></label>
+        <select asp-for="CategoryId" asp-items='@(new SelectList(@Model.Categories,"Id","Name"))' class="form-control">
+             <option></option>
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+        <label asp-for="MeasurmentTypeId" class="control-label"></label>
+        <select asp-for="MeasurmentTypeId" asp-items="Html.GetEnumSelectList<Pos.Data.Classes.Utilitise.MeasurmentType>()" class="form-control">
+             <option></option>
+        </select>
+        <span asp-validation-for="MeasurmentTypeId" class="text-danger"></span>
+        </div>
+         <div class="form-group">
+        <label asp-for="SalesPrice" class="control-label"></label>
+        <input asp-for="SalesPrice" class="form-control">
+        <span asp-validation-for="SalesPrice" class="text-danger"></span>
+        </div>
+         <div class="form-group">
+        <label asp-for="PurchasePrice" class="control-label"></label>
+        <input asp-for="PurchasePrice" class="form-control">
+        <span asp-validation-for="PurchasePrice" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+        <label asp-for="Photo" class="control-label"></label>
+          <div class="imgSec col-12 row">
+           <img class="col-md-2 col-4" id="ProductPhoto" src="" alt="" width="100px" height="70px"  style="border: 1px solid #9e9e9e;padding: 5px;background-color: #ffffff8a;margin-bottom: 5px;"/> 
+           <input asp-for="Photo" type="file" class="form-control" id="customFile" />
+            </div>
+           <span asp-validation-for="Photo" class="text-danger"></span>
+       </div>
+
+        <div class="form-group">
+        <label asp-for="Descriptions" class="control-label"></label>
+        <input type="text" asp-for="Descriptions" class="form-control">
+        <span asp-validation-for="Descriptions" class="text-danger"></span>
+        </div>
+
+
+        </div>
+       <div class="modal-footer">
+
+            <input type="submit" class="btn btn-primary" value="Save" />
+            <a href="/Products/Index" class="btn btn-default">Cancel</a>
+        </div>
+
+    </form>
+</div>   
+
+@* <style>
+    .form-group svg{
+        display: none;
+     }
+    .form-group svg g rect{
+        height: 600px !important;
+     }
+</style> *@

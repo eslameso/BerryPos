@@ -1,0 +1,130 @@
+@{
+    ViewData["Title"]="Stores";
+}
+
+<h2>Stores</h2>
+
+<button id="CreateStore_btn" class=" btn btn-primary mt-2">Create new Store</button>
+<br />
+<br />
+<table style="width:100%" class="table table-striped table-bordered" style="width:100%" id="StoresTable">
+    <thead>
+        <tr>
+            <th>Store Code</th>
+            <th>Store Name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="ItemsModal">
+    <div class="modal-dialog" role="document" id="modalcontent">
+
+    </div>
+</div>
+
+
+
+
+
+@section Scripts{
+     <script src="~/js/CustomDeleteSwalServerSide.js"></script>
+     <script src="~/js/ServerSideDataTable.js"></script>
+<script>
+   $(document).ready(function(){
+       let dataTableColumns = [{ data: "code" }, { data: "name" },{data :"description"},
+
+            {
+                data: "id", orderable: false, render: function (result, x, y) {
+
+
+                    return `<button class="btn default btn-editable edit-Item btn-primary" data-id="${result}"> <i class="fa fa-pencil"> </i> Edit </button>
+                            <button class="btn red btn delete-Item btn-danger" data-id="${result}"> <i class="glyphicon glyphicon-remove"> </i> Delete </button>`;
+
+                }
+            }];
+
+            globaltable = tablePlugin("#StoresTable", "/Stores/GetListOfStores", dataTableColumns,localizedData);
+         });
+       
+       $('#StoresTable').on("click",'.delete-Item',function(){
+           var dataId = $(this).attr("data-id");
+         CustomDelete("/Stores/Delete",dataId);
+       });
+
+       $('#StoresTable').on("click",'.edit-Item',function(){
+           var dataId = $(this).attr("data-id");
+          $.ajax({
+              url:"/Stores/Edit/"+dataId,
+              method:"Get",
+              success:function(result)
+              {
+                  $('#modalcontent').html(result);
+                  $('#ItemsModal').modal("show");
+                 var form = $("form");
+                        form.removeData('validator');
+                        form.removeData('unobtrusiveValidation');
+                        $.validator.unobtrusive.parse(form);
+              }
+
+          });
+       });
+
+       $('#CreateStore_btn').click(function(){
+          $.ajax({
+              url:"/Stores/Create",
+              method:"Get",
+              success:function(result)
+              {
+                  $('#modalcontent').html(result);
+                  $('#ItemsModal').modal("show");
+                 var form = $("form");
+                        form.removeData('validator');
+                        form.removeData('unobtrusiveValidation');
+                        $.validator.unobtrusive.parse(form);
+              }
+
+          });
+       });
+
+    function CreateSuccess()
+    {
+     $('#ItemsModal').modal("hide");
+    swal("Successfuly Create Store ");
+    globaltable.ajax.reload();
+   
+    }
+
+    function CreateFailure()
+    {
+     $('#ItemsModal').modal("hide");
+    swal("Faild To Create Store ");
+    
+   
+    }
+
+
+     function EditSuccess()
+    {
+     $('#ItemsModal').modal("hide");
+    swal("Successfuly Edit Store ");
+    globaltable.ajax.reload();
+   
+    }
+
+    function EditFailure()
+    {
+     $('#ItemsModal').modal("hide");
+    swal("Faild To Edit Store ");
+    
+    }
+
+
+
+        
+</script>
+}

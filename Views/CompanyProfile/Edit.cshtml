@@ -1,0 +1,88 @@
+@model Pos.ViewModels.EditCompanyProfileMv
+@{
+    ViewData["Title"]="Edit Company Profile";
+}
+<div class="modal-content">
+    <div class="modal-header">
+        <h2 class="modal-title text-primary" style="display:inline-block">Edit Company Profile</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="display:inline-block">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+ 
+   <form asp-controller="companyprofile" asp-action="Edit" method="POST" enctype="multipart/form-data">
+
+
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+        <div class="modal-body">
+         
+         <input type="hidden" asp-for="Id">
+         
+         <div class="form-group">
+        <label asp-for="CompanyName" class="control-label"></label>
+        <input type="text" asp-for="CompanyName" class="form-control">
+        <span asp-validation-for="CompanyName" class="text-danger"></span>
+        </div>
+      
+
+        <div class="form-group">
+        <label asp-for="OwnerName" class="control-label"></label>
+        <input type="text" asp-for="OwnerName" class="form-control">
+        <span asp-validation-for="OwnerName" class="text-danger"></span>
+        </div>
+
+         <div class="form-group">
+        <label asp-for="ComapanyType" class="control-label"></label>
+        <input type="text" asp-for="ComapanyType" class="form-control">
+        <span asp-validation-for="ComapanyType" class="text-danger"></span>
+        </div>
+
+         <div class="form-group">
+        <label asp-for="CompanyLogo" class="control-label"></label>
+          <div class="imgSec col-12 row">
+           <img class="col-md-2 col-4" id="LogoImg" src="/Uploads/@ViewBag.Logo" alt="" width="100px" height="70px"  style="border: 1px solid #9e9e9e;padding: 5px;background-color: #ffffff8a;margin-bottom: 5px;"/> 
+           <input asp-for="CompanyLogo" type="file" class="form-control" id="customFile" />
+            </div>
+           <span asp-validation-for="CompanyLogo" class="text-danger"></span>
+       </div>
+
+         <div class="form-group">
+        <label asp-for="Notes" class="control-label"></label>
+        <input type="text" asp-for="Notes" class="form-control">
+        <span asp-validation-for="Notes" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+        <label asp-for="CompanyDescription" class="control-label"></label>
+        <input type="text" asp-for="CompanyDescription" class="form-control">
+        <span asp-validation-for="CompanyDescription" class="text-danger"></span>
+        </div>
+
+
+        </div>
+       <div class="modal-footer">
+
+            <input type="submit" class="btn btn-primary" value="Save" />
+            <a href="/CompanyProfile/Index" class="btn btn-default">Cancel</a>
+        </div>
+
+    </form>
+</div>   
+@section Scripts
+{
+    <script>
+    function readURL(input) {
+       if (input.files && input.files[0]) {
+         var reader = new FileReader();
+         reader.onload = function(e) {
+         $('#LogoImg').attr('src', e.target.result); 
+        }   
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+      }}
+      $("#customFile").change(function() {
+       readURL(this);
+   }); 
+    </script>
+}
